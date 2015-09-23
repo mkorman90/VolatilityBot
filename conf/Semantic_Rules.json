@@ -1,0 +1,19 @@
+{
+    "yara_rules": [
+        {
+            "pattern": "6A 06 6A 01 6A 02 FF 15 API:WSASocketW [-] API:WSAConnect", 
+            "rule_name": "socket_tcp",
+            "is_64bit" : "False"
+        }, 
+        {
+            "pattern": "6A 17 6A 02 6A 01 FF 15 API:WSASocketW [-] API:WSAConnect", 
+            "rule_name": "socket_udp",
+            "is_64bit" : "False"
+        }, 
+        {
+            "pattern": "FF 15 API:GetCurrentProcess [-] 50 FF 15 API:OpenProcessToken [-] 68 string:SeDebugPrivilege [-] FF 15 API:LookupPrivilegeValueW [-] API:AdjustTokenPrivileges", 
+            "rule_name": "Process_Privilege_Escalation",
+            "is_64bit" : "False"
+        }
+    ]
+}
