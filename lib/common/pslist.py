@@ -4,6 +4,7 @@ import yaml
 import re
 import subprocess
 import pipes
+import json
 
 VolatilityBot_Home = ""
 volatility_path = ""
@@ -70,6 +71,4 @@ def get_new_pslist(mem,f_profile):
 	        pslist_run.append(entry)
         return pslist_run
 
-import json
-gi_list = load_golden_image('wxp_01')
-print json.dumps(gi_list,indent=4)
+
