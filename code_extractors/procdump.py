@@ -57,16 +57,16 @@ def _run(vm_name,f_profile,vmem_path,workdir,sample_id):
 	        new_processes.append(proc)
 	
 	for procdata in new_processes:
-		command = volatility_path + ' --profile ' + f_profile + ' -f '  + vmem_path + ' procdump -p ' + procdata['pid'] + ' -D ' + workdir + '/'
+		command = volatility_path + ' --profile ' + f_profile + ' -f '  + vmem_path + ' procdump -p ' + str(procdata['pid']) + ' -D ' + workdir + '/'
 		proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
 		output = proc.stdout.read()
 		#print output
 		try:
-			src = workdir + "/executable." + procdata['pid'] + ".exe"
+			src = workdir + "/executable." + str(procdata['pid']) + ".exe"
 	  
 			
 	  
-			dest = workdir + "/" + procdata['name'] + "." + procdata['pid'] + "._exe"
+			dest = workdir + "/" + procdata['name'] + "." + str(procdata['pid']) + "._exe"
 			#print " Renaming %s to %s" % (src,dest)
 			os.rename(src,dest)
 
@@ -100,6 +100,6 @@ def _run(vm_name,f_profile,vmem_path,workdir,sample_id):
 	  
 			return True
 		except:
-			print "Dump of " + procdata['pid'] + "failed."
+			print "Dump of " + str(procdata['pid']) + "failed."
 			print output
 			return False

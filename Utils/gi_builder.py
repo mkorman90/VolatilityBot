@@ -124,7 +124,7 @@ for pool in active_pools:
             
             modules = ['pslist','dlllist','ldrmodules','modscan']
             for mod in modules:
-                 command = volatility_path + ' --profile ' + vm['profile'] + ' -f ' + vmem_path + ' ' + mod
+                 command = volatility_path + ' --profile ' + vm['profile'] + ' -f ' + vmem_path + ' --output=json ' + mod
                  print command
                  proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
                  print '[*] Executing ' + mod

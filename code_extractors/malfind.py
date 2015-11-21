@@ -88,10 +88,10 @@ def _run(vm_name,f_profile,vmem_path,workdir,sample_id):
              
 	            for proc_gi in pslist_new:
 	                #print '[DEBUG] Look for process: gi - "%s" == new - "%s"' % (proc_gi['offset'],offset)                     
-	                if (proc_gi['offset'] == offset):
+	                if (str(proc_gi['offset']) == offset):
 	                    print "Found process name: %s" % (proc_gi['name'])
 	                    procname = proc_gi['name']
-	                    pid = proc_gi['pid']
+	                    pid = str(proc_gi['pid'])
 
 	            
 	            outputpath = workdir + '/injected/' + procname + '.' + offset +  '.' + imagebase +  '.fixed_bin'

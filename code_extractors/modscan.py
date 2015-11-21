@@ -7,11 +7,14 @@ Created on Tue Feb 10 08:34:30 2015
 
 from lib.core import sample
 from lib.core import DataBase
+from string import join
 import subprocess
 import yaml
 import os
 import re
 import pipes
+import json
+
 
 from post_processing import strings
 from post_processing import yara_postprocessor
@@ -50,46 +53,51 @@ def _run(vm_name,f_profile,vmem_path,workdir,sample_id):
     
     
     #Get golden image data
+    """
+       "Offset(P)",
+    "Name",
+    "Base",
+    "Size",
+    "File"
+    """
     modscan_gi = []
-    f = open(VolatilityBot_Home + '/GoldenImage/' + vm_name + '/modscan', 'r')
-    modscan_GoldenImage = f.readlines()
-    for line in modscan_GoldenImage:
-    	splitted_line = re.split('\s+',  line.rstrip('\n'))  
-    	if splitted_line[0].startswith("0x"):  
-    		try:  
-	    		entry = dict()
-	    		entry['offset'] = splitted_line[0]
-	    		entry['name'] = splitted_line[1]
-	    		entry['base'] = splitted_line[2]
-	    		entry['size'] = splitted_line[3]
-	    		entry['filename'] = splitted_line[4]
-	    		modscan_gi.append(entry)
-	    		#print entry    
-	        except:
-	    		#print "Skipping a non-parseable line:" + line
-	    		pass
-    f.close()
-    #print modscan_gi
+    
+    with open(VolatilityBot_Home + '/GoldenImage/' + vm_name + '/modscan') as data_file:    
+        modscan_GoldenImage = json.load(data_file)
+    
+    for line in modscan_GoldenImage['rows']:
+        try:  
+            entry = dict()
+            entry['offset'] = line[0]
+            entry['name'] = line[1]
+            entry['base'] = line[2]
+            entry['size'] = line[3]
+            entry['filename'] = line[4]
+            modscan_gi.append(entry)
+        except:
+            #print "Skipping a non-parseable line:" + line
+            pass
     
     #Get new modscan:
-    command = volatility_path + ' --profile ' + f_profile + ' -f '  + vmem_path + ' modscan'
+    command = volatility_path + ' --profile ' + f_profile + ' -f '  + vmem_path + ' modscan --output=json'
     proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
+
+    output_list = proc.stdout.readlines()
+    output = join(output_list, "") 
+    modscan_new_from_machine = json.loads(output)    
+    
     modscan_run = []
-    for line in iter(proc.stdout.readline, ''):	
-        splitted_line = re.split('\s+',  line.rstrip('\n'))  
-        if splitted_line[0].startswith("0x"):  
-            try:  
-                entry = dict()
-                entry['offset'] = splitted_line[0]
-                entry['name'] = splitted_line[1]
-                entry['base'] = splitted_line[2]
-                entry['size'] = splitted_line[3]
-                entry['filename'] = splitted_line[4]
-                modscan_run.append(entry)
-				#print entry    
-            except:
-                pass
-	#print modscan_run    
+    for line in modscan_new_from_machine['rows']:	
+        try:  
+            entry = dict()
+            entry['offset'] = line[0]
+            entry['name'] = line[1]
+            entry['base'] = line[2]
+            entry['size'] = line[3]
+            entry['filename'] = line[4]
+            modscan_run.append(entry)
+        except:
+            pass
     
     new_modules = []
     for mod in modscan_run:

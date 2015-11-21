@@ -1,10 +1,12 @@
 #! /usr/bin/python
 import os
 import yaml
+import json
+
 import re
 import subprocess
 import pipes
-import json
+from string import join
 
 VolatilityBot_Home = ""
 volatility_path = ""
@@ -31,44 +33,66 @@ def _load_config():
     
 def load_golden_image(vmname):
     	_load_config()
-	f = open(VolatilityBot_Home + '/GoldenImage/' + vmname + '/pslist', 'r')
-	pslist_GoldenImage = f.readlines()
+	#f = open(VolatilityBot_Home + '/GoldenImage/' + vmname + '/pslist', 'r')
+	#pslist_GoldenImage = f.readlines()
+
+	with open(VolatilityBot_Home + '/GoldenImage/' + vmname + '/pslist') as data_file:    
+         pslist_GoldenImage = json.load(data_file)
+    
 	pslist_gi = []
-	for line in pslist_GoldenImage:
-	    splitted_line = re.split('\s+',  line.rstrip('\n'))  
-	    if splitted_line[0].startswith("0x"):    
-	        try:
-		        entry = dict()
-		        entry['offset'] = splitted_line[0]
-		        entry['name'] = splitted_line[1]
-		        entry['pid'] = splitted_line[2]
-		        entry['ppid'] = splitted_line[3]
-		        pslist_gi.append(entry)    
-	        except:
-	    		pass
-	f.close()
+         
+	"""
+                "Offset(V)",
+                "Name",
+                "PID",
+                "PPID",
+                "Thds",
+                "Hnds",
+                "Sess",
+                "Wow64",
+                "Start",
+                "Exit"
+	"""         
+         
+	for proc in pslist_GoldenImage['rows']:
+         _load_config()
+         entry = dict()
+         try:
+             entry = dict()
+             entry['offset'] = "0x%x" % proc[0]
+             entry['name'] = proc[1]
+             entry['pid'] = proc[2]
+             entry['ppid'] = proc[3]
+             pslist_gi.append(entry)    
+         except:
+             pass         
+ 
 	return pslist_gi
 
 def get_new_pslist(mem,f_profile):
 	global volatility_path
-	command = volatility_path + ' --profile ' + f_profile + ' -f ' + mem + ' pslist'
-	print command 
+	_load_config()
+	command = volatility_path + ' --profile ' + f_profile + ' -f ' + mem + ' pslist --output=json '
+	print '[DEBUG]:' + command 
 	proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
 	pslist_run = []
 
-	for line in iter(proc.stdout.readline, ''):
-	    #Parse the line:
-	    #0x8660c628 svchost.exe            1192    704      6       96      0      0 2015-01-19 19:29:44 UTC+0000                                 
-	    #phy_addr,proc_name,pid,ppid,threads,Handles,sess,wow64,Start,Exit                    
-	    splitted_line = re.split('\s+',  line.rstrip('\n'))  
-	    if splitted_line[0].startswith("0x"):    
-	        entry = dict()
-	        entry['offset'] = splitted_line[0]
-	        entry['name'] = splitted_line[1]
-	        entry['pid'] = splitted_line[2]
-	        entry['ppid'] = splitted_line[3]
+	output_list = proc.stdout.readlines()
+	output = join(output_list, "") 
+	pslist_new_from_machine = json.loads(output)
+	for line in pslist_new_from_machine['rows']:               
+         entry = dict()
+         entry['offset'] = "0x%x" % line[0]
+         entry['name'] = line[1]
+         entry['pid'] = line[2]
+         entry['ppid'] = line[3]
 	            
-	        pslist_run.append(entry)
-        return pslist_run
+         pslist_run.append(entry)
+	return pslist_run
 
-
+gi_list = load_golden_image('wxp_01')
+print json.dumps(gi_list,indent=4)
+print '----------------------------------'
+new_pslist = get_new_pslist('/home/martin/vmware/wxp_01/wxp_01-Snapshot1.vmem','WinXPSP3x86')
+print json.dumps(new_pslist,indent=4)
+#print gi_list
