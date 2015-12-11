@@ -90,9 +90,3 @@ def get_new_pslist(mem,f_profile):
          pslist_run.append(entry)
 	return pslist_run
 
-gi_list = load_golden_image('wxp_01')
-print json.dumps(gi_list,indent=4)
-print '----------------------------------'
-new_pslist = get_new_pslist('/home/martin/vmware/wxp_01/wxp_01-Snapshot1.vmem','WinXPSP3x86')
-print json.dumps(new_pslist,indent=4)
-#print gi_list
