@@ -204,6 +204,17 @@ def reenqueue_enqueued_samples():
     session.close()
     return True    
 
+def reenqueue_failed_samples():
+    _load_config()
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for instance in session.query(samplesTable).filter(samplesTable.c.status == 'failed').all():
+        print '[*] Re-Enqueuing %s (%d) SHA256: %s' % (instance.binary_path,instance.id,instance.sha256)
+        change_analysis_status(instance.id,'waiting')
+    session.close()
+    return True
+
 def add_tag(set_tag,f_sample_id):
     _load_config()
 	#Find all existing tags for that sample, and remove from the to_add list existing ones.

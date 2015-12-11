@@ -61,7 +61,8 @@ def read_config():
 	global conf_path
 	global machine_failure_threshold
 	global active_pools
-     
+
+	config_file_path = ''
 	if conf_path == '':
          config_file_path = './conf/main.conf'
 	else:
@@ -332,12 +333,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f',"--filename", help="The Executable you want to submit")
     parser.add_argument("-s","--sleep", help="How much time to wait, in seconds")
-    parser.add_argument('-r', action='store_true')
+    parser.add_argument('-r', action='store_true',help="Submit a directory, as opposed to -f (file)")
     parser.add_argument('-x', action='store_true', help="Delete original file after submission")    
     parser.add_argument('-e', action='store_true', help="Enqueue files, but do not analyze them now")
     parser.add_argument('-D', action='store_true', help="Execute in daemon mode")
     parser.add_argument('-S', action='store_true', help="Skip existing samples")
-    parser.add_argument('-Q', action='store_true', help="Reprocess samples that were in waiting state and failed samples")
+    parser.add_argument('-Q', action='store_true', help="Re-enqueue failed samples")
     parser.add_argument('-t','--tags', help='Sample tags, separated by commas i.e: Dyre,Upatre')
     args = parser.parse_args()
     
@@ -487,6 +488,9 @@ def main():
                 
                 
             else:
+                if not os.path.exists(args.filename):
+                    print '[!] No file given, or file does not exist'
+                    exit(256)
                 path = args.filename    
                 try:
                     pe =  pefile.PE(path,fast_load=True)
@@ -563,7 +567,20 @@ def main():
                 t.start()
                 threads.append(t)
                 
-            
+    elif (args.Q):
+        print '[!] Going to re-enqueue failed samples:'
+        new_queue = DataBase.get_failed_sample_queue()
+
+        q_size = len(new_queue)
+        if q_size > 0:
+            print '[*] %d samples in queue' % q_size
+            print new_queue
+        else:
+            print '[!] No failed samples in queue'
+
+        DataBase.reenqueue_failed_samples()
+
+
 
     else:
         print '[!!!] [Error] Invalid parameters were set, either enqueue sample or Launch VolatilityBot Daemon.'
