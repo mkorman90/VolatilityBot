@@ -7,7 +7,6 @@ rule Winsock__WSA : Sockets Winsock {
         $WSARecv ="WSARecv"
         $WSAConnect ="WSAConnect"
         $WSAIoctl ="WSAIoctl"
-        $WSAConnect ="WSAConnect"
     condition:
         any of them
 }
