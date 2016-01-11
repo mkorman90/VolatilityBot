@@ -105,9 +105,8 @@ def _revert(vm):
 	print "[*] [xen]  Reverting %s is futile." % (vm['name'])
 	"""	
 	_load_config()
-	destroy_xbox(vm)
+	_cleanup(vm)
 	print "[*] [xen]  Reverting %s to snapshot %s:" % (vm['name'],vm['snapshot_name'])
-	#vboxmanage snapshot wxp_01 restore VolatilityBot
 	command = "%s restore %s%s %s%s" % (xl_path,xbox_working_path,vm['config_file'],xbox_working_path,vm['snapshot_name'])
 	print " >  %s" % command
 	p = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
@@ -115,7 +114,6 @@ def _revert(vm):
 	print output
 	if gui:
 		subprocess.Popen(gui,shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-	return True
 	"""
 	return True
 
@@ -135,20 +133,19 @@ def _start(vm):
 
 def _suspend(vm):
 	''' suspend the vm '''
-    _load_config()
-    print "[*] [xen]  Suspending %s " % (vm['name'])
-    command = xl_path + " pause " +  vm['name']
-    print " >  %s" % command
-    p = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    output, error = p.communicate()
-    print output
-    return True
+	_load_config()
+	print "[*] [xen]  Suspending %s " % (vm['name'])
+	command = xl_path + " pause " +  vm['name']
+	print " >  %s" % command
+	p = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+	output, error = p.communicate()
+	print output
+	return True
 
 def _get_mem_path(vm):
 	''' mount vm memory and provide path to it '''
 	_load_config()
 	_cleanup(vm,False)
-     #Check if dump for this sample exists (by vmname - If it exsits: return name, if not: create and return dump name)
 	dump_name = xbox_working_path + 'xboxmem_' +  vm['name']
 	print "[*] [xen]  Getting mempath (%s) for %s" % (dump_name,vm['name'])
 	command = "/usr/local/bin/vmifs name " + vm['name'] + " " + dump_name
