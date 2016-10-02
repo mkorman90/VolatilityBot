@@ -1,5 +1,4 @@
-
-![alt tag](https://bytebucket.org/martink90/volatilitybot/raw/0c8fe13fc69d60102d62299d09884697a9b3994e/pics/logo.png?token=f3ed026cce59ed64d4f291c52050df7c4a920137)
+![alt tag](https://bytebucket.org/martink90/volatilitybot_public/raw/eca82b287aea53bfe308042eec7a713cfcc355b7/pics/logo.png)
 
 
 ## Synopsis
