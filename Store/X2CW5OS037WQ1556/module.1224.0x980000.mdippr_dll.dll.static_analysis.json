@@ -1,0 +1,401 @@
+{
+    "sections": [
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x3707",
+            "entropy": 6.442493379087336,
+            "virtual_address": "0x1000",
+            "hash_sha1": "909a2167fd7f266a9a3c2025b892d87cbf6f944f",
+            "name": ".text\u0000\u0000\u0000",
+            "hash_md5": "12b202a91834520b676228db848eb67c",
+            "size_raw_data": 14336,
+            "section_perm": {
+                "w": false,
+                "x": true,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x784",
+            "entropy": 1.7975902597753515,
+            "virtual_address": "0x5000",
+            "hash_sha1": "d28faf7f90d14c7292351355617e0a88707a25ef",
+            "name": ".data\u0000\u0000\u0000",
+            "hash_md5": "66c40dc1dd10bcb85164e0ec9c46051d",
+            "size_raw_data": 2048,
+            "section_perm": {
+                "w": true,
+                "x": false,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x3b0",
+            "entropy": 3.1300055447725583,
+            "virtual_address": "0x6000",
+            "hash_sha1": "abaf3cfd35a4ff0520f4d8085edc0344c79f859a",
+            "name": ".rsrc\u0000\u0000\u0000",
+            "hash_md5": "31389843edc22fcadca75db3b71c0dd8",
+            "size_raw_data": 1024,
+            "section_perm": {
+                "w": false,
+                "x": false,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x1f2",
+            "entropy": 5.086002584013445,
+            "virtual_address": "0x7000",
+            "hash_sha1": "6cf5a9904464506c1f1cdd77f2db5afb2ea8fb15",
+            "name": ".reloc\u0000\u0000",
+            "hash_md5": "1e61df1016ee8eb0ec0b2cc43454070b",
+            "size_raw_data": 512,
+            "section_perm": {
+                "w": false,
+                "x": false,
+                "r": true
+            }
+        }
+    ],
+    "exports": [
+        {
+            "ordinal": 1,
+            "address": "0x401a00",
+            "name": "ClosePrintProcessor"
+        },
+        {
+            "ordinal": 2,
+            "address": "0x401a8f",
+            "name": "ControlPrintProcessor"
+        },
+        {
+            "ordinal": 3,
+            "address": "0x401300",
+            "name": "EnumPrintProcessorDatatypesW"
+        },
+        {
+            "ordinal": 4,
+            "address": "0x4018fb",
+            "name": "GetPrintProcessorCapabilities"
+        },
+        {
+            "ordinal": 5,
+            "address": "0x401627",
+            "name": "OpenPrintProcessor"
+        },
+        {
+            "ordinal": 6,
+            "address": "0x4019b5",
+            "name": "PrintDocumentOnPrintProcessor"
+        }
+    ],
+    "imports": [
+        {
+            "offset": 4198656,
+            "name": "RtlUnwind"
+        },
+        {
+            "offset": 4198660,
+            "name": "wcscmp"
+        },
+        {
+            "offset": 4198664,
+            "name": "_ftol"
+        },
+        {
+            "offset": 4198668,
+            "name": "_wcsicmp"
+        },
+        {
+            "offset": 4198672,
+            "name": "wcslen"
+        },
+        {
+            "offset": 4198676,
+            "name": "wcscpy"
+        },
+        {
+            "offset": 4198680,
+            "name": "wcschr"
+        },
+        {
+            "offset": 4198684,
+            "name": "_wcsnicmp"
+        },
+        {
+            "offset": 4198688,
+            "name": "iswctype"
+        },
+        {
+            "offset": 4198692,
+            "name": "wcstoul"
+        },
+        {
+            "offset": 4198544,
+            "name": "WaitForSingleObject"
+        },
+        {
+            "offset": 4198548,
+            "name": "lstrlenW"
+        },
+        {
+            "offset": 4198552,
+            "name": "GlobalFree"
+        },
+        {
+            "offset": 4198556,
+            "name": "GetLastError"
+        },
+        {
+            "offset": 4198560,
+            "name": "SetLastError"
+        },
+        {
+            "offset": 4198564,
+            "name": "CreateEventW"
+        },
+        {
+            "offset": 4198568,
+            "name": "CloseHandle"
+        },
+        {
+            "offset": 4198572,
+            "name": "ResetEvent"
+        },
+        {
+            "offset": 4198576,
+            "name": "SetEvent"
+        },
+        {
+            "offset": 4198580,
+            "name": "HeapFree"
+        },
+        {
+            "offset": 4198584,
+            "name": "GetACP"
+        },
+        {
+            "offset": 4198588,
+            "name": "IsDBCSLeadByteEx"
+        },
+        {
+            "offset": 4198592,
+            "name": "GlobalAlloc"
+        },
+        {
+            "offset": 4198596,
+            "name": "HeapAlloc"
+        },
+        {
+            "offset": 4198600,
+            "name": "GetProcessHeap"
+        },
+        {
+            "offset": 4198604,
+            "name": "lstrcpyW"
+        },
+        {
+            "offset": 4198612,
+            "name": "GetPrinterW"
+        },
+        {
+            "offset": 4198616,
+            "name": "ClosePrinter"
+        },
+        {
+            "offset": 4198620,
+            "name": "OpenPrinterW"
+        },
+        {
+            "offset": 4198624,
+            "name": "GetJobAttributes"
+        },
+        {
+            "offset": 4198628,
+            "name": "ReadPrinter"
+        },
+        {
+            "offset": 4198632,
+            "name": "GetPrinterDataW"
+        },
+        {
+            "offset": 4198636,
+            "name": "StartDocPrinterW"
+        },
+        {
+            "offset": 4198640,
+            "name": "WritePrinter"
+        },
+        {
+            "offset": 4198644,
+            "name": "EndDocPrinter"
+        },
+        {
+            "offset": 4198648,
+            "name": "SplInitializeWinSpoolDrv"
+        },
+        {
+            "offset": 4198400,
+            "name": "TranslateCharsetInfo"
+        },
+        {
+            "offset": 4198404,
+            "name": "CreateFontIndirectW"
+        },
+        {
+            "offset": 4198408,
+            "name": "SelectObject"
+        },
+        {
+            "offset": 4198412,
+            "name": "GetTextMetricsW"
+        },
+        {
+            "offset": 4198416,
+            "name": "StartDocW"
+        },
+        {
+            "offset": 4198420,
+            "name": "SetBkMode"
+        },
+        {
+            "offset": 4198424,
+            "name": "StartPage"
+        },
+        {
+            "offset": 4198428,
+            "name": "EndPage"
+        },
+        {
+            "offset": 4198432,
+            "name": "TextOutA"
+        },
+        {
+            "offset": 4198436,
+            "name": "EndDoc"
+        },
+        {
+            "offset": 4198440,
+            "name": "AbortDoc"
+        },
+        {
+            "offset": 4198444,
+            "name": "GdiGetSpoolFileHandle"
+        },
+        {
+            "offset": 4198448,
+            "name": "GdiGetDC"
+        },
+        {
+            "offset": 4198452,
+            "name": "GdiGetPageCount"
+        },
+        {
+            "offset": 4198456,
+            "name": "GetWorldTransform"
+        },
+        {
+            "offset": 4198460,
+            "name": "GdiStartDocEMF"
+        },
+        {
+            "offset": 4198464,
+            "name": "GdiEndDocEMF"
+        },
+        {
+            "offset": 4198468,
+            "name": "GdiDeleteSpoolFileHandle"
+        },
+        {
+            "offset": 4198472,
+            "name": "GdiGetPageHandle"
+        },
+        {
+            "offset": 4198476,
+            "name": "GdiStartPageEMF"
+        },
+        {
+            "offset": 4198480,
+            "name": "GdiGetDevmodeForPage"
+        },
+        {
+            "offset": 4198484,
+            "name": "GdiEndPageEMF"
+        },
+        {
+            "offset": 4198488,
+            "name": "GdiResetDCEMF"
+        },
+        {
+            "offset": 4198492,
+            "name": "ResetDCW"
+        },
+        {
+            "offset": 4198496,
+            "name": "SetGraphicsMode"
+        },
+        {
+            "offset": 4198500,
+            "name": "SetWorldTransform"
+        },
+        {
+            "offset": 4198504,
+            "name": "ModifyWorldTransform"
+        },
+        {
+            "offset": 4198508,
+            "name": "GdiPlayPageEMF"
+        },
+        {
+            "offset": 4198512,
+            "name": "ExtEscape"
+        },
+        {
+            "offset": 4198516,
+            "name": "GetEnhMetaFileBits"
+        },
+        {
+            "offset": 4198520,
+            "name": "GetDeviceCaps"
+        },
+        {
+            "offset": 4198524,
+            "name": "DeleteObject"
+        },
+        {
+            "offset": 4198528,
+            "name": "CancelDC"
+        },
+        {
+            "offset": 4198532,
+            "name": "DeleteDC"
+        },
+        {
+            "offset": 4198536,
+            "name": "CreateDCW"
+        }
+    ],
+    "general": {
+        "imphash": "failed",
+        "md5": "7c539f9dd52bda2a27ed06c1e8553b32",
+        "sha256": "032cac16e89bef8eb48442b4d72ed9ae81ccf9e596a5291d0fae359f6c24ce06"
+    },
+    "resources": [
+        {
+            "offset": "0x00006060",
+            "filetype": "data",
+            "language": "LANG_ENGLISH",
+            "size": "0x0000034c",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "RT_VERSION"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+mainconfig:
+ general:
+  VolatilityBot_Home : /Users/Martin/Dropbox/Projects/VolatilityBot
+  machine_type: vmware
+  db_engine: "sqlite:///samples.db"
+  modules: malfind,pslist,modscan
+  vmware:
+   vmrun_path : "/Applications/VMware Fusion.app/Contents/Library/vmrun"
+   gui: True
+machines:
+ MWA_WXP:
+  name: MWA_WXP
+  enabled: True
+  vmx_path: /Users/Martin/Documents/Virtual Machines/MWA7/MWAXP.vmwarevm/MWAXP.vmx
+  vmdk_path: /Users/Martin/Documents/Virtual Machines/MWA7/MWAXP.vmwarevm/
+  IP: 192.168.202.129
+  snapshot_name: VolatilityBot
+  status: idle
+ MWA_WXP_2:
+  name: MWA_WXP_2
+  enabled: True
+  vmx_path:  /Users/Martin/Documents/Virtual Machines/MWA_XP_2.vmwarevm/MWA_XP_2.vmx
+  vmdk_path: /Users/Martin/Documents/Virtual Machines/MWA_XP_2.vmwarevm/
+  IP: 192.168.202.130
+  snapshot_name: VolatilityBot
+  status: idle

@@ -1,0 +1,455 @@
+{
+    "sections": [
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x32f0",
+            "entropy": 5.654997127614749,
+            "virtual_address": "0x1000",
+            "hash_sha1": "401c2c72ea23557a1adc180bc07476983260ea85",
+            "name": ".text\u0000\u0000\u0000",
+            "hash_md5": "b305ad2e1afd46ef5fba35893ad00a87",
+            "size_raw_data": 16384,
+            "section_perm": {
+                "w": false,
+                "x": true,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0xa85",
+            "entropy": 4.319688658428018,
+            "virtual_address": "0x5000",
+            "hash_sha1": "88b135c3064800204626edae0ec3fa1d33cac201",
+            "name": ".rdata\u0000\u0000",
+            "hash_md5": "0af1a0dc806f5aec3ed70afb3536ae1c",
+            "size_raw_data": 4096,
+            "section_perm": {
+                "w": false,
+                "x": false,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x499",
+            "entropy": 1.8166339780566767,
+            "virtual_address": "0x6000",
+            "hash_sha1": "d4a4a24153dd7ca405c655dd46ab072137b10755",
+            "name": ".data\u0000\u0000\u0000",
+            "hash_md5": "3bf7a903a275fbe805b62ab395b3a7f9",
+            "size_raw_data": 4096,
+            "section_perm": {
+                "w": true,
+                "x": false,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x18e8",
+            "entropy": 3.9524676134801613,
+            "virtual_address": "0x7000",
+            "hash_sha1": "bd2f34a1064a35e064f72da869eb64d3bee9db8c",
+            "name": ".rsrc\u0000\u0000\u0000",
+            "hash_md5": "75b5b951652dbf4a856fcf3c6cca73e6",
+            "size_raw_data": 8192,
+            "section_perm": {
+                "w": false,
+                "x": false,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x44a",
+            "entropy": 2.1255611668413694,
+            "virtual_address": "0x9000",
+            "hash_sha1": "52e1e7e12bc14d6b9ac77deb0cca48761f98656d",
+            "name": ".reloc\u0000\u0000",
+            "hash_md5": "0beaa64cfd9c71dba80ad3c57ec91ce5",
+            "size_raw_data": 4096,
+            "section_perm": {
+                "w": false,
+                "x": false,
+                "r": true
+            }
+        }
+    ],
+    "exports": [
+        {
+            "ordinal": 1,
+            "address": "0x100014bc",
+            "name": "DllCanUnloadNow"
+        },
+        {
+            "ordinal": 2,
+            "address": "0x100014c8",
+            "name": "DllGetClassObject"
+        },
+        {
+            "ordinal": 3,
+            "address": "0x100014e1",
+            "name": "DllRegisterServer"
+        },
+        {
+            "ordinal": 4,
+            "address": "0x100014f0",
+            "name": "DllUnregisterServer"
+        }
+    ],
+    "imports": [
+        {
+            "offset": 268455984,
+            "name": "LocalAlloc"
+        },
+        {
+            "offset": 268455988,
+            "name": "DisableThreadLibraryCalls"
+        },
+        {
+            "offset": 268455992,
+            "name": "GetSystemInfo"
+        },
+        {
+            "offset": 268455996,
+            "name": "GetVersionExA"
+        },
+        {
+            "offset": 268456000,
+            "name": "HeapCreate"
+        },
+        {
+            "offset": 268456004,
+            "name": "InitializeCriticalSection"
+        },
+        {
+            "offset": 268456008,
+            "name": "DeleteCriticalSection"
+        },
+        {
+            "offset": 268456012,
+            "name": "LeaveCriticalSection"
+        },
+        {
+            "offset": 268456016,
+            "name": "InterlockedIncrement"
+        },
+        {
+            "offset": 268456020,
+            "name": "EnterCriticalSection"
+        },
+        {
+            "offset": 268456024,
+            "name": "InterlockedDecrement"
+        },
+        {
+            "offset": 268456028,
+            "name": "lstrlenW"
+        },
+        {
+            "offset": 268456032,
+            "name": "MultiByteToWideChar"
+        },
+        {
+            "offset": 268456036,
+            "name": "GetShortPathNameA"
+        },
+        {
+            "offset": 268456040,
+            "name": "GetModuleHandleA"
+        },
+        {
+            "offset": 268456044,
+            "name": "lstrcmpA"
+        },
+        {
+            "offset": 268456048,
+            "name": "GetCurrentProcessId"
+        },
+        {
+            "offset": 268456052,
+            "name": "SizeofResource"
+        },
+        {
+            "offset": 268456056,
+            "name": "LoadResource"
+        },
+        {
+            "offset": 268456060,
+            "name": "FindResourceA"
+        },
+        {
+            "offset": 268456064,
+            "name": "GetLastError"
+        },
+        {
+            "offset": 268456068,
+            "name": "LoadLibraryExA"
+        },
+        {
+            "offset": 268456072,
+            "name": "lstrcmpiA"
+        },
+        {
+            "offset": 268456076,
+            "name": "lstrcpynA"
+        },
+        {
+            "offset": 268456080,
+            "name": "IsDBCSLeadByte"
+        },
+        {
+            "offset": 268456084,
+            "name": "HeapDestroy"
+        },
+        {
+            "offset": 268456088,
+            "name": "DebugBreak"
+        },
+        {
+            "offset": 268456092,
+            "name": "lstrcatA"
+        },
+        {
+            "offset": 268456096,
+            "name": "FindClose"
+        },
+        {
+            "offset": 268456100,
+            "name": "FindFirstFileA"
+        },
+        {
+            "offset": 268456104,
+            "name": "CreateDirectoryA"
+        },
+        {
+            "offset": 268456108,
+            "name": "GetSystemDirectoryA"
+        },
+        {
+            "offset": 268456112,
+            "name": "GetVersion"
+        },
+        {
+            "offset": 268456116,
+            "name": "lstrlenA"
+        },
+        {
+            "offset": 268456120,
+            "name": "LocalFree"
+        },
+        {
+            "offset": 268456124,
+            "name": "FreeLibrary"
+        },
+        {
+            "offset": 268456128,
+            "name": "LoadLibraryA"
+        },
+        {
+            "offset": 268456132,
+            "name": "GetProcAddress"
+        },
+        {
+            "offset": 268456136,
+            "name": "HeapAlloc"
+        },
+        {
+            "offset": 268456140,
+            "name": "HeapFree"
+        },
+        {
+            "offset": 268456144,
+            "name": "HeapReAlloc"
+        },
+        {
+            "offset": 268456148,
+            "name": "GetModuleFileNameA"
+        },
+        {
+            "offset": 268456152,
+            "name": "WideCharToMultiByte"
+        },
+        {
+            "offset": 268456156,
+            "name": "lstrcpyA"
+        },
+        {
+            "offset": 268456188,
+            "name": "wsprintfA"
+        },
+        {
+            "offset": 268456192,
+            "name": "CharNextA"
+        },
+        {
+            "offset": 268456196,
+            "name": "InsertMenuA"
+        },
+        {
+            "offset": 268456200,
+            "name": "LoadStringA"
+        },
+        {
+            "offset": 268456204,
+            "name": "GetSystemMetrics"
+        },
+        {
+            "offset": 268455936,
+            "name": "RegCreateKeyExA"
+        },
+        {
+            "offset": 268455940,
+            "name": "RegDeleteKeyA"
+        },
+        {
+            "offset": 268455944,
+            "name": "RegDeleteValueA"
+        },
+        {
+            "offset": 268455948,
+            "name": "RegQueryValueExA"
+        },
+        {
+            "offset": 268455952,
+            "name": "RegCloseKey"
+        },
+        {
+            "offset": 268455956,
+            "name": "RegOpenKeyA"
+        },
+        {
+            "offset": 268455960,
+            "name": "RegEnumKeyExA"
+        },
+        {
+            "offset": 268455964,
+            "name": "RegSetValueExA"
+        },
+        {
+            "offset": 268455968,
+            "name": "RegOpenKeyExA"
+        },
+        {
+            "offset": 268455972,
+            "name": "RegEnumValueA"
+        },
+        {
+            "offset": 268455976,
+            "name": "RegQueryInfoKeyA"
+        },
+        {
+            "offset": 268456212,
+            "name": "CoInitialize"
+        },
+        {
+            "offset": 268456216,
+            "name": "CoCreateInstance"
+        },
+        {
+            "offset": 268456220,
+            "name": "CoTaskMemAlloc"
+        },
+        {
+            "offset": 268456224,
+            "name": "CoTaskMemFree"
+        },
+        {
+            "offset": 268456228,
+            "name": "CoUninitialize"
+        },
+        {
+            "offset": 268456232,
+            "name": "CoTaskMemRealloc"
+        },
+        {
+            "offset": 268456164,
+            "name": "SysFreeString"
+        },
+        {
+            "offset": 268456168,
+            "name": "VarUI4FromStr"
+        },
+        {
+            "offset": 268456172,
+            "name": "SysAllocString"
+        },
+        {
+            "offset": 268456176,
+            "name": "LoadTypeLib"
+        },
+        {
+            "offset": 268456180,
+            "name": "RegisterTypeLib"
+        }
+    ],
+    "general": {
+        "imphash": "failed",
+        "md5": "b0d70d533a3fc40d71224bc4ade0de92",
+        "sha256": "8809f3d652bad038c7eb767a6a27ff34acc207823d773a74c0aeac9b072da8ca"
+    },
+    "resources": [
+        {
+            "offset": "0x00007900",
+            "filetype": "zlib compressed data",
+            "language": "LANG_ENGLISH",
+            "size": "0x000001fa",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "unknown"
+        },
+        {
+            "offset": "0x00007900",
+            "filetype": "zlib compressed data",
+            "language": "LANG_ENGLISH",
+            "size": "0x000001fa",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "unknown"
+        },
+        {
+            "offset": "0x00007b00",
+            "filetype": "data",
+            "language": "LANG_ENGLISH",
+            "size": "0x000007ac",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "unknown"
+        },
+        {
+            "offset": "0x00008668",
+            "filetype": "data",
+            "language": "LANG_ENGLISH",
+            "size": "0x0000027c",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "RT_STRING"
+        },
+        {
+            "offset": "0x00008668",
+            "filetype": "data",
+            "language": "LANG_ENGLISH",
+            "size": "0x0000027c",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "RT_STRING"
+        },
+        {
+            "offset": "0x00008668",
+            "filetype": "data",
+            "language": "LANG_ENGLISH",
+            "size": "0x0000027c",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "RT_STRING"
+        },
+        {
+            "offset": "0x000082b0",
+            "filetype": "data",
+            "language": "LANG_ENGLISH",
+            "size": "0x000002f4",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "name": "RT_VERSION"
+        }
+    ]
+}

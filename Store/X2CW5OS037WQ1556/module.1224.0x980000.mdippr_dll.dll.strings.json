@@ -1,0 +1,1170 @@
+[
+    {
+        "offset": "0x400001",
+        "string": "!This program cannot be run in DOS mode.\r\r\n$"
+    },
+    {
+        "offset": "0x400001",
+        "string": "Rich+!"
+    },
+    {
+        "offset": "0x400001",
+        "string": ".text"
+    },
+    {
+        "offset": "0x400001",
+        "string": "`.data"
+    },
+    {
+        "offset": "0x400001",
+        "string": ".rsrc"
+    },
+    {
+        "offset": "0x400001",
+        "string": "@.reloc"
+    },
+    {
+        "offset": "0x400001",
+        "string": "D.t#,.tj<.t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "I.taO.t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9.teP.t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "K.t2P.tSH.t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "NB10"
+    },
+    {
+        "offset": "0x400001",
+        "string": "mdippr.pdb"
+    },
+    {
+        "offset": "0x400001",
+        "string": "QSUV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9|$("
+    },
+    {
+        "offset": "0x400001",
+        "string": "t{IItKf="
+    },
+    {
+        "offset": "0x400001",
+        "string": "t,f= "
+    },
+    {
+        "offset": "0x400001",
+        "string": "t&f="
+    },
+    {
+        "offset": "0x400001",
+        "string": "j XFF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "L$$f"
+    },
+    {
+        "offset": "0x400001",
+        "string": "_^][Y"
+    },
+    {
+        "offset": "0x400001",
+        "string": "QQSV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u\fW3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "YYt\n"
+    },
+    {
+        "offset": "0x400001",
+        "string": "C49u"
+    },
+    {
+        "offset": "0x400001",
+        "string": "C89{4"
+    },
+    {
+        "offset": "0x400001",
+        "string": "YYt\t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "tAv\fj"
+    },
+    {
+        "offset": "0x400001",
+        "string": "jWX_^[]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t)v\""
+    },
+    {
+        "offset": "0x400001",
+        "string": "t$\fP"
+    },
+    {
+        "offset": "0x400001",
+        "string": "D$\fHt=Ht\"HuF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "HHtN"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E\f;]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "|19E\f}13"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9E\f}"
+    },
+    {
+        "offset": "0x400001",
+        "string": "tF9E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "F\fjp"
+    },
+    {
+        "offset": "0x400001",
+        "string": "^\ft4"
+    },
+    {
+        "offset": "0x400001",
+        "string": "vbVW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "tEWV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "L$\fSW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t\u000bf9OVu"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ueWS"
+    },
+    {
+        "offset": "0x400001",
+        "string": "YYuW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u\ff;Fdu2"
+    },
+    {
+        "offset": "0x400001",
+        "string": "@_^[]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E$;]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "@L;E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E$H3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "]\fV3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u\ft%W"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E0tW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u 9u0w"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u0WS"
+    },
+    {
+        "offset": "0x400001",
+        "string": "\u000bVWS"
+    },
+    {
+        "offset": "0x400001",
+        "string": ")u0W"
+    },
+    {
+        "offset": "0x400001",
+        "string": "@f9Adt"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u$9]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "M$w|9]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u SV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "tL9]"
+    },
+    {
+        "offset": "0x400001",
+        "string": "F;E$v"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9},u\f"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E89}8SV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t+SV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "B;} w"
+    },
+    {
+        "offset": "0x400001",
+        "string": "+} SV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E8t\t;"
+    },
+    {
+        "offset": "0x400001",
+        "string": "@L;E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t;FG;u"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9E(SWt)9E,t\t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E 9E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E )E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "M QV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u(WP"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E$PV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E PV"
+    },
+    {
+        "offset": "0x400001",
+        "string": "@L;E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E4tP"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E 9E4w"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u4WS"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E )E4W"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9M4t1"
+    },
+    {
+        "offset": "0x400001",
+        "string": "QQS3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u\f9E"
+    },
+    {
+        "offset": "0x400001",
+        "string": "4SVW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "tJSSS"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u\f~'P"
+    },
+    {
+        "offset": "0x400001",
+        "string": "_^[t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "f9FZu\nf"
+    },
+    {
+        "offset": "0x400001",
+        "string": "N`f;M"
+    },
+    {
+        "offset": "0x400001",
+        "string": "~Ht\r"
+    },
+    {
+        "offset": "0x400001",
+        "string": "FV\t~H"
+    },
+    {
+        "offset": "0x400001",
+        "string": "^HtW3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "Af9NduN;"
+    },
+    {
+        "offset": "0x400001",
+        "string": "f9FVu"
+    },
+    {
+        "offset": "0x400001",
+        "string": "^Ht\"f"
+    },
+    {
+        "offset": "0x400001",
+        "string": "f9Fdt"
+    },
+    {
+        "offset": "0x400001",
+        "string": "f9Ndu\n"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t\nf9N^t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u\u000b9M"
+    },
+    {
+        "offset": "0x400001",
+        "string": "HtvHH"
+    },
+    {
+        "offset": "0x400001",
+        "string": " GA;"
+    },
+    {
+        "offset": "0x400001",
+        "string": "C V3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E(Y3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E Pj"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E$PVhT"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9u$t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E Pj"
+    },
+    {
+        "offset": "0x400001",
+        "string": "u<9u"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E Pj"
+    },
+    {
+        "offset": "0x400001",
+        "string": "E@PVh"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9u@t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "}<9u<u<"
+    },
+    {
+        "offset": "0x400001",
+        "string": "s8+E\\P"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9uPtd"
+    },
+    {
+        "offset": "0x400001",
+        "string": "Eh;ELr/"
+    },
+    {
+        "offset": "0x400001",
+        "string": "EL)Eh9Ehs"
+    },
+    {
+        "offset": "0x400001",
+        "string": "Ex@t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "Ex t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "uPt\t;EH"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9u@t\f"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9ult"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9udt\t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9u8t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "9u`t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ED_^["
+    },
+    {
+        "offset": "0x400001",
+        "string": "Y_^["
+    },
+    {
+        "offset": "0x400001",
+        "string": "VC20XC00U"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SVWU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t:VU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "t(x1"
+    },
+    {
+        "offset": "0x400001",
+        "string": "]_^["
+    },
+    {
+        "offset": "0x400001",
+        "string": "SVWUj"
+    },
+    {
+        "offset": "0x400001",
+        "string": "]_^["
+    },
+    {
+        "offset": "0x400001",
+        "string": "t ;t$$t"
+    },
+    {
+        "offset": "0x400001",
+        "string": "\f_^["
+    },
+    {
+        "offset": "0x400001",
+        "string": "R\f9Q"
+    },
+    {
+        "offset": "0x400001",
+        "string": "wcstoul"
+    },
+    {
+        "offset": "0x400001",
+        "string": "iswctype"
+    },
+    {
+        "offset": "0x400001",
+        "string": "_wcsnicmp"
+    },
+    {
+        "offset": "0x400001",
+        "string": "wcschr"
+    },
+    {
+        "offset": "0x400001",
+        "string": "wcscpy"
+    },
+    {
+        "offset": "0x400001",
+        "string": "wcslen"
+    },
+    {
+        "offset": "0x400001",
+        "string": "_wcsicmp"
+    },
+    {
+        "offset": "0x400001",
+        "string": "_ftol"
+    },
+    {
+        "offset": "0x400001",
+        "string": "wcscmp"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ntdll.dll"
+    },
+    {
+        "offset": "0x400001",
+        "string": "RtlUnwind"
+    },
+    {
+        "offset": "0x400001",
+        "string": "lstrcpyW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "lstrlenW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GlobalFree"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetLastError"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SetLastError"
+    },
+    {
+        "offset": "0x400001",
+        "string": "CreateEventW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "CloseHandle"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ResetEvent"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SetEvent"
+    },
+    {
+        "offset": "0x400001",
+        "string": "HeapFree"
+    },
+    {
+        "offset": "0x400001",
+        "string": "HeapAlloc"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetProcessHeap"
+    },
+    {
+        "offset": "0x400001",
+        "string": "WaitForSingleObject"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GlobalAlloc"
+    },
+    {
+        "offset": "0x400001",
+        "string": "IsDBCSLeadByteEx"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetACP"
+    },
+    {
+        "offset": "0x400001",
+        "string": "KERNEL32.dll"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetPrinterW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ClosePrinter"
+    },
+    {
+        "offset": "0x400001",
+        "string": "OpenPrinterW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SplInitializeWinSpoolDrv"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetJobAttributes"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ReadPrinter"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetPrinterDataW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "EndDocPrinter"
+    },
+    {
+        "offset": "0x400001",
+        "string": "WritePrinter"
+    },
+    {
+        "offset": "0x400001",
+        "string": "StartDocPrinterW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SPOOLSS.DLL"
+    },
+    {
+        "offset": "0x400001",
+        "string": "CreateDCW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "DeleteDC"
+    },
+    {
+        "offset": "0x400001",
+        "string": "CancelDC"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetDeviceCaps"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetEnhMetaFileBits"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ExtEscape"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiPlayPageEMF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ModifyWorldTransform"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SetWorldTransform"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SetGraphicsMode"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ResetDCW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiResetDCEMF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiEndPageEMF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiGetDevmodeForPage"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiStartPageEMF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiGetPageHandle"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiDeleteSpoolFileHandle"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiEndDocEMF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiStartDocEMF"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetWorldTransform"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiGetPageCount"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiGetDC"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GdiGetSpoolFileHandle"
+    },
+    {
+        "offset": "0x400001",
+        "string": "DeleteObject"
+    },
+    {
+        "offset": "0x400001",
+        "string": "AbortDoc"
+    },
+    {
+        "offset": "0x400001",
+        "string": "EndDoc"
+    },
+    {
+        "offset": "0x400001",
+        "string": "TextOutA"
+    },
+    {
+        "offset": "0x400001",
+        "string": "EndPage"
+    },
+    {
+        "offset": "0x400001",
+        "string": "StartPage"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SetBkMode"
+    },
+    {
+        "offset": "0x400001",
+        "string": "StartDocW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetTextMetricsW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "SelectObject"
+    },
+    {
+        "offset": "0x400001",
+        "string": "CreateFontIndirectW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "TranslateCharsetInfo"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GDI32.dll"
+    },
+    {
+        "offset": "0x400001",
+        "string": "G)_@"
+    },
+    {
+        "offset": "0x400001",
+        "string": "genprint.dll"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ClosePrintProcessor"
+    },
+    {
+        "offset": "0x400001",
+        "string": "ControlPrintProcessor"
+    },
+    {
+        "offset": "0x400001",
+        "string": "EnumPrintProcessorDatatypesW"
+    },
+    {
+        "offset": "0x400001",
+        "string": "GetPrintProcessorCapabilities"
+    },
+    {
+        "offset": "0x400001",
+        "string": "OpenPrintProcessor"
+    },
+    {
+        "offset": "0x400001",
+        "string": "PrintDocumentOnPrintProcessor"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "?UUUUUU"
+    },
+    {
+        "offset": "0x400001",
+        "string": "2 2(2,24282@2D2L2P2"
+    },
+    {
+        "offset": "0x400001",
+        "string": "3!3-3W3j3|3"
+    },
+    {
+        "offset": "0x400001",
+        "string": "6!686d6q6"
+    },
+    {
+        "offset": "0x400001",
+        "string": "7U8s8"
+    },
+    {
+        "offset": "0x400001",
+        "string": "929?9*:6:N:"
+    },
+    {
+        "offset": "0x400001",
+        "string": "<(<.<O<U<s<"
+    },
+    {
+        "offset": "0x400001",
+        "string": "<8=A=R=B>c>"
+    },
+    {
+        "offset": "0x400001",
+        "string": "0C1c1y1"
+    },
+    {
+        "offset": "0x400001",
+        "string": "1>2U2"
+    },
+    {
+        "offset": "0x400001",
+        "string": "0f3~3>5k5y5"
+    },
+    {
+        "offset": "0x400001",
+        "string": "5:6V657K7"
+    },
+    {
+        "offset": "0x400001",
+        "string": ":9:W:h:4;T;f;"
+    },
+    {
+        "offset": "0x400001",
+        "string": "<7<R<[<s<|<%=m="
+    },
+    {
+        "offset": "0x400001",
+        "string": ">P?j?p?v?|?"
+    }
+]

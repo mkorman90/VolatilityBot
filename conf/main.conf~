@@ -1,0 +1,8 @@
+mainconfig:
+ general:
+  VolatilityBot_Home: /home/martin/MWA/VolatilityBot/volatilitybot
+  machine_type: vmware
+  db_engine: "sqlite:////home/martin/MWA/VolatilityBot/volatilitybot/WebUI/VolatilityBotOnline/db.sqlite3"
+  volatility_path: "/usr/local/bin/vol.py"
+  modules: malfind,procdump,modscan
+  log_path : 

@@ -1,173 +1,87 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 10 08:34:30 2015
-
-@author: Martin
-"""
-
-from lib.core import sample
-from lib.core import DataBase
-from string import join
-import subprocess
-import yaml
-import os
-import re
-import pipes
 import json
+import logging
+import os
+
+from conf.config import VOLATILITYBOT_HOME
+from lib.common.pe_utils import get_strings
+from lib.common.utils import get_workdir_path, calc_md5, calc_sha256, calc_ephash, calc_imphash
+from lib.core.database import DataBaseConnection
+from lib.core.memory_utils import execute_volatility_command
+from lib.core.sample import SampleDump
+from post_processing.yara_postprocessor import scan_with_yara
 
 
-from post_processing import strings
-from post_processing import yara_postprocessor
-from post_processing import static_report
-from post_processing import ephash
+def create_golden_image(memory_instance):
+    return execute_volatility_command(memory_instance, 'modscan')
 
 
-VolatilityBot_Home = ""
-volatility_path = ""
+NAME = 'modscan'
+TIMEOUT = 120
 
-def _load_config():
-  global VolatilityBot_Home
-  global volatility_path
-  
-  if os.path.isfile('conf/main.conf'):
-	f = open('conf/main.conf')
-	# use safe_load instead load
-	dataMap = yaml.safe_load(f)
-	f.close()
 
-	VolatilityBot_Home = dataMap['mainconfig']['general']['VolatilityBot_Home']
-	volatility_path  = pipes.quote(dataMap['mainconfig']['general']['volatility_path'])
+def run_extractor(memory_instance, malware_sample,machine_instance=None):
+    if machine_instance is None:
+        return None
 
-	return True       
- 
-  return False
+    # Whitelist of modules by name, not optimal at all...
+    mod_white_list = ['TDTCP.SYS', 'RDPWD.SYS', 'kmixer.sys', 'Bthidbus.sys', 'rdpdr.sys', 'tdtcp.sys', 'tssecsrv.sys']
 
-def _run(vm_name,f_profile,vmem_path,workdir,sample_id):
-    global VolatilityBot_Home
-    global volatility_path
-    _load_config()
-    
-    mod_white_list = ['TDTCP.SYS','RDPWD.SYS','kmixer.sys','Bthidbus.sys','rdpdr.sys','tdtcp.sys','tssecsrv.sys']
-    
+    # Get golden image data:
+    with open(os.path.join(VOLATILITYBOT_HOME, 'GoldenImage', machine_instance.machine_name,
+                           'modscan.json')) as data_file:
+        modscan_golden_image = json.load(data_file)
 
-    
-    
-    #Get golden image data
-    """
-       "Offset(P)",
-    "Name",
-    "Base",
-    "Size",
-    "File"
-    """
-    modscan_gi = []
-    
-    with open(VolatilityBot_Home + '/GoldenImage/' + vm_name + '/modscan') as data_file:    
-        modscan_GoldenImage = json.load(data_file)
-    
-    for line in modscan_GoldenImage['rows']:
-        try:  
-            entry = dict()
-            entry['offset'] = line[0]
-            entry['name'] = line[1]
-            entry['base'] = line[2]
-            entry['size'] = line[3]
-            entry['filename'] = line[4]
-            modscan_gi.append(entry)
-        except:
-            #print "Skipping a non-parseable line:" + line
-            pass
-    
-    #Get new modscan:
-    command = volatility_path + ' --profile ' + f_profile + ' -f '  + vmem_path + ' modscan --output=json'
-    proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
+    modscan_run = execute_volatility_command(memory_instance, 'modscan')
 
-    output_list = proc.stdout.readlines()
-    output = join(output_list, "") 
-    modscan_new_from_machine = json.loads(output)    
-    
-    modscan_run = []
-    for line in modscan_new_from_machine['rows']:	
-        try:  
-            entry = dict()
-            entry['offset'] = line[0]
-            entry['name'] = line[1]
-            entry['base'] = line[2]
-            entry['size'] = line[3]
-            entry['filename'] = line[4]
-            modscan_run.append(entry)
-        except:
-            pass
-    
+    db_connection = DataBaseConnection()
+
     new_modules = []
     for mod in modscan_run:
         new_mod = True
-        for mod_gi in modscan_gi:
-            if (mod['filename'] == mod_gi['filename']):
-                if (mod['size'] == mod_gi['size']):
+        for mod_gi in modscan_golden_image:
+            if mod['File'] == mod_gi['File']:
+                if mod['Size'] == mod_gi['Size']:
                     new_mod = False
-                    
+
         for wl_mod in mod_white_list:
-            #print '[DEBUG] modscan %s : %s' % (mod['filename'],wl_mod)
-            if (mod['name'] == wl_mod):
+            # print '[DEBUG] modscan %s : %s' % (mod['filename'],wl_mod)
+            if (mod['Name'] == wl_mod):
                 new_mod = False
-            
-            
 
-        if (new_mod):            
-            print "Identified a new module: %s - %s" % (mod['filename'],mod['size'])
+        if new_mod:
+            logging.info('Identified a new module: {} - {}'.format(mod['File'], mod['Size']))
             new_modules.append(mod)
-            
 
+            output = execute_volatility_command(memory_instance, 'moddump',
+                                                extra_flags='-b {} -D {}/'.format(mod['Base'],
+                                                                                  get_workdir_path(malware_sample)),
+                                                has_json_output=False)
 
-            command = volatility_path + ' --profile ' + f_profile + ' -f '  + vmem_path + ' moddump -b ' + mod['base'] + ' -x -D ' + workdir + '/'
-            proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
-            output = proc.stdout.read()
-	
+            base = mod['Base']
+            src = os.path.join(get_workdir_path(malware_sample), "driver." + base[2:] + ".sys")
+            dest = os.path.join(get_workdir_path(malware_sample), mod['Name'] + '.' + mod['Base'] + '.sys')
+
             try:
-                #Name should be:  0xf855a000 pci.sys     OK: driver.f855a000.sys
-                base = mod['base']
-                src = workdir + "/driver." + base[2:] + ".sys"
-  
-		
-  
-                dest = workdir + "/" + mod['name'] + "." + mod['base'] + "._sys"
-		
-                os.rename(src,dest)
-  
-                file_sha256 = sample.calc_SHA256(dest)     
-                file_md5 = sample.calc_MD5(dest)    
-                file_ephash = ephash.calc_ephash(dest)
-                
+                os.rename(src, dest)
+            except Exception as e:
+                logging.error('Could not rename driver, leaving it as it is... ({})'.format(e) )
+                dest = src
 
-                DataBase.add_dump(sample_id,file_md5,file_sha256,file_ephash,'n/a',mod['name'],"kmd_" + f_profile,dest)  
-                
-                #Adding tag to sample: (loads_kmd)
-                DataBase.add_tag("loads_KMD",sample_id)
-            
-              
-                strings_json = strings._run(dest,sample_id)
-                #Write output to file:
-                obj = open(dest + '.strings', 'wb')
-                obj.write(strings_json)
-                obj.close
-             
-                #yara output:
-                yara_output = yara_postprocessor._run(dest,sample_id)
-                if (yara_output != "none"):                 
-                 obj = open(dest + '.yara_results', 'wb')
-                 obj.write(yara_output)
-                 obj.close
-                     
-                static_report_data = static_report._run(dest,sample_id)
-                if (static_report_data != "none"):
-                 obj = open(dest + '.static_report', 'wb')
-                 obj.write(static_report_data)
-                 obj.close                    
-  
-            except:
-                print "Dump of " + mod['name'] + "failed."
-    
-    
-    
-    return True
+            current_dump = SampleDump(dest)
+            current_dump.parent_sample_id = malware_sample.id
+            current_dump.sha256 = calc_sha256(dest)
+            current_dump.md5 = calc_md5(dest)
+            current_dump.process_name = mod['Name']
+            current_dump.source = 'KMD'
+
+            current_dump.ephash = calc_ephash(dest)
+            current_dump.imphash = calc_imphash(dest)
+
+            db_connection.add_dump(current_dump)
+
+            with open(dest + '.strings.json', 'w') as strings_output_file:
+                strings_output_file.write(json.dumps(get_strings(current_dump), indent=4))
+
+            with open(dest + '.yara.json', 'w') as yara_output_file:
+                yara_output_file.write(json.dumps(scan_with_yara(current_dump), indent=4))
+

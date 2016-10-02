@@ -1,0 +1,1020 @@
+{
+    "sections": [
+        {
+            "entropy": 6.191101889012486,
+            "virtual_address": "0x1000",
+            "hash_sha1": "4088102c7d80e4301b4854406dbbecf76a210692",
+            "size_raw_data": 7680,
+            "hash_md5": "cd89adbfcc52bdf51cf4bc28728ba051",
+            "virtual_size": "0x1d9b",
+            "name": ".text\u0000\u0000\u0000",
+            "suspicious": false,
+            "is_section_of_ep": true,
+            "section_perm": {
+                "x": true,
+                "w": false,
+                "r": true
+            }
+        },
+        {
+            "entropy": 2.564347785321744,
+            "virtual_address": "0x3000",
+            "hash_sha1": "b881bb49d06a083a27921d57d3fdd46a80cc75bb",
+            "size_raw_data": 512,
+            "hash_md5": "a7eec33dec1450f161f41f5da69ad145",
+            "virtual_size": "0x9c",
+            "name": ".data\u0000\u0000\u0000",
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "section_perm": {
+                "x": false,
+                "w": true,
+                "r": true
+            }
+        },
+        {
+            "entropy": 0.18300298727803493,
+            "virtual_address": "0x4000",
+            "hash_sha1": "14c56b435073b0e40b25dc77e415a3d7e8806166",
+            "size_raw_data": 83968,
+            "hash_md5": "09c10f7b15891d160f3451a371cade10",
+            "virtual_size": "0x14750",
+            "name": ".rsrc\u0000\u0000\u0000",
+            "suspicious": true,
+            "is_section_of_ep": false,
+            "section_perm": {
+                "x": false,
+                "w": false,
+                "r": true
+            }
+        }
+    ],
+    "general": {
+        "sha256": "477ab3cedc35d165e3a1f56177c3df0965cea80efa787ea29460f9ff23843d46",
+        "imphash": "failed",
+        "md5": "13d73c5d5347f3e1749d5555cf2de262"
+    },
+    "exports": [
+        {
+            "ordinal": 1,
+            "name": "DllGetLCID",
+            "address": "0x40239a"
+        }
+    ],
+    "imports": [
+        {
+            "offset": 4198724,
+            "name": "_except_handler3"
+        },
+        {
+            "offset": 4198400,
+            "name": "UnhandledExceptionFilter"
+        },
+        {
+            "offset": 4198404,
+            "name": "GetCommandLineA"
+        },
+        {
+            "offset": 4198408,
+            "name": "lstrlenW"
+        },
+        {
+            "offset": 4198412,
+            "name": "MultiByteToWideChar"
+        },
+        {
+            "offset": 4198416,
+            "name": "CreateEventA"
+        },
+        {
+            "offset": 4198420,
+            "name": "GetCurrentThreadId"
+        },
+        {
+            "offset": 4198424,
+            "name": "lstrcatA"
+        },
+        {
+            "offset": 4198428,
+            "name": "lstrlenA"
+        },
+        {
+            "offset": 4198432,
+            "name": "lstrcmpiA"
+        },
+        {
+            "offset": 4198436,
+            "name": "lstrcpyA"
+        },
+        {
+            "offset": 4198440,
+            "name": "GetModuleFileNameA"
+        },
+        {
+            "offset": 4198444,
+            "name": "FreeLibrary"
+        },
+        {
+            "offset": 4198448,
+            "name": "GetProcAddress"
+        },
+        {
+            "offset": 4198452,
+            "name": "LoadLibraryA"
+        },
+        {
+            "offset": 4198456,
+            "name": "GetVersionExA"
+        },
+        {
+            "offset": 4198460,
+            "name": "UnmapViewOfFile"
+        },
+        {
+            "offset": 4198464,
+            "name": "CloseHandle"
+        },
+        {
+            "offset": 4198468,
+            "name": "ReleaseMutex"
+        },
+        {
+            "offset": 4198472,
+            "name": "SetEvent"
+        },
+        {
+            "offset": 4198476,
+            "name": "WaitForSingleObject"
+        },
+        {
+            "offset": 4198480,
+            "name": "CreateProcessA"
+        },
+        {
+            "offset": 4198484,
+            "name": "lstrcpynA"
+        },
+        {
+            "offset": 4198488,
+            "name": "GetCurrentProcessId"
+        },
+        {
+            "offset": 4198492,
+            "name": "DuplicateHandle"
+        },
+        {
+            "offset": 4198496,
+            "name": "GetCurrentProcess"
+        },
+        {
+            "offset": 4198500,
+            "name": "CreateMutexA"
+        },
+        {
+            "offset": 4198504,
+            "name": "MapViewOfFile"
+        },
+        {
+            "offset": 4198508,
+            "name": "CreateFileMappingA"
+        },
+        {
+            "offset": 4198512,
+            "name": "WaitForMultipleObjects"
+        },
+        {
+            "offset": 4198516,
+            "name": "GetModuleFileNameW"
+        },
+        {
+            "offset": 4198520,
+            "name": "OpenProcess"
+        },
+        {
+            "offset": 4198524,
+            "name": "GetLastError"
+        },
+        {
+            "offset": 4198528,
+            "name": "SetUnhandledExceptionFilter"
+        },
+        {
+            "offset": 4198532,
+            "name": "LocalFree"
+        },
+        {
+            "offset": 4198536,
+            "name": "LocalAlloc"
+        },
+        {
+            "offset": 4198540,
+            "name": "GetModuleHandleA"
+        },
+        {
+            "offset": 4198544,
+            "name": "ExitThread"
+        },
+        {
+            "offset": 4198548,
+            "name": "GetStartupInfoA"
+        },
+        {
+            "offset": 4198552,
+            "name": "SetErrorMode"
+        },
+        {
+            "offset": 4198556,
+            "name": "TerminateProcess"
+        },
+        {
+            "offset": 4198560,
+            "name": "QueryPerformanceCounter"
+        },
+        {
+            "offset": 4198564,
+            "name": "GetTickCount"
+        },
+        {
+            "offset": 4198568,
+            "name": "GetSystemTimeAsFileTime"
+        },
+        {
+            "offset": 4198656,
+            "name": "GetShellWindow"
+        },
+        {
+            "offset": 4198660,
+            "name": "GetClassNameA"
+        },
+        {
+            "offset": 4198664,
+            "name": "SendMessageA"
+        },
+        {
+            "offset": 4198668,
+            "name": "PeekMessageA"
+        },
+        {
+            "offset": 4198672,
+            "name": "MsgWaitForMultipleObjects"
+        },
+        {
+            "offset": 4198676,
+            "name": "DestroyWindow"
+        },
+        {
+            "offset": 4198680,
+            "name": "TranslateMessage"
+        },
+        {
+            "offset": 4198684,
+            "name": "DispatchMessageA"
+        },
+        {
+            "offset": 4198688,
+            "name": "LoadStringA"
+        },
+        {
+            "offset": 4198692,
+            "name": "DefWindowProcA"
+        },
+        {
+            "offset": 4198696,
+            "name": "RegisterClassA"
+        },
+        {
+            "offset": 4198700,
+            "name": "CreateMenu"
+        },
+        {
+            "offset": 4198704,
+            "name": "CreateWindowExA"
+        },
+        {
+            "offset": 4198708,
+            "name": "ShowWindow"
+        },
+        {
+            "offset": 4198712,
+            "name": "GetForegroundWindow"
+        },
+        {
+            "offset": 4198716,
+            "name": "wsprintfA"
+        },
+        {
+            "offset": 4198588,
+            "name": "SHGetValueA"
+        },
+        {
+            "offset": 4198592,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198596,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198600,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198604,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198608,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198612,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198616,
+            "name": "SHRegGetBoolUSValueA"
+        },
+        {
+            "offset": 4198620,
+            "name": "PathRemoveFileSpecA"
+        },
+        {
+            "offset": 4198624,
+            "name": "PathAppendA"
+        },
+        {
+            "offset": 4198628,
+            "name": "PathQuoteSpacesA"
+        },
+        {
+            "offset": 4198632,
+            "name": "StrCpyNW"
+        },
+        {
+            "offset": 4198636,
+            "name": "wnsprintfA"
+        },
+        {
+            "offset": 4198640,
+            "name": "PathFindFileNameA"
+        },
+        {
+            "offset": 4198644,
+            "name": "StrStrIA"
+        },
+        {
+            "offset": 4198648,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198576,
+            "name": "unknown"
+        },
+        {
+            "offset": 4198580,
+            "name": "unknown"
+        }
+    ],
+    "resources": [
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00017eb8",
+            "size": "0x00000128",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_ICON"
+        },
+        {
+            "offset": "0x00018630",
+            "size": "0x0000011c",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_STRING"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00017fe0",
+            "size": "0x00000022",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_GROUP_ICON"
+        },
+        {
+            "offset": "0x00018008",
+            "size": "0x00000628",
+            "language": "LANG_ENGLISH",
+            "sublanguage": "SUBLANG_ENGLISH_US",
+            "filetype": "data",
+            "name": "RT_VERSION"
+        }
+    ]
+}

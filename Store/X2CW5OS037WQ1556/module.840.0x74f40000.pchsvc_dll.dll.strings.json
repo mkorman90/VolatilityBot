@@ -1,0 +1,866 @@
+[
+    {
+        "offset": "0x74f40001",
+        "string": "!This program cannot be run in DOS mode.\r\r\n$"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbB|ymB"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vcBLvbB|y?B"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbB|y=B"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbB|y>B"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbB|y<B"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbB|y"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbB|y8B"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vbBRich"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".text"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "`.data"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".rsrc"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "@.reloc"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "msvcrt.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ntdll.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ole32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "OLEAUT32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "KERNEL32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "USER32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ADVAPI32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WINSTA.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RPCRT4.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NETAPI32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "vPw#"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "csE%"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "D$\fd"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "l$\fP"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WVh2D"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SVWwB+E"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "t!OO"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_^[]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "@@AA"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "9~\fs"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "~Lh{N"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WhEL"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "E\f_^[]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "YtIh "
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "Yt+h"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "t%Vh\nw"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "6j\fW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "pchsvc.DLL"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ServiceMain"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_^[]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "tWW3"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WWSW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_^[]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "|B8]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "t=Sj"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "QQSVW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_^[t"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "QQSVW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_^[t"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "|U8]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_^[]"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "tuDh"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "tYY3"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "9u\fu"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "Y_^["
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "W WV"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "f!82"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "AQVP"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "F?`9"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "t%Vh"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "6j\fW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "@\f;A\fu"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "PWWj WWW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "msvcrt.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ntdll.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ole32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "OLEAUT32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "KERNEL32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "USER32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ADVAPI32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WINSTA.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RPCRT4.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NETAPI32.dll"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "malloc"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_CxxThrowException"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "memmove"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "wcscmp"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "wcscat"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "free"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "??1type_info@@UAE@XZ"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_except_handler3"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "?terminate@@YAXXZ"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_adjust_fdiv"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_initterm"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "wcscpy"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "wcsncpy"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "swprintf"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_wcsnicmp"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_ftol"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "wcslen"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "_wcsicmp"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "swscanf"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "__CxxFrameHandler"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NtQueryInformationProcess"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "StringFromGUID2"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CoRegisterClassObject"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CoRevokeClassObject"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CoUninitialize"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CoCreateInstance"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CoGetCallContext"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CoInitializeEx"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "FindFirstChangeNotificationW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetTickCount"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetCurrentThreadId"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetCurrentProcessId"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetSystemTimeAsFileTime"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetCurrentProcess"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "UnhandledExceptionFilter"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetUnhandledExceptionFilter"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetLocalTime"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetLastError"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "LoadLibraryExW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetSystemDirectoryW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GlobalUnlock"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GlobalLock"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GlobalAlloc"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetUserDefaultLCID"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetTimeZoneInformation"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetModuleFileNameW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "DeleteTimerQueueTimer"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "UnregisterWaitEx"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CreateTimerQueueTimer"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegisterWaitForSingleObject"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetCurrentThread"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "FindCloseChangeNotification"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "OpenProcess"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GlobalFree"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "Sleep"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "FindNextChangeNotification"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "lstrlenW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "DisableThreadLibraryCalls"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CreateEventA"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetLastError"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WaitForMultipleObjects"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetEvent"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "HeapDestroy"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "DeleteCriticalSection"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "InitializeCriticalSection"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "EnterCriticalSection"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CreateProcessW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WaitForSingleObject"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "TerminateProcess"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "CloseHandle"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "LeaveCriticalSection"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ExpandEnvironmentStringsW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "QueryPerformanceCounter"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "LocalFree"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "LoadStringW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetThreadToken"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "OpenProcessToken"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "UnregisterIdleTask"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegisterIdleTask"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegDeleteValueW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegConnectRegistryW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "ConvertSidToStringSidW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegQueryInfoKeyW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegEnumValueW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "LookupAccountNameW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "EqualSid"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "DeleteAce"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetSecurityDescriptorDacl"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "IsValidAcl"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetAclInformation"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetLengthSid"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "AddAccessAllowedAce"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetAce"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "AddAccessDeniedAce"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetSecurityDescriptorDacl"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetSecurityDescriptorOwner"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetSecurityDescriptorGroup"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegCreateKeyExW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "MakeAbsoluteSD"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "InitializeSecurityDescriptor"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "InitializeAcl"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "GetTokenInformation"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegisterServiceCtrlHandlerExW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegNotifyChangeKeyValue"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegSetValueExW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "SetServiceStatus"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegOpenKeyExW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegQueryValueExW"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RegCloseKey"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "OpenThreadToken"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "MakeSelfRelativeSD"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "IsValidSecurityDescriptor"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "WinStationSetInformationA"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "I_RpcBindingInqLocalClientPID"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetLocalGroupAddMembers"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetLocalGroupDel"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetLocalGroupAdd"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetLocalGroupGetInfo"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetApiBufferFree"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetLocalGroupGetMembers"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "NetLocalGroupDelMembers"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "RSDS"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": "pchsvc.pdb"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUServiceHandler@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUCComRedirectorFactory@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVEvent@Pooling@MPC@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVLocalEvent@ServiceHandler_HelpSvc@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVTimer@Pooling@MPC@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVLocalTimer@ServiceHandler_HelpSvc@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUServiceHandler_HelpSvc@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUIDispatch@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUIPCHUtility@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AV?$IDispatchImpl@UIPCHUtility@@$1?IID_IPCHUtility@@3U_GUID@@B$1?LIBID_HelpServiceTypeLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUIUnknown@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AUIClassFactory@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVBase@Pooling@MPC@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVbad_alloc_nocrt@@"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".PAX"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".PAD"
+    },
+    {
+        "offset": "0x74f40001",
+        "string": ".?AVImpersonation@MPC@@"
+    }
+]

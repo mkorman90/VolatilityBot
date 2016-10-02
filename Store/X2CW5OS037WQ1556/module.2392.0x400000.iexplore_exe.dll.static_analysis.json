@@ -1,0 +1,60 @@
+{
+    "sections": [
+        {
+            "suspicious": false,
+            "is_section_of_ep": true,
+            "virtual_size": "0x1d9b",
+            "entropy": 0.0,
+            "virtual_address": "0x1000",
+            "hash_sha1": "4981187399d35298834bae86c5d94ead173d5126",
+            "name": ".text\u0000\u0000\u0000",
+            "hash_md5": "9b7aed5b7acd844124ead0e6d35e9fbb",
+            "size_raw_data": 7680,
+            "section_perm": {
+                "w": false,
+                "x": true,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x9c",
+            "entropy": 0.0,
+            "virtual_address": "0x3000",
+            "hash_sha1": "5c3eb80066420002bc3dcc7ca4ab6efad7ed4ae5",
+            "name": ".data\u0000\u0000\u0000",
+            "hash_md5": "bf619eac0cdf3f68d496ea9344137e8b",
+            "size_raw_data": 512,
+            "section_perm": {
+                "w": true,
+                "x": false,
+                "r": true
+            }
+        },
+        {
+            "suspicious": false,
+            "is_section_of_ep": false,
+            "virtual_size": "0x14750",
+            "entropy": 0.0,
+            "virtual_address": "0x4000",
+            "hash_sha1": "7538a0b9cbb4cad46b8b4b8694a557fd4e750e9d",
+            "name": ".rsrc\u0000\u0000\u0000",
+            "hash_md5": "e62c85417da56ca7b7cdb89c8fc73b8e",
+            "size_raw_data": 83968,
+            "section_perm": {
+                "w": false,
+                "x": false,
+                "r": true
+            }
+        }
+    ],
+    "exports": [],
+    "imports": null,
+    "general": {
+        "imphash": "failed",
+        "md5": "67423b3d39e4514ae15349a6c1f67d0b",
+        "sha256": "9fc05fb88c95b10daee659d9d35cd442e2f86b3656409361ed916cf8d52d29a3"
+    },
+    "resources": []
+}

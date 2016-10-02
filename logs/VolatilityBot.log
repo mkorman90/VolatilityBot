@@ -1,0 +1,427 @@
+2015-04-12 20:24:10,670 - root - INFO - ======= VolatilityBot Initialized =======
+2015-04-12 20:24:10,674 - root - INFO - [*] [vmware] Loading vmware module
+2015-04-12 20:24:10,678 - root - INFO -  - Loaded machine - wxp_01
+2015-04-12 20:24:10,678 - root - INFO -  - Loaded machine - wxp_02
+2015-04-12 20:24:10,678 - root - INFO -  - Loaded machine - wxp_03
+2015-04-12 20:24:10,678 - root - INFO - [*] [vmware] Active machines: 3
+2015-04-12 20:24:10,678 - root - INFO - [*] A directory was chosen to be processed
+2015-04-12 20:24:10,678 - root - INFO - [*] Processing 1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin:
+2015-04-12 20:24:10,692 - root - INFO - [*] This sample ID is 534
+2015-04-12 20:24:10,692 - root - INFO - [*] Processing invoice32.exe:
+2015-04-12 20:24:10,702 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:24:10,702 - root - INFO - [*] Processing 26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin:
+2015-04-12 20:24:10,716 - root - INFO - [*] This sample ID is 536
+2015-04-12 20:24:10,716 - root - INFO - [*] Processing 7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin:
+2015-04-12 20:24:10,726 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:24:10,726 - root - INFO - [*] Queue Size: 4
+2015-04-12 20:24:10,726 - root - INFO - [*] wxp_01 is idle, sending the task to this VM
+2015-04-12 20:24:10,726 - root - INFO - [*] [wxp_01] Now working on sample 534.
+2015-04-12 20:24:10,729 - sqlalchemy.pool.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 567, in _finalize_fairy
+    fairy._reset(pool)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 701, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 406, in do_rollback
+    dbapi_connection.rollback()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140083737843456 and this is thread id 140083680392960
+2015-04-12 20:24:10,730 - sqlalchemy.pool.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x1e13a28>
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 250, in _close_connection
+    self._dialect.do_close(connection)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 412, in do_close
+    dbapi_connection.close()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140083737843456 and this is thread id 140083680392960
+2015-04-12 20:24:10,740 - root - INFO - [*] [wxp_01] Reverting to snapshot VolatilityBot:
+2015-04-12 20:24:11,287 - root - INFO - [*] [wxp_01] Starting VM
+2015-04-12 20:24:22,279 - root - INFO - [*] [wxp_01] Sleeping 10 seconds...
+2015-04-12 20:24:25,740 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:24:25,740 - root - INFO - [*] 3 samples in queue...
+2015-04-12 20:24:25,740 - root - INFO - [*] wxp_02 is idle, sending the task to this VM
+2015-04-12 20:24:25,740 - root - INFO - [*] [wxp_02] Now working on sample 535.
+2015-04-12 20:24:25,746 - root - INFO - [*] [wxp_02] Reverting to snapshot VolatilityBot:
+2015-04-12 20:24:26,167 - root - INFO - [*] [wxp_02] Starting VM
+2015-04-12 20:24:32,288 - root - INFO - [*] Sending executable ../../Samples/30_03_2015/1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin to vm: wxp_01 I.P: 192.168.47.20
+2015-04-12 20:24:32,290 - root - INFO - [*] [wxp_01] Sleeping 60 seconds...
+2015-04-12 20:24:40,753 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:24:40,753 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:24:40,753 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:24:40,753 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:24:40,753 - root - INFO - [*] wxp_03 is idle, sending the task to this VM
+2015-04-12 20:24:40,753 - root - INFO - [*] [wxp_03] Now working on sample 536.
+2015-04-12 20:24:40,775 - root - INFO - [*] [wxp_03] Reverting to snapshot VolatilityBot:
+2015-04-12 20:24:41,316 - root - INFO - [*] [wxp_03] Starting VM
+2015-04-12 20:24:49,543 - root - INFO - [*] [wxp_03] Sleeping 10 seconds...
+2015-04-12 20:24:55,766 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:24:55,766 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:24:55,766 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:24:59,553 - root - INFO - [*] Sending executable ../../Samples/30_03_2015/26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin to vm: wxp_03 I.P: 192.168.47.24
+2015-04-12 20:24:59,589 - root - INFO - [*] [wxp_03] Sleeping 60 seconds...
+2015-04-12 20:25:10,766 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:10,767 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:10,767 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:25,779 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:25,779 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:25,779 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:32,312 - root - INFO - [*] [wxp_01] Suspending VM
+2015-04-12 20:25:38,778 - root - INFO - [*] [wxp_01] Got Snapshot name: /home/martin/vmware/wxp_01/wxp_01-cb6994e6.vmem
+2015-04-12 20:25:38,778 - root - INFO - [*] [wxp_01] Executing malfind
+2015-04-12 20:25:40,791 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:40,792 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:40,792 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:42,460 - root - INFO - [*] [wxp_01] [DONE] Executing malfind
+2015-04-12 20:25:42,460 - root - INFO - [*] [wxp_01] Executing procdump
+2015-04-12 20:25:45,247 - sqlalchemy.pool.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 567, in _finalize_fairy
+    fairy._reset(pool)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 701, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 406, in do_rollback
+    dbapi_connection.rollback()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140083737843456 and this is thread id 140083680392960
+2015-04-12 20:25:45,247 - sqlalchemy.pool.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x1c993d0>
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 250, in _close_connection
+    self._dialect.do_close(connection)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 412, in do_close
+    dbapi_connection.close()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 140083737843456 and this is thread id 140083680392960
+2015-04-12 20:25:50,259 - root - INFO - [*] [wxp_01] [DONE] Executing procdump
+2015-04-12 20:25:50,260 - root - INFO - [*] [wxp_01] Executing modscan
+2015-04-12 20:25:55,804 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:55,805 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:55,805 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:25:56,456 - root - INFO - [!] [wxp_02] Error when starting VM: Error: Cannot connect to the virtual machine
+
+2015-04-12 20:25:58,600 - root - INFO - [*] [wxp_01] [DONE] Executing modscan
+2015-04-12 20:25:58,600 - root - INFO - [*] [wxp_01] PROCESSING OF SAMPLE COMPLETED (sample ID: 534) [*]
+2015-04-12 20:25:59,646 - root - INFO - [*] [wxp_03] Suspending VM
+2015-04-12 20:26:06,073 - root - INFO - [*] [wxp_03] Got Snapshot name: /home/martin/vmware/wxp_03/wxp_03-cb6994e8.vmem
+2015-04-12 20:26:06,073 - root - INFO - [*] [wxp_03] Executing malfind
+2015-04-12 20:26:09,759 - root - INFO - [*] [wxp_03] [DONE] Executing malfind
+2015-04-12 20:26:09,760 - root - INFO - [*] [wxp_03] Executing procdump
+2015-04-12 20:26:10,820 - root - INFO - [*] wxp_01 is idle, sending the task to this VM
+2015-04-12 20:26:10,821 - root - INFO - [*] [wxp_01] Now working on sample 535.
+2015-04-12 20:26:10,826 - root - INFO - [*] [wxp_01] Reverting to snapshot VolatilityBot:
+2015-04-12 20:26:12,079 - root - INFO - [*] [wxp_01] Starting VM
+2015-04-12 20:26:17,595 - root - INFO - [*] [wxp_03] [DONE] Executing procdump
+2015-04-12 20:26:17,595 - root - INFO - [*] [wxp_03] Executing modscan
+2015-04-12 20:26:18,818 - root - INFO - [*] [wxp_03] [DONE] Executing modscan
+2015-04-12 20:26:18,818 - root - INFO - [*] [wxp_03] PROCESSING OF SAMPLE COMPLETED (sample ID: 536) [*]
+2015-04-12 20:26:22,388 - root - INFO - [*] [wxp_01] Sleeping 10 seconds...
+2015-04-12 20:26:32,397 - root - INFO - [*] Sending executable ../../Samples/30_03_2015/7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin to vm: wxp_01 I.P: 192.168.47.20
+2015-04-12 20:26:32,399 - root - INFO - [*] [wxp_01] Sleeping 60 seconds...
+2015-04-12 20:27:32,431 - root - INFO - [*] [wxp_01] Suspending VM
+2015-04-12 20:27:38,950 - root - INFO - [*] [wxp_01] Got Snapshot name: /home/martin/vmware/wxp_01/wxp_01-cb6994e6.vmem
+2015-04-12 20:27:38,950 - root - INFO - [*] [wxp_01] Executing malfind
+2015-04-12 20:27:42,464 - root - INFO - [*] [wxp_01] [DONE] Executing malfind
+2015-04-12 20:27:42,464 - root - INFO - [*] [wxp_01] Executing procdump
+2015-04-12 20:27:50,175 - root - INFO - [*] [wxp_01] [DONE] Executing procdump
+2015-04-12 20:27:50,175 - root - INFO - [*] [wxp_01] Executing modscan
+2015-04-12 20:27:58,573 - root - INFO - [*] [wxp_01] [DONE] Executing modscan
+2015-04-12 20:27:58,573 - root - INFO - [*] [wxp_01] PROCESSING OF SAMPLE COMPLETED (sample ID: 535) [*]
+2015-04-12 20:41:35,706 - root - INFO - ======= VolatilityBot Initialized =======
+2015-04-12 20:41:35,710 - root - INFO - [*] [vmware] Loading vmware module
+2015-04-12 20:41:35,714 - root - INFO -  - Loaded machine - wxp_01
+2015-04-12 20:41:35,714 - root - INFO -  - Loaded machine - wxp_02
+2015-04-12 20:41:35,714 - root - INFO -  - Loaded machine - wxp_03
+2015-04-12 20:41:35,714 - root - INFO - [*] [vmware] Active machines: 3
+2015-04-12 20:41:35,714 - root - INFO - [*] A directory was chosen to be processed
+2015-04-12 20:41:35,714 - root - INFO - [*] Processing 1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin:
+2015-04-12 20:41:35,728 - root - INFO - [*] This sample ID is 534
+2015-04-12 20:41:35,728 - root - INFO - [*] Processing invoice32.exe:
+2015-04-12 20:41:35,737 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:41:35,738 - root - INFO - [*] Processing 26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin:
+2015-04-12 20:41:35,752 - root - INFO - [*] This sample ID is 536
+2015-04-12 20:41:35,752 - root - INFO - [*] Processing 7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin:
+2015-04-12 20:41:35,762 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:41:35,762 - root - INFO - [*] Queue Size: 4
+2015-04-12 20:41:35,762 - root - INFO - [*] wxp_01 is idle, sending the task to this VM
+2015-04-12 20:41:35,762 - root - INFO - [*] [wxp_01] Now working on sample 534.
+2015-04-12 20:41:35,764 - sqlalchemy.pool.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 567, in _finalize_fairy
+    fairy._reset(pool)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 701, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 406, in do_rollback
+    dbapi_connection.rollback()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 139950366406400 and this is thread id 139950308955904
+2015-04-12 20:41:35,764 - sqlalchemy.pool.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x1963a28>
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 250, in _close_connection
+    self._dialect.do_close(connection)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 412, in do_close
+    dbapi_connection.close()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 139950366406400 and this is thread id 139950308955904
+2015-04-12 20:41:35,769 - root - INFO - [*] [wxp_01] Reverting to snapshot VolatilityBot:
+2015-04-12 20:41:36,338 - root - INFO - [*] [wxp_01] Starting VM
+2015-04-12 20:41:47,169 - root - INFO - [*] [wxp_01] Sleeping 10 seconds...
+2015-04-12 20:41:50,776 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:41:50,776 - root - INFO - [*] 3 samples in queue...
+2015-04-12 20:41:50,776 - root - INFO - [*] wxp_02 is idle, sending the task to this VM
+2015-04-12 20:41:50,776 - root - INFO - [*] [wxp_02] Now working on sample 535.
+2015-04-12 20:41:50,782 - root - INFO - [*] [wxp_02] Reverting to snapshot VolatilityBot:
+2015-04-12 20:41:51,220 - root - INFO - [*] [wxp_02] Starting VM
+2015-04-12 20:41:57,179 - root - INFO - [*] [wxp_01] Sending executable ../../Samples/30_03_2015/1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin to vm: wxp_01 I.P: 192.168.47.20
+2015-04-12 20:41:57,181 - root - INFO - [*] [wxp_01] Sleeping 60 seconds...
+2015-04-12 20:42:05,785 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:05,785 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:42:05,785 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:05,785 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:42:05,785 - root - INFO - [*] wxp_03 is idle, sending the task to this VM
+2015-04-12 20:42:05,786 - root - INFO - [*] [wxp_03] Now working on sample 536.
+2015-04-12 20:42:05,795 - root - INFO - [*] [wxp_03] Reverting to snapshot VolatilityBot:
+2015-04-12 20:42:06,298 - root - INFO - [*] [wxp_03] Starting VM
+2015-04-12 20:42:14,827 - root - INFO - [*] [wxp_03] Sleeping 10 seconds...
+2015-04-12 20:42:20,790 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:20,790 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:20,790 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:24,827 - root - INFO - [*] [wxp_03] Sending executable ../../Samples/30_03_2015/26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin to vm: wxp_03 I.P: 192.168.47.24
+2015-04-12 20:42:24,875 - root - INFO - [*] [wxp_03] Sleeping 60 seconds...
+2015-04-12 20:42:35,795 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:35,795 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:35,795 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:50,810 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:50,810 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:50,810 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:42:57,236 - root - INFO - [*] [wxp_01] Suspending VM
+2015-04-12 20:43:05,657 - root - INFO - [*] [wxp_01] Got Snapshot name: /home/martin/vmware/wxp_01/wxp_01-cb6994e6.vmem
+2015-04-12 20:43:05,658 - root - INFO - [*] [wxp_01] Executing malfind
+2015-04-12 20:43:05,825 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:05,825 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:05,825 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:20,836 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:20,837 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:20,837 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:21,449 - root - INFO - [!] [wxp_02] Error when starting VM: Error: Cannot connect to the virtual machine
+
+2015-04-12 20:43:21,451 - sqlalchemy.pool.NullPool - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 567, in _finalize_fairy
+    fairy._reset(pool)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 701, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 406, in do_rollback
+    dbapi_connection.rollback()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 139950366406400 and this is thread id 139950300563200
+2015-04-12 20:43:21,452 - sqlalchemy.pool.NullPool - ERROR - Exception closing connection <sqlite3.Connection object at 0x17643d0>
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool.py", line 250, in _close_connection
+    self._dialect.do_close(connection)
+  File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 412, in do_close
+    dbapi_connection.close()
+ProgrammingError: SQLite objects created in a thread can only be used in that same thread.The object was created in thread id 139950366406400 and this is thread id 139950300563200
+2015-04-12 20:43:24,944 - root - INFO - [*] [wxp_03] Suspending VM
+2015-04-12 20:43:32,298 - root - INFO - [*] [wxp_03] Got Snapshot name: /home/martin/vmware/wxp_03/wxp_03-cb6994e8.vmem
+2015-04-12 20:43:32,298 - root - INFO - [*] [wxp_03] Executing malfind
+2015-04-12 20:43:35,850 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:35,850 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:35,851 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:35,874 - root - INFO - [*] [wxp_03] [DONE] Executing malfind
+2015-04-12 20:43:35,875 - root - INFO - [*] [wxp_03] Executing procdump
+2015-04-12 20:43:43,572 - root - INFO - [*] [wxp_03] [DONE] Executing procdump
+2015-04-12 20:43:43,572 - root - INFO - [*] [wxp_03] Executing modscan
+2015-04-12 20:43:44,782 - root - INFO - [*] [wxp_03] [DONE] Executing modscan
+2015-04-12 20:43:44,782 - root - INFO - [*] [wxp_03] PROCESSING OF SAMPLE COMPLETED (sample ID: 536) [*]
+2015-04-12 20:43:50,866 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:50,866 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:43:50,866 - root - INFO - [*] wxp_03 is idle, sending the task to this VM
+2015-04-12 20:43:50,866 - root - INFO - [*] [wxp_03] Now working on sample 535.
+2015-04-12 20:43:50,879 - root - INFO - [*] [wxp_03] Reverting to snapshot VolatilityBot:
+2015-04-12 20:43:51,442 - root - INFO - [*] [wxp_03] Starting VM
+2015-04-12 20:44:02,062 - root - INFO - [*] [wxp_03] Sleeping 10 seconds...
+2015-04-12 20:44:12,063 - root - INFO - [*] [wxp_03] Sending executable ../../Samples/30_03_2015/7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin to vm: wxp_03 I.P: 192.168.47.24
+2015-04-12 20:44:12,064 - root - INFO - [*] [wxp_03] Sleeping 60 seconds...
+2015-04-12 20:45:12,118 - root - INFO - [*] [wxp_03] Suspending VM
+2015-04-12 20:45:18,547 - root - INFO - [*] [wxp_03] Got Snapshot name: /home/martin/vmware/wxp_03/wxp_03-cb6994e8.vmem
+2015-04-12 20:45:18,548 - root - INFO - [*] [wxp_03] Executing malfind
+2015-04-12 20:47:17,277 - root - INFO - ======= VolatilityBot Initialized =======
+2015-04-12 20:47:17,281 - root - INFO - [*] [vmware] Loading vmware module
+2015-04-12 20:47:17,284 - root - INFO -  - Loaded machine - wxp_01
+2015-04-12 20:47:17,284 - root - INFO -  - Loaded machine - wxp_02
+2015-04-12 20:47:17,284 - root - INFO -  - Loaded machine - wxp_03
+2015-04-12 20:47:17,285 - root - INFO - [*] [vmware] Active machines: 3
+2015-04-12 20:47:17,285 - root - INFO - [*] A directory was chosen to be processed
+2015-04-12 20:47:17,285 - root - INFO - [*] Processing 1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin:
+2015-04-12 20:47:50,138 - root - INFO - ======= VolatilityBot Initialized =======
+2015-04-12 20:47:50,141 - root - INFO - [*] [vmware] Loading vmware module
+2015-04-12 20:47:50,145 - root - INFO -  - Loaded machine - wxp_01
+2015-04-12 20:47:50,145 - root - INFO -  - Loaded machine - wxp_02
+2015-04-12 20:47:50,146 - root - INFO -  - Loaded machine - wxp_03
+2015-04-12 20:47:50,146 - root - INFO - [*] [vmware] Active machines: 3
+2015-04-12 20:47:50,146 - root - INFO - [*] A directory was chosen to be processed
+2015-04-12 20:47:50,146 - root - INFO - [*] Processing 1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin:
+2015-04-12 20:47:50,159 - root - INFO - [*] This sample ID is 534
+2015-04-12 20:47:50,159 - root - INFO - [*] Processing invoice32.exe:
+2015-04-12 20:47:50,170 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:47:50,170 - root - INFO - [*] Processing 26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin:
+2015-04-12 20:47:50,185 - root - INFO - [*] This sample ID is 536
+2015-04-12 20:47:50,185 - root - INFO - [*] Processing 7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin:
+2015-04-12 20:47:50,195 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:47:50,195 - root - INFO - [*] Queue Size: 4
+2015-04-12 20:47:50,195 - root - INFO - [*] wxp_01 is idle, sending the task to this VM
+2015-04-12 20:47:50,195 - root - INFO - [*] [wxp_01] Now working on sample 534.
+2015-04-12 20:47:50,208 - root - INFO - [*] [wxp_01] Reverting to snapshot VolatilityBot:
+2015-04-12 20:47:50,750 - root - INFO - [*] [wxp_01] Starting VM
+2015-04-12 20:48:01,395 - root - INFO - [*] [wxp_01] Sleeping 10 seconds...
+2015-04-12 20:48:05,211 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:05,211 - root - INFO - [*] 3 samples in queue...
+2015-04-12 20:48:05,211 - root - INFO - [*] wxp_02 is idle, sending the task to this VM
+2015-04-12 20:48:05,212 - root - INFO - [*] [wxp_02] Now working on sample 535.
+2015-04-12 20:48:05,222 - root - INFO - [*] [wxp_02] Reverting to snapshot VolatilityBot:
+2015-04-12 20:48:05,658 - root - INFO - [*] [wxp_02] Starting VM
+2015-04-12 20:48:11,405 - root - INFO - [*] [wxp_01] Sending executable ../../Samples/30_03_2015/1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin to vm: wxp_01 I.P: 192.168.47.20
+2015-04-12 20:48:11,407 - root - INFO - [*] [wxp_01] Sleeping 60 seconds...
+2015-04-12 20:48:20,212 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:20,213 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:48:20,213 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:20,213 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:48:20,213 - root - INFO - [*] wxp_03 is idle, sending the task to this VM
+2015-04-12 20:48:20,213 - root - INFO - [*] [wxp_03] Now working on sample 536.
+2015-04-12 20:48:20,223 - root - INFO - [*] [wxp_03] Reverting to snapshot VolatilityBot:
+2015-04-12 20:48:20,708 - root - INFO - [*] [wxp_03] Starting VM
+2015-04-12 20:48:29,401 - root - INFO - [*] [wxp_03] Sleeping 10 seconds...
+2015-04-12 20:48:35,217 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:35,217 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:35,217 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:39,408 - root - INFO - [*] [wxp_03] Sending executable ../../Samples/30_03_2015/26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin to vm: wxp_03 I.P: 192.168.47.24
+2015-04-12 20:48:39,444 - root - INFO - [*] [wxp_03] Sleeping 60 seconds...
+2015-04-12 20:48:50,232 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:50,233 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:48:50,233 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:05,245 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:05,245 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:05,246 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:11,417 - root - INFO - [*] [wxp_01] Suspending VM
+2015-04-12 20:49:20,251 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:20,252 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:20,252 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:20,552 - root - INFO - [*] [wxp_01] Got Snapshot name: /home/martin/vmware/wxp_01/wxp_01-cb6994e6.vmem
+2015-04-12 20:49:20,553 - root - INFO - [*] [wxp_01] Executing malfind
+2015-04-12 20:49:35,253 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:35,253 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:35,253 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:35,909 - root - INFO - [!] [wxp_02] Error when starting VM: Error: Cannot connect to the virtual machine
+
+2015-04-12 20:49:39,514 - root - INFO - [*] [wxp_03] Suspending VM
+2015-04-12 20:49:45,917 - root - INFO - [*] [wxp_03] Got Snapshot name: /home/martin/vmware/wxp_03/wxp_03-cb6994e8.vmem
+2015-04-12 20:49:45,917 - root - INFO - [*] [wxp_03] Executing malfind
+2015-04-12 20:49:49,528 - root - INFO - [*] [wxp_03] [DONE] Executing malfind
+2015-04-12 20:49:49,528 - root - INFO - [*] [wxp_03] Executing procdump
+2015-04-12 20:49:50,266 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:50,266 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:50,266 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:49:57,231 - root - INFO - [*] [wxp_03] [DONE] Executing procdump
+2015-04-12 20:49:57,231 - root - INFO - [*] [wxp_03] Executing modscan
+2015-04-12 20:49:58,458 - root - INFO - [*] [wxp_03] [DONE] Executing modscan
+2015-04-12 20:49:58,458 - root - INFO - [*] [wxp_03] PROCESSING OF SAMPLE COMPLETED (sample ID: 536) [*]
+2015-04-12 20:50:05,277 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:50:05,277 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:50:05,277 - root - INFO - [*] wxp_03 is idle, sending the task to this VM
+2015-04-12 20:50:05,277 - root - INFO - [*] [wxp_03] Now working on sample 535.
+2015-04-12 20:50:05,292 - root - INFO - [*] [wxp_03] Reverting to snapshot VolatilityBot:
+2015-04-12 20:50:05,837 - root - INFO - [*] [wxp_03] Starting VM
+2015-04-12 20:50:16,144 - root - INFO - [*] [wxp_03] Sleeping 10 seconds...
+2015-04-12 20:50:26,145 - root - INFO - [*] [wxp_03] Sending executable ../../Samples/30_03_2015/7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin to vm: wxp_03 I.P: 192.168.47.24
+2015-04-12 20:50:26,147 - root - INFO - [*] [wxp_03] Sleeping 60 seconds...
+2015-04-12 20:51:26,216 - root - INFO - [*] [wxp_03] Suspending VM
+2015-04-12 20:51:35,302 - root - INFO - [*] [wxp_03] Got Snapshot name: /home/martin/vmware/wxp_03/wxp_03-cb6994e8.vmem
+2015-04-12 20:51:35,302 - root - INFO - [*] [wxp_03] Executing malfind
+2015-04-12 20:51:39,126 - root - INFO - [*] [wxp_03] [DONE] Executing malfind
+2015-04-12 20:51:39,127 - root - INFO - [*] [wxp_03] Executing procdump
+2015-04-12 20:51:41,952 - root - INFO - [*] [wxp_03] [DONE] Executing procdump
+2015-04-12 20:51:41,952 - root - INFO - [*] [wxp_03] Executing modscan
+2015-04-12 20:51:45,347 - root - INFO - [*] [wxp_03] [DONE] Executing modscan
+2015-04-12 20:51:45,348 - root - INFO - [*] [wxp_03] PROCESSING OF SAMPLE COMPLETED (sample ID: 535) [*]
+2015-04-12 20:51:45,462 - root - INFO - [*] [wxp_03] Cleanup done.
+2015-04-12 20:55:36,820 - root - INFO - ======= VolatilityBot Initialized =======
+2015-04-12 20:55:36,824 - root - INFO - [*] [vmware] Loading vmware module
+2015-04-12 20:55:36,828 - root - INFO -  - Loaded machine - wxp_01
+2015-04-12 20:55:36,828 - root - INFO -  - Loaded machine - wxp_02
+2015-04-12 20:55:36,828 - root - INFO -  - Loaded machine - wxp_03
+2015-04-12 20:55:36,828 - root - INFO - [*] [vmware] Active machines: 3
+2015-04-12 20:55:36,828 - root - INFO - [*] A directory was chosen to be processed
+2015-04-12 20:55:36,828 - root - INFO - [*] Processing 1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin:
+2015-04-12 20:55:36,842 - root - INFO - [*] This sample ID is 534
+2015-04-12 20:55:36,842 - root - INFO - [*] Processing invoice32.exe:
+2015-04-12 20:55:36,852 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:55:36,853 - root - INFO - [*] Processing 26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin:
+2015-04-12 20:55:36,867 - root - INFO - [*] This sample ID is 536
+2015-04-12 20:55:36,867 - root - INFO - [*] Processing 7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin:
+2015-04-12 20:55:36,876 - root - INFO - [*] This sample ID is 535
+2015-04-12 20:55:36,876 - root - INFO - [*] Queue Size: 4
+2015-04-12 20:55:36,876 - root - INFO - [*] wxp_01 is idle, sending the task to this VM
+2015-04-12 20:55:36,877 - root - INFO - [*] [wxp_01] Now working on sample 534.
+2015-04-12 20:55:36,888 - root - INFO - [*] [wxp_01] Reverting to snapshot VolatilityBot:
+2015-04-12 20:55:37,413 - root - INFO - [*] [wxp_01] Starting VM
+2015-04-12 20:55:47,809 - root - INFO - [*] [wxp_01] Sleeping 10 seconds...
+2015-04-12 20:55:51,883 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:55:51,883 - root - INFO - [*] 3 samples in queue...
+2015-04-12 20:55:51,883 - root - INFO - [*] wxp_02 is idle, sending the task to this VM
+2015-04-12 20:55:51,884 - root - INFO - [*] [wxp_02] Now working on sample 535.
+2015-04-12 20:55:51,892 - root - INFO - [*] [wxp_02] Reverting to snapshot VolatilityBot:
+2015-04-12 20:55:52,336 - root - INFO - [*] [wxp_02] Starting VM
+2015-04-12 20:55:57,811 - root - INFO - [*] [wxp_01] Sending executable ../../Samples/30_03_2015/1a56353bf1cb73db3a72832f8f8255f500f4a41bbab18203d7e37f349eed789f.bin to vm: wxp_01 I.P: 192.168.47.20
+2015-04-12 20:55:57,813 - root - INFO - [*] [wxp_01] Sleeping 60 seconds...
+2015-04-12 20:56:06,899 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:06,899 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:56:06,900 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:06,900 - root - INFO - [*] 2 samples in queue...
+2015-04-12 20:56:06,900 - root - INFO - [*] wxp_03 is idle, sending the task to this VM
+2015-04-12 20:56:06,900 - root - INFO - [*] [wxp_03] Now working on sample 536.
+2015-04-12 20:56:06,917 - root - INFO - [*] [wxp_03] Reverting to snapshot VolatilityBot:
+2015-04-12 20:56:07,440 - root - INFO - [*] [wxp_03] Starting VM
+2015-04-12 20:56:15,771 - root - INFO - [*] [wxp_03] Sleeping 10 seconds...
+2015-04-12 20:56:21,914 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:21,915 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:21,915 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:25,780 - root - INFO - [*] [wxp_03] Sending executable ../../Samples/30_03_2015/26b2265c045a520089b0127a4896a510fd155d2a2c43e26c2a2a3221cfc4c1cb.bin to vm: wxp_03 I.P: 192.168.47.24
+2015-04-12 20:56:25,830 - root - INFO - [*] [wxp_03] Sleeping 60 seconds...
+2015-04-12 20:56:36,927 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:36,927 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:36,927 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:51,936 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:51,936 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:51,936 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:56:57,879 - root - INFO - [*] [wxp_01] Suspending VM
+2015-04-12 20:57:04,993 - root - INFO - [*] [wxp_01] Got Snapshot name: /home/martin/vmware/wxp_01/wxp_01-cb6994e6.vmem
+2015-04-12 20:57:04,993 - root - INFO - [*] [wxp_01] Executing malfind
+2015-04-12 20:57:06,951 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:57:06,951 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:57:06,951 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:57:21,455 - root - INFO - [*] [wxp_01] [DONE] Executing malfind
+2015-04-12 20:57:21,455 - root - INFO - [*] [wxp_01] Executing procdump
+2015-04-12 20:57:21,961 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:57:21,961 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:57:21,961 - root - INFO - Waiting, All Machines are busy...
+2015-04-12 20:57:22,621 - root - INFO - [!] [wxp_02] Error when starting VM: Error: Cannot connect to the virtual machine
+
+2015-04-12 20:57:22,717 - root - ERROR - [!] [wxp_02] FATAL: Machine could not be reverted. Marked as fail for the rest of the analysis queue
+2015-04-12 20:57:22,717 - root - INFO - [*] [wxp_02] Cleanup done.
+2015-04-12 20:57:24,108 - root - INFO - [*] [wxp_01] [DONE] Executing procdump
+2015-04-12 20:57:24,108 - root - INFO - [*] [wxp_01] Executing modscan
+2015-04-12 20:57:25,897 - root - INFO - [*] [wxp_03] Suspending VM
+2015-04-12 20:57:31,024 - root - INFO - [*] [wxp_01] [DONE] Executing modscan
+2015-04-12 20:57:31,024 - root - INFO - [*] [wxp_01] PROCESSING OF SAMPLE COMPLETED (sample ID: 534) [*]
+2015-04-12 20:57:31,124 - root - INFO - [*] [wxp_01] Cleanup done.
+2015-04-12 20:57:32,190 - root - INFO - [*] [wxp_03] Got Snapshot name: /home/martin/vmware/wxp_03/wxp_03-cb6994e8.vmem
+2015-04-12 20:57:32,190 - root - INFO - [*] [wxp_03] Executing malfind
+2015-04-12 20:57:35,805 - root - INFO - [*] [wxp_03] [DONE] Executing malfind
+2015-04-12 20:57:35,806 - root - INFO - [*] [wxp_03] Executing procdump
+2015-04-12 20:57:36,977 - root - INFO - [*] wxp_01 is idle, sending the task to this VM
+2015-04-12 20:57:36,977 - root - INFO - [*] [wxp_01] Now working on sample 535.
+2015-04-12 20:57:36,983 - root - INFO - [*] [wxp_01] Reverting to snapshot VolatilityBot:
+2015-04-12 20:57:40,025 - root - INFO - [*] [wxp_03] [DONE] Executing procdump
+2015-04-12 20:57:40,025 - root - INFO - [*] [wxp_03] Executing modscan
+2015-04-12 20:57:40,193 - root - INFO - [*] [wxp_01] Starting VM
+2015-04-12 20:57:41,350 - root - INFO - [*] [wxp_03] [DONE] Executing modscan
+2015-04-12 20:57:41,350 - root - INFO - [*] [wxp_03] PROCESSING OF SAMPLE COMPLETED (sample ID: 536) [*]
+2015-04-12 20:57:41,456 - root - INFO - [*] [wxp_03] Cleanup done.
+2015-04-12 20:57:51,180 - root - INFO - [*] [wxp_01] Sleeping 10 seconds...
+2015-04-12 20:58:01,189 - root - INFO - [*] [wxp_01] Sending executable ../../Samples/30_03_2015/7adee69b5f504a2d0eeda8cc5b2ca8a02f6de1c6c43337755ebdf2119d53080d.bin to vm: wxp_01 I.P: 192.168.47.20
+2015-04-12 20:58:01,191 - root - INFO - [*] [wxp_01] Sleeping 60 seconds...
+2015-04-12 20:59:01,253 - root - INFO - [*] [wxp_01] Suspending VM
+2015-04-12 20:59:07,642 - root - INFO - [*] [wxp_01] Got Snapshot name: /home/martin/vmware/wxp_01/wxp_01-cb6994e6.vmem
+2015-04-12 20:59:07,642 - root - INFO - [*] [wxp_01] Executing malfind

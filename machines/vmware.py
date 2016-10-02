@@ -1,157 +1,103 @@
 #! /usr/bin/python
-import os
-import yaml
-import pipes
-import subprocess
+import glob
 import logging
-import json
+import os
+import subprocess
 
-vmindex = []
-vmrun_path = ""
-gui = ""
-
-def _load_config():
-  global vmrun_path
-  global gui  
-  global machines_log_path  
-  if os.path.isfile('conf/vmware.conf'):
-	f = open('conf/vmware.conf')
-	# use safe_load instead load
-	dataMap = json.load(f)
-	f.close()
-
-	vmrun_path_tmp = dataMap['general']['vmrun_path']
-  	vmrun_path = vmrun_path_tmp.replace(' ','\\ ')
-   
-  if (dataMap['general']['gui']):
-    gui = "gui"     
-	
-  return True       
- 
-  
-def _init():
-  machine_count = 0
-  global vmrun_path
-  global gui
-  
-  print "[*] [vmware] Loading vmware module"    
-  logging.info("[*] [vmware] Loading vmware module")
-  
-  if os.path.isfile('conf/vmware.conf'):
-	f = open('conf/vmware.conf')
-	# use safe_load instead load
-	dataMap = json.load(f)
-	f.close()
+from .machine import Machine
+from conf.config import VMRUN_PATH, MACHINE_INDEX, DEFAULT_SLEEP_TIME
 
 
-  #print json.dumps(dataMap,indent=4)
-  vmrun_path_tmp = dataMap['general']['vmrun_path']
-  vmrun_path = vmrun_path_tmp.replace(' ','\\ ')
-  gui = dataMap['general']['gui']
- 
-  pool_index = {} 
- 
-  for res_pool in dataMap['general']['machine_resource_pools']:
-      if dataMap['general']['machine_resource_pools'][res_pool]['active']:
-          print '[*] Loading Machine Resouce Pool: %s' % res_pool
-          pool_index[res_pool] = []
-          for vm_cfg in dataMap['general']['machine_resource_pools'][res_pool]['machines']:
-             vm = {}
-             vm['enabled']       = dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['enabled']
-             vm['name'] 			   = dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['name']
-             vm['vmx_path'] 		 = pipes.quote(dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['vmx_path'])
-             vm['vmdk_path'] 		 = pipes.quote(dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['vmdk_path'])
-             vm['IP'] 				   = dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['IP']
-             vm['snapshot_name'] = dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['snapshot_name']
-             vm['status'] 			 = dataMap['general']['machine_resource_pools'][res_pool]['machines'][vm_cfg]['status']
-             vm['profile']       = dataMap['general']['machine_resource_pools'][res_pool]['profile'] 
-             if (vm['enabled']):
-                 machine_count  = machine_count + 1
-    
-             pool_index[res_pool].append(vm)
-    					
-             print " - Loaded machine - %s" % (vm['name'])
-             logging.info(" - Loaded machine - %s" % (vm['name']))
-              
-              
-              
-      else:
-         print '[!] Inactive Machine Resouce Pool: %s' % res_pool     
-          
-  #print json.dumps(pool_index,indent=4)
- 
-			
-  print "[*] [vmware] Active machines: %d" % (machine_count) 
-  logging.info("[*] [vmware] Active machines: %d" % (machine_count) )
-  
- 
- 
-  return pool_index 
+class VMWARE(Machine):
+    def initialize(self):
+        self.ip_address = MACHINE_INDEX[self.machine_name]['ip_address']
+        self.snapshot_name = MACHINE_INDEX[self.machine_name]['snapshot_name']
+        self.vmx_path = MACHINE_INDEX[self.machine_name]['vmx_path']
+        self.memory_profile = MACHINE_INDEX[self.machine_name]['memory_profile']
+        self.is_64bit = MACHINE_INDEX[self.machine_name]['is_64bit']
+        self.active = MACHINE_INDEX[self.machine_name]['active']
 
+    def revert(self, wet=True):
+        """
+        Revert the virtual machine
+        :param wet:  used for debbuging, if wet=False - nothing happens
+        :return:
+        """
+        logging.info("[*] [%s] Reverting to snapshot %s:" % (self.machine_name, self.snapshot_name))
+        command = VMRUN_PATH + ' revertToSnapshot "' + self.vmx_path + '" ' + self.snapshot_name
+        logging.info(command)
+        if wet:
+            p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output, error = p.communicate()
+            if output:
+                logging.error("[!] [%s] Error when starting VM: %s" % (self.machine_name, output))
+                return False
 
-def _revert(vm):
-    _load_config()
-    print "[*] [%s] Reverting to snapshot %s:" % (vm['name'],vm['snapshot_name'])
-    logging.info("[*] [%s] Reverting to snapshot %s:" % (vm['name'],vm['snapshot_name']))
-    command = vmrun_path + " revertToSnapshot " + vm['vmx_path'] + " " + vm['snapshot_name']
-    p = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    output, error = p.communicate()
-    if output:
-        print "[!] [%s] Error when starting VM: %s" % (vm['name'],output)
-        logging.info("[!] [%s] Error when starting VM: %s" % (vm['name'],output))
-        return False
-    
-    return True
+            return True
+        else:
+            logging.info('Dry Run reverting...')
+            return True
 
-def _start(vm):
-    _load_config()
-    print "[*] [%s] Starting VM" % (vm['name'])    
-    logging.info("[*] [%s] Starting VM" % (vm['name']))
-    command = vmrun_path + " start " +  vm['vmx_path']
-    p = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    output, error = p.communicate()
-    if output:
-        print "[!] [%s] Error when starting VM: %s" % (vm['name'],output)
-        logging.info("[!] [%s] Error when starting VM: %s" % (vm['name'],output))
-        return False
-    
-    return True
+    def start(self, wet=True):
+        """
+        Start the virtual machine
+        :param wet:  used for debbuging, if wet=False - nothing happens
+        :return:
+        """
+        logging.info("[*] [%s] Starting VM" % self.machine_name)
+        command = VMRUN_PATH + ' start "' + self.vmx_path + '"'
+        logging.info(command)
+        if wet:
+            p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output, error = p.communicate()
+            if output:
+                logging.error("[!] [%s] Error when starting VM: %s" % (self.machine_name, output))
+                return False
+            return True
+        else:
+            logging.info('Dry run start')
+            return True
 
-def _suspend(vm):
-    _load_config()
-    print " [*] [%s] Suspending VM" % (vm['name'])
-    logging.info("[*] [%s] Suspending VM" % (vm['name']))
-    command = vmrun_path + " suspend " +  vm['vmx_path'] + " hard"
-    p = subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    output, error = p.communicate()
-    if output:
-        print "[!] [%s] Error when suspending: %s" % (vm['name'],output)
-        logging.info("[!] [%s] Error when suspending: %s" % (vm['name'],output))
-        return False
-    
-    return True
-    """
-    try:
-        print "%s %s %s" % (vmrun_path,"suspend",vm['vmx_path'])
-        if subprocess.call([vmrun_path,"suspend",vm['vmx_path']," hard"],
-                       stdout=subprocess.PIPE,stderr=subprocess.PIPE):        
-                           raise "Unable to revert snapshot for %s " % (vm['name'])
-    except:
-        print "Unable to suspend VM: %s" % (vm['name'])  
-    """ 
-def _get_mem_path(vm):    
-	command = '/bin/ls -tr ' + vm['vmdk_path'] + '*.vmem | tail -1'
-	proc = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
-	snapshot_name = proc.stdout.read()
-	snapshot_name = snapshot_name.strip()
-	snapshot_name = snapshot_name.replace(' ','\\ ')
-	print "[*] [%s] Got Snapshot name: %s" % (vm['name'],snapshot_name)
- 	logging.info("[*] [%s] Got Snapshot name: %s" % (vm['name'],snapshot_name))
-	return snapshot_name    
-    
-    
-def _cleanup(vm):
-    print "[*] [%s] Cleanup done." % (vm['name'])
-    logging.info("[*] [%s] Cleanup done." % (vm['name']))
-    return True
-     
+    def suspend(self, wet=True):
+        """
+        Suspend the virtual machine
+        :param wet:  used for debbuging, if wet=False - nothing happens
+        :return:
+        """
+        logging.info("[*] [%s] Suspending VM" % (self.machine_name))
+        command = VMRUN_PATH + ' suspend "' + self.vmx_path + '" hard'
+        logging.info(command)
+        if wet:
+            p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output, error = p.communicate()
+            if output:
+                logging.error("[!] [%s] Error when suspending: %s" % (self.machine_name, output))
+                return False
+
+            return True
+        else:
+            logging.info('Dry run suspend')
+            return True
+
+    def get_memory_path(self, wet=True):
+        """
+        Get the path to VMEM filr
+        :param wet:
+        :return:
+        """
+        logging.info('Searching VMEM in {}'.format(os.path.join(os.path.dirname(os.path.abspath(self.vmx_path)))))
+        snapshot_name = max(
+            glob.iglob(os.path.join(os.path.dirname(os.path.abspath(self.vmx_path)), '*.vmem')),
+            key=os.path.getctime)
+        if wet:
+            return snapshot_name
+        else:
+            logging.info('Dry run get_memory_path')
+            return None
+
+    def show_info(self):
+        print(
+            'Machine Name: {}\n\tis_64bit: {}\n\tActive: {}\n\tSnapshot Name: {}\n\tStatus: {}\n\tMemory Profile: {}\n\tVMX Path {}\n\tIP: {}'.format(
+                self.machine_name, self.is_64bit, self.active, self.snapshot_name, self.status, self.memory_profile,
+                self.vmx_path, self.ip_address))
+

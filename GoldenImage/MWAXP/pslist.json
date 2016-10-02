@@ -1,0 +1,242 @@
+[
+    {
+        "offset": "0x823c6830",
+        "ppid": 0,
+        "name": "System",
+        "pid": 4
+    },
+    {
+        "offset": "0x81e8d678",
+        "ppid": 4,
+        "name": "smss.exe",
+        "pid": 580
+    },
+    {
+        "offset": "0x822f5338",
+        "ppid": 580,
+        "name": "csrss.exe",
+        "pid": 648
+    },
+    {
+        "offset": "0x820a8020",
+        "ppid": 580,
+        "name": "winlogon.exe",
+        "pid": 736
+    },
+    {
+        "offset": "0x822967e0",
+        "ppid": 736,
+        "name": "services.exe",
+        "pid": 780
+    },
+    {
+        "offset": "0x81d2d020",
+        "ppid": 736,
+        "name": "lsass.exe",
+        "pid": 792
+    },
+    {
+        "offset": "0x82075500",
+        "ppid": 780,
+        "name": "vmacthlp.exe",
+        "pid": 972
+    },
+    {
+        "offset": "0x82071da0",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 988
+    },
+    {
+        "offset": "0x81d19420",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 1032
+    },
+    {
+        "offset": "0x81d10980",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 1200
+    },
+    {
+        "offset": "0x82062b40",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 1304
+    },
+    {
+        "offset": "0x81d0cda0",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 1372
+    },
+    {
+        "offset": "0x81e097b8",
+        "ppid": 780,
+        "name": "spoolsv.exe",
+        "pid": 1456
+    },
+    {
+        "offset": "0x8226d760",
+        "ppid": 1200,
+        "name": "GoogleUpdate.ex",
+        "pid": 1824
+    },
+    {
+        "offset": "0x81dfb020",
+        "ppid": 1776,
+        "name": "explorer.exe",
+        "pid": 1876
+    },
+    {
+        "offset": "0x81df9878",
+        "ppid": 1824,
+        "name": "GoogleUpdate.ex",
+        "pid": 1968
+    },
+    {
+        "offset": "0x82012020",
+        "ppid": 1876,
+        "name": "rundll32.exe",
+        "pid": 636
+    },
+    {
+        "offset": "0x8226fbf8",
+        "ppid": 1876,
+        "name": "vmtoolsd.exe",
+        "pid": 632
+    },
+    {
+        "offset": "0x82017b38",
+        "ppid": 1876,
+        "name": "jusched.exe",
+        "pid": 676
+    },
+    {
+        "offset": "0x81cc4020",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 1132
+    },
+    {
+        "offset": "0x8200ab08",
+        "ppid": 780,
+        "name": "svchost.exe",
+        "pid": 1180
+    },
+    {
+        "offset": "0x81febd08",
+        "ppid": 780,
+        "name": "vmtoolsd.exe",
+        "pid": 1676
+    },
+    {
+        "offset": "0x81c91c68",
+        "ppid": 988,
+        "name": "wmiprvse.exe",
+        "pid": 540
+    },
+    {
+        "offset": "0x81c945f0",
+        "ppid": 1200,
+        "name": "wuauclt.exe",
+        "pid": 616
+    },
+    {
+        "offset": "0x81f9cc80",
+        "ppid": 780,
+        "name": "TPAutoConnSvc.e",
+        "pid": 1588
+    },
+    {
+        "offset": "0x81f8e5f0",
+        "ppid": 780,
+        "name": "alg.exe",
+        "pid": 2156
+    },
+    {
+        "offset": "0x81f7f870",
+        "ppid": 1200,
+        "name": "wscntfy.exe",
+        "pid": 2408
+    },
+    {
+        "offset": "0x82001020",
+        "ppid": 1588,
+        "name": "TPAutoConnect.e",
+        "pid": 2484
+    },
+    {
+        "offset": "0x81c74af0",
+        "ppid": 780,
+        "name": "msiexec.exe",
+        "pid": 3360
+    },
+    {
+        "offset": "0x81c9e020",
+        "ppid": 1876,
+        "name": "chrome.exe",
+        "pid": 3632
+    },
+    {
+        "offset": "0x81c33678",
+        "ppid": 3632,
+        "name": "chrome.exe",
+        "pid": 3812
+    },
+    {
+        "offset": "0x81c515b0",
+        "ppid": 3632,
+        "name": "chrome.exe",
+        "pid": 3836
+    },
+    {
+        "offset": "0x81cc3648",
+        "ppid": 3632,
+        "name": "chrome.exe",
+        "pid": 4024
+    },
+    {
+        "offset": "0x81f6a728",
+        "ppid": 1876,
+        "name": "iexplore.exe",
+        "pid": 396
+    },
+    {
+        "offset": "0x81c3cda0",
+        "ppid": 396,
+        "name": "iexplore.exe",
+        "pid": 1508
+    },
+    {
+        "offset": "0x81d1b020",
+        "ppid": 396,
+        "name": "ctfmon.exe",
+        "pid": 1384
+    },
+    {
+        "offset": "0x81cf04d8",
+        "ppid": 1876,
+        "name": "cmd.exe",
+        "pid": 2500
+    },
+    {
+        "offset": "0x81f523b8",
+        "ppid": 2500,
+        "name": "python.exe",
+        "pid": 2704
+    },
+    {
+        "offset": "0x82320860",
+        "ppid": 780,
+        "name": "GoogleUpdate.ex",
+        "pid": 2720
+    },
+    {
+        "offset": "0x81c20ae8",
+        "ppid": 1200,
+        "name": "wuauclt.exe",
+        "pid": 1548
+    }
+]

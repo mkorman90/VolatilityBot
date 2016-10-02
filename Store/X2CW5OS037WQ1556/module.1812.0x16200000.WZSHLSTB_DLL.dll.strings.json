@@ -1,0 +1,182 @@
+[
+    {
+        "offset": "0x16200001",
+        "string": "!This program cannot be run in DOS mode.\r\r\n$"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "Rich"
+    },
+    {
+        "offset": "0x16200001",
+        "string": ".text"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "`.rdata"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "@.data"
+    },
+    {
+        "offset": "0x16200001",
+        "string": ".rsrc"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "@.reloc"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "5(  "
+    },
+    {
+        "offset": "0x16200001",
+        "string": "VPQR"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "5,  "
+    },
+    {
+        "offset": "0x16200001",
+        "string": "h|  "
+    },
+    {
+        "offset": "0x16200001",
+        "string": "hl  "
+    },
+    {
+        "offset": "0x16200001",
+        "string": "\r 0 "
+    },
+    {
+        "offset": "0x16200001",
+        "string": "D$\fh"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "RVPh"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "=8  "
+    },
+    {
+        "offset": "0x16200001",
+        "string": "DllCanUnloadNow"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "DllGetClassObject"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "wzshlstb.dll"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "wzshlex1.dll"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "CLSID\\%s\\InProcServer32"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "{e0d79304-84be-11ce-9641-444553540000}"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "Sleep"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "LeaveCriticalSection"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "FreeLibrary"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "EnterCriticalSection"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "DeleteCriticalSection"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "CloseHandle"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "TerminateThread"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "GetExitCodeThread"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "DisableThreadLibraryCalls"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "InitializeCriticalSection"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "CreateThread"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "GetProcAddress"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "LoadLibraryA"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "lstrcpyA"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "lstrlenA"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "KERNEL32.dll"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "wsprintfA"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "USER32.dll"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "RegQueryValueA"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "ADVAPI32.dll"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "WZSTUBSE.dll"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "DllCanUnloadNow"
+    },
+    {
+        "offset": "0x16200001",
+        "string": "DllGetClassObject"
+    }
+]
