@@ -7,12 +7,13 @@ import re
 
 from conf.config import VOLATILITY_PATH
 from lib.common.pe_utils import static_analysis, get_strings
-from lib.core.memory import MemoryDump
 from lib.core.sample import SampleDump
-from machines.machine import Machine
 
 
 def dump_process(memory_instance, pid, target_dump_dir, process_name=None, memdump=False):
+    if process_name is None:
+        process_name = 'unknown'
+
     if memdump:
         dump_method = 'memdump'
     else:
@@ -37,10 +38,9 @@ def dump_process(memory_instance, pid, target_dump_dir, process_name=None, memdu
         with open(target_dump_path + '.strings.json', 'w') as strings_output_file:
             strings_output_file.write(json.dumps(get_strings(dump_obj), indent=4))
 
-        with open(target_dump_path + '.static_analysis.json', 'w') as strings_output_file:
-            strings_output_file.write(json.dumps(static_analysis(dump_obj), indent=4))
-
-
+        if not memdump:
+            with open(target_dump_path + '.static_analysis.json', 'w') as strings_output_file:
+                strings_output_file.write(json.dumps(static_analysis(dump_obj), indent=4))
 
         logging.info('Dumping of process with pid {} succeeded'.format(pid))
         return True

@@ -38,18 +38,19 @@ if args.m:
             for entry in os.scandir(target_dir):
                 logging.info('Will analyze {}'.format(entry.path))
                 if entry.is_file():
-                    target_file = args.filename
+                    target_file = entry.path
                     memdump = MemoryDump(target_file)
                     if args.dump:
                         target_dir = create_workdir()
                     else:
                         target_dir = None
-                        if args.profile is not None:
-                            memdump.profile = args.profile
-                        else:
-                            memdump.identify_profile()
 
-                    heuristics_results = run_heuristics(memdump, workdir=target_dir)
+                    if args.profile is not None:
+                        memdump.profile = args.profile
+                    else:
+                        memdump.identify_profile()
+
+                    heuristics_results = run_heuristics(memdump, workdir=target_dir,dump_objects=args.dump)
 
                     # Save report to file
                     with open(os.path.join(target_dir, 'report.json'), 'w') as report:
