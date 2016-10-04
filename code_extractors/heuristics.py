@@ -419,6 +419,7 @@ def heuristic_dll_uncommon_on_machine(memory_instance, pslist=None, workdir=None
                 if dump_objects:
                     dump_dll(memory_instance, loaded_dlls_counter[key]['first_seen']['Pid'],
                              loaded_dlls_counter[key]['first_seen']['Base'], workdir)
+                suspect_path_list.append(loaded_dlls_counter[key]['first_seen'])
 
     return suspect_path_list
 
