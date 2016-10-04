@@ -156,6 +156,10 @@ def pe_read_x_bytes_from_ep(file_path,bytes_to_read=20):
     except PEFormatError as e:
         logging.error('error reading file %s: %s' % (file_path, e))
         return 'failed'
+    except AttributeError as e:
+        logging.error('error reading file %s: %s' % (file_path, e))
+        return 'failed'
+
 
 # Assembly generalization - In the future will generalize more instructions i.e: (mov eax,0) = (xor eax eax)
 def generalize(line):

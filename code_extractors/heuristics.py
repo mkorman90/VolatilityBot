@@ -6,6 +6,7 @@ import pefile
 from pefile import PEFormatError
 
 from conf.config import EXPLOITABLE_PROCESS_NAMES
+from conf.static_config import DLLS_IN_SYSDIR
 from lib.common.pslist import get_new_pslist
 from lib.common.utils import create_workdir
 from lib.core.memory_utils import execute_volatility_command, dump_process, dump_dll
@@ -28,8 +29,16 @@ def run_heuristics(memory_instance, workdir=None, dump_objects=False):
     """
     pslist = get_new_pslist(memory_instance)
 
-    suspicious_modules_ldrmodules = heuristic_modules_by_path(memory_instance, pslist=pslist, workdir=workdir,
-                                                              dump_objects=dump_objects)
+    suspicious_drivers_by_ssdt = heuristic_ssdt(memory_instance, pslist=pslist, workdir=workdir,dump_objects=dump_objects)
+
+    suspicious_procs_by_dst_port = heuristic_dest_port_anomallies(memory_instance, pslist=pslist, workdir=workdir,
+                                                                  dump_objects=dump_objects)
+
+    suspicious_loaded_dlls_by_count = heuristic_dll_uncommon_on_machine(memory_instance, pslist=pslist, workdir=workdir,
+                                                                        dump_objects=dump_objects)
+
+    suspicious_processes_by_sids = heuristic_by_process_sids(memory_instance, pslist=pslist, workdir=workdir,
+                                                             dump_objects=dump_objects)
 
     injected_code = heuristic_injected_code(memory_instance, pslist=pslist, workdir=workdir, dump_objects=dump_objects)
 
@@ -46,8 +55,11 @@ def run_heuristics(memory_instance, workdir=None, dump_objects=False):
 
     result = {'pslist': pslist, 'injected_code': injected_code, 'suspicious_processes_by_handles': suspect_processes,
               'suspicious_handles': suspicious_handles, 'suspicious_dlls': suspicious_dlls,
-              'suspicious_modules_ldrmodules': suspicious_modules_ldrmodules,
-              'suspect_processes_by_priv': suspicious_procs_by_privs}
+              'suspect_processes_by_priv': suspicious_procs_by_privs,
+              'suspicious_procs_by_dst_port': suspicious_procs_by_dst_port,
+              'suspicious_loaded_dlls_by_count': suspicious_loaded_dlls_by_count,
+              'suspicious_processes_by_sids': suspicious_processes_by_sids,
+              'suspicious_drivers_by_ssdt': suspicious_drivers_by_ssdt}
 
     return result
 
@@ -83,6 +95,42 @@ def heuristic_exploitable_parent(memory_instance, pslist=None, workdir=None, dum
                                          memdump=True)
 
     return suspect_processes
+
+
+def heuristic_by_process_sids(memory_instance, pslist=None, workdir=None, dump_objects=False):
+    """
+    Dump suspicious processes, according to running user
+    :param memory_instance: an instance of memory object
+    :param pslist: list of processes obtained from get_new_pslist
+    :param workdir: path to the workdir
+    :param dump_objects: wether to dump suspicious results or not
+    :return: dictionary of suspect code injection sections inside processes
+    """
+
+    process_whitelist = ['System', 'msiexec.exe', 'VMwareService.e', 'spoolsv.exe', 'svchost.exe', 'vmacthlp.exe',
+                         'services.exe', 'winlogon.exe', 'csrss.exe', 'smss.exe', 'lsass.exe','vmtoolsd.exe']
+
+    suspicious_processes = list()
+
+    # Get process list
+    if pslist is None:
+        pslist = get_new_pslist(memory_instance)
+
+    if workdir is None:
+        workdir = create_workdir()
+
+    # "columns": ["PID", "Process", "SID", "Name"]}
+    output = execute_volatility_command(memory_instance, 'getsids')
+    for priv in output:
+        if priv['SID'] == 'S-1-5-18' and priv['Process'] not in process_whitelist:
+            logging.info('Suspicious priv: {}'.format(priv))
+            suspicious_processes.append(priv)
+            if dump_objects:
+                logging.info('Dumping {} due to suspicious SID'.format(priv['PID']))
+                dump_process(memory_instance, priv['PID'], workdir,
+                             process_name=priv['Process'],
+                             memdump=True)
+    return suspicious_processes
 
 
 def heuristic_injected_code(memory_instance, pslist=None, workdir=None, dump_objects=False, delete_non_pe=False):
@@ -153,7 +201,7 @@ def heuristic_injected_code(memory_instance, pslist=None, workdir=None, dump_obj
 
         result = {'PE_dump_list': injected_dumps_list}
     else:
-        logging.info('Not output workdir defined, not goint to dump injected processes.')
+        logging.info('Not output workdir defined, not going to dump injected processes.')
         output = execute_volatility_command(memory_instance, 'malfind')
         result = {'malfind_output': output}
 
@@ -201,46 +249,6 @@ def heuristic_libraries_by_path(memory_instance, pslist=None, workdir=None, dump
                     if dump_objects:
                         logging.info('Going to dump {} due to suspicious path'.format(loaded_dll))
                         dump_dll(memory_instance, loaded_dll['Pid'], loaded_dll['Base'], workdir)
-
-    return suspicious_dlls
-
-
-def heuristic_modules_by_path(memory_instance, pslist=None, workdir=None, dump_objects=False):
-    """
-    Heuristics by path, using statistics and ldrmodules
-    :param memory_instance: memory instance object
-    :param pslist: list of loaded processes created by get_new_pslist()
-    :param workdir: path to working directory
-    :param dump_objects: wether to dump suspicious object or not
-    :return: dictionary of suspect processes
-    """
-    loaded_modules = execute_volatility_command(memory_instance, 'ldrmodules', extra_flags='-v')
-
-    suspicious_dlls = list()
-    paths_whitelist = ['\\windows\\system32\\advapi32.dll']
-
-    for loaded_module in loaded_modules:
-        suspicious_module = False
-
-        if loaded_module['LoadPath'] == '-' and loaded_module['MemPath'] == '-':
-            continue
-
-        if loaded_module['LoadPath'].lower().split(':')[1].strip() in paths_whitelist and \
-                        loaded_module['MemPath'].lower().split(':')[1].strip() in paths_whitelist:
-            continue
-
-        if loaded_module['LoadPath'] != loaded_module['MemPath']:
-            logging.info('Loaded path and memory path are different, suspicious module')
-            suspicious_module = True
-        # 2010972160 is 0x00400000, suspicious base for a loaded module.
-        elif loaded_module['Base'] == 2010972160:
-            suspicious_module = True
-
-        if suspicious_module:
-            suspicious_dlls.append(loaded_module)
-            if dump_objects:
-                logging.info('Going to dump {} due to suspicious path'.format(loaded_module))
-                dump_dll(memory_instance, loaded_module['Pid'], loaded_module['Base'], workdir)
 
     return suspicious_dlls
 
@@ -364,3 +372,70 @@ def heuristics_process_privileges(memory_instance, pslist=None, workdir=None, du
                     dumped_process_list.append(privilege['Pid'])
 
     return procs_with_suspicious_privs
+
+
+def heuristic_dest_port_anomallies(memory_instance, pslist=None, workdir=None, dump_objects=False):
+    whitelisted_dest_ports = ['80', '443', '8443', '53', '3889']
+
+    suspicious_processes = list()
+    connections = execute_volatility_command(memory_instance, 'connections')
+    for conn in connections:
+        dst_ip, dst_port = conn['RemoteAddress'].split(':')
+        if dst_port not in whitelisted_dest_ports:
+            suspicious_processes.append(conn)
+            if dump_objects:
+                procname = 'unknown'
+                for process in pslist:
+                    if str(process['Offset(V)']) == str(conn['Offset(V)']):
+                        logging.info("Found process name: {}".format(process['Name']))
+                        procname = process['Name']
+                        pid = str(process['PID'])
+                        break
+                dump_process(memory_instance, conn['PID'], workdir, process_name=procname)
+
+    return suspicious_processes
+
+
+def heuristic_dest_ip_malicious_in_vt(memory_instance, pslist=None, workdir=None, dump_objects=False):
+    pass
+
+
+def heuristic_dll_uncommon_on_machine(memory_instance, pslist=None, workdir=None, dump_objects=False):
+    loaded_dlls = execute_volatility_command(memory_instance, 'dlllist')
+
+    suspect_path_list = list()
+    loaded_dlls_counter = dict()
+    for loaded_dll in loaded_dlls:
+        try:
+            loaded_dlls_counter[loaded_dll['Path']]['counter'] += 1
+        except KeyError:
+            loaded_dlls_counter[loaded_dll['Path']] = {'counter': 0, 'first_seen': loaded_dll}
+
+    for key in loaded_dlls_counter:
+        if loaded_dlls_counter[key]['first_seen']['Path'] not in DLLS_IN_SYSDIR:
+            if loaded_dlls_counter[key]['counter'] == 1 and loaded_dlls_counter[key]['first_seen']['LoadCount'] == 1:
+                print('Going to dump: {}'.format(loaded_dlls_counter[key]['first_seen']))
+
+                if dump_objects:
+                    dump_dll(memory_instance, loaded_dlls_counter[key]['first_seen']['Pid'],
+                             loaded_dlls_counter[key]['first_seen']['Base'], workdir)
+
+    return suspect_path_list
+
+
+def heuristic_ssdt(memory_instance, pslist=None, workdir=None, dump_objects=False):
+    ssdt = execute_volatility_command(memory_instance, 'ssdt')
+
+    legitimate_owners = ['ntoskrnl.exe', 'win32k.sys']
+
+    known_owners = list()
+    for entry in ssdt:
+        if entry['Owner'] not in legitimate_owners and entry['Owner'] not in known_owners:
+            print('New ownwer: {}'.format(entry))
+            known_owners.append(entry['Owner'])
+
+    for driver_name in known_owners:
+        # /usr/local/bin/vol.py --profile WinXPSP2x86 -f "/home/MemoryDumps/APT.img" moddump -r irykmmww.sys -D /tmp
+        execute_volatility_command(memory_instance,'moddump',extra_flags='-r {} -D {}'.format(driver_name,workdir))
+
+    return known_owners

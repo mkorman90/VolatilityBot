@@ -52,3 +52,4 @@ MACHINE_INDEX = {
 
 # Names of exploitable processes, in lowercase (Heuristics will normalize all names to lower case)
 EXPLOITABLE_PROCESS_NAMES = ['iexplore.exe', 'chrome.exe', 'firefox.exe']
+
