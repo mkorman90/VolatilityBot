@@ -48,7 +48,7 @@ def get_exports(pe):
     if hasattr(pe, "DIRECTORY_ENTRY_EXPORT"):
         for exported_symbol in pe.DIRECTORY_ENTRY_EXPORT.symbols:
             if exported_symbol.name is not None:
-                export_name = exported_symbol.name.decode('utf-8')
+                export_name = exported_symbol.name.decode('utf-8',errors='ignore')
             else:
                 export_name = 'n/a'
 
@@ -71,7 +71,7 @@ def get_section_data(pe):
         else:
             suspicious = False
 
-        scn = section.Name.decode('utf-8')
+        scn = section.Name.decode('utf-8',errors='ignore')
         md5 = section.get_hash_md5()
         sha1 = section.get_hash_sha1()
         spc = suspicious
@@ -137,7 +137,7 @@ def get_imports(pe):
         for library in pe.DIRECTORY_ENTRY_IMPORT:
             for imp in library.imports:
                 try:
-                    import_name = imp.name.decode('utf-8')
+                    import_name = imp.name.decode('utf-8',errors='ignore')
                 except AttributeError:
                     import_name = 'unknown'
                 import_list.append({'name': import_name, 'offset': imp.address})
@@ -159,7 +159,7 @@ def fix_pe_from_memory(pe, imagebase=None):
 
     for section in pe.sections:
         # Change section address back to raw
-        logging.info('==' + section.Name.decode('utf-8') + '==')
+        logging.info('==' + section.Name.decode('utf-8',errors='ignore') + '==')
         logging.info('Modifying virtual addresses:')
         logging.info('{} => {}'.format(hex(section.VirtualAddress), hex(section.PointerToRawData)))
         section.VirtualAddress = section.PointerToRawData

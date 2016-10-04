@@ -59,7 +59,7 @@ def run_extractor(memory_instance, malware_sample,machine_instance=None):
 
             base = mod['Base']
             src = os.path.join(get_workdir_path(malware_sample), "driver." + base[2:] + ".sys")
-            dest = os.path.join(get_workdir_path(malware_sample), mod['Name'] + '.' + mod['Base'] + '.sys')
+            dest = os.path.join(get_workdir_path(malware_sample), mod['Name'] + '.' + base[2:] + '.sys')
 
             try:
                 os.rename(src, dest)

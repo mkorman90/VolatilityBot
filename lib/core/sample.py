@@ -43,8 +43,8 @@ class MalwareSample():
             self.md5 = calc_md5(self.file_path)
             self.sha1 = calc_sha1(self.file_path)
             self.sha256 = calc_sha256(self.file_path)
-            self.ephash = calc_ephash(self.binary_path)
-            self.imphash = calc_imphash(self.binary_path)
+            self.ephash = calc_ephash(self.file_path)
+            self.imphash = calc_imphash(self.file_path)
         return
 
     def enqueue(self):

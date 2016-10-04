@@ -389,6 +389,7 @@ def semantically_analyze(sample_dump_instance):
     with open(SEMANTIC_YARA_RULES_PATH) as conf_file:
         data = json.load(conf_file)
 
+    result = None
     yara_matches_list = list()
     for entry in data['yara_rules']:
         if is_64bit and entry['is_64bit'] == 'True':
@@ -401,29 +402,3 @@ def semantically_analyze(sample_dump_instance):
             yara_matches_list.append(result)
 
     return yara_matches_list
-
-    results_list = {}
-    for match in yara_matches_list:
-
-        results_list[match['rule']] = []
-        entry = {}
-
-        for pattern_match in match['matches']:
-            entry['offset'] = hex(int_paddr_2_vaddr(pattern_match['offset'], pe))
-
-            disasm_string = disasm(f_filename, pattern_match['offset'], 32, is_64bit, True)
-
-            # print '[DEBUG] %s' % disasm_string
-
-            matching_disasm = []
-            for line in disasm_string:
-                matching_disasm.append(line)
-
-            entry['Disassembly'] = matching_disasm
-
-        results_list[match['rule']].append(entry)
-
-    if any_rules_matched:
-        return results_list
-    else:
-        return None

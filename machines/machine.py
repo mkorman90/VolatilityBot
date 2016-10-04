@@ -111,6 +111,9 @@ class Machine:
             # Change the status of sample to completed, and machine back to idle
             status = 'completed'
 
+        if status == 'failed':
+            self.cleanup()
+
         malware_sample.set_status(status)
         logging.info(
             'Processing of sample {} by {} completed with status: {}.'.format(malware_sample.id, self.machine_name,

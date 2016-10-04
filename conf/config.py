@@ -2,8 +2,8 @@
 import os
 
 # ------------ General configuration ------------
-# VOLATILITYBOT_HOME = '/Users/Martin/Projects/volatilitybot'
-VOLATILITYBOT_HOME = '/home/Projects/volatilitybot/'
+VOLATILITYBOT_HOME = '/Users/Martin/Projects/volatilitybot'
+# VOLATILITYBOT_HOME = '/home/Projects/volatilitybot/'
 STORE_PATH = os.path.join(VOLATILITYBOT_HOME, 'Store')
 DB_ENGINE = 'sqlite:///' + os.path.join(STORE_PATH, 'db.sqlite3')
 LOG_PATH = '/tmp'
@@ -11,7 +11,7 @@ VOLATILITY_PATH = '/usr/local/bin/vol.py'
 ACTIVE_MACHINE_TYPE = 'VMWARE'
 
 # If you run into problems, and machines get stuck - disable threading in order to see what error you are getting
-ENABLE_THREADING = True
+ENABLE_THREADING = False
 
 # ------------ Agent configuration ------------
 # Agent ket is used to verify no unauthorized executables are sent from server to agent
