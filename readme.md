@@ -9,11 +9,24 @@ Not only does it automatically extract the executable (exe), but it also fetches
 
 ## Motivation
 
-Part of the work security researchers have to go through when they study new malware or wish to analyse suspicious executables is to extract the binary file and all the different injections and strings decrypted during the malwareâ€™s execution.
+Part of the work security researchers have to go through when they study new malware or wish to analyse suspicious executables is to extract the binary file and all the different injections and strings decrypted during the malware’s execution.
 
 In the new version of VolatilityBot, a new feature is automated analysis of memory dumps, using heuristics and YARA/Clam AV Scanners (Clam scan coming soon).
 This feature is useful for memory analysis at scale. Usually, this initial process is done manually, either of a malware sample, or a memory dump and it can be lengthy and tedious.
 
+## Current features
+* Automated analaysis of malware samples (Based on diff-ing between clean memory image and infected one )
+ * Extraction of injected code
+ * Extraction of loaded kernel drivers
+ * Dump of new processes
+ * Yara scan, static analysis, string extraction, etc. on all outputs
+* Automated heuristic analysis of memory dumps
+ * Detect anomallies using heuristics and dump the relevant code
+ * Yara scan, static analysis, string extraction, etc. on all outputs
+ 
+## Coming soon:
+* Integration of automated sample analysis with Fakenet-NG
+* Clam scan on extracted code 
 
 ## Installation
 
