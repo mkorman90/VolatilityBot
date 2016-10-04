@@ -15,12 +15,12 @@ In the new version of VolatilityBot, a new feature is automated analysis of memo
 This feature is useful for memory analysis at scale. Usually, this initial process is done manually, either of a malware sample, or a memory dump and it can be lengthy and tedious.
 
 ## Current features
-* Automated analaysis of malware samples (Based on diff-ing between clean memory image and infected one )
+1. Automated analaysis of malware samples (Based on diff-ing between clean memory image and infected one )
   * Extraction of injected code
   * Extraction of loaded kernel drivers
   * Dump of new processes
   * Yara scan, static analysis, string extraction, etc. on all outputs
-* Automated heuristic analysis of memory dumps
+2. Automated heuristic analysis of memory dumps
   * Detect anomallies using heuristics and dump the relevant code
   * Yara scan, static analysis, string extraction, etc. on all outputs
  
