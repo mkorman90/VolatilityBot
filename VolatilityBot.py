@@ -144,11 +144,13 @@ elif args.D:
                             # Execution code happens here, hopefully in a thread
                             # which will update the status of the machine instance to waiting when done..
                             if ENABLE_THREADING:
-                                future = executor.submit(machine_dict[machine_instance].handle_malware_sample, next_sample)
+                                future = executor.submit(machine_dict[machine_instance].handle_malware_sample,
+                                                         next_sample)
                             else:
                                 machine_dict[machine_instance].handle_malware_sample(next_sample)
                     if not vm_for_execution_found:
-                        logging.info('All machines are busy... Will retry in 5 seconds')
+                        logging.info('All machines are busy... Will retry in 5 seconds ({} Samples in queue)'.format(
+                            sample_queue.size() + 1))
                         time.sleep(5)
 
         logging.info('No more samples in queue...')
