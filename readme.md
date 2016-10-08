@@ -1,4 +1,4 @@
-![alt tag](https://bytebucket.org/martink90/volatilitybot_public/raw/eca82b287aea53bfe308042eec7a713cfcc355b7/pics/logo.png)
+![alt tag](https://raw.githubusercontent.com/mkorman90/VolatilityBot/master/pics/logo.png)
 
 
 ## Synopsis
@@ -9,7 +9,7 @@ Not only does it automatically extract the executable (exe), but it also fetches
 
 ## Motivation
 
-Part of the work security researchers have to go through when they study new malware or wish to analyse suspicious executables is to extract the binary file and all the different injections and strings decrypted during the malware’s execution.
+Part of the work security researchers have to go through when they study new malware or wish to analyse suspicious executables is to extract the binary file and all the different injections and strings decrypted during the malwareâ€™s execution.
 
 In the new version of VolatilityBot, a new feature is automated analysis of memory dumps, using heuristics and YARA/Clam AV Scanners (Clam scan coming soon).
 This feature is useful for memory analysis at scale. Usually, this initial process is done manually, either of a malware sample, or a memory dump and it can be lengthy and tedious.
@@ -29,7 +29,7 @@ This feature is useful for memory analysis at scale. Usually, this initial proce
 
 ## Installation
 
-git clone https://martink90@bitbucket.org/martink90/volatilitybot_public.git
+git clone https://github.com/mkorman90/VolatilityBot.git
 
 install the required dependencies, from the requirements.txt file
 
