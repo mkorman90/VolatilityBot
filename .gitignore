@@ -9,7 +9,8 @@ __pycache__/
 *.so
 
 #VolatilityBot stuff
-Store/ce2d075228034405a02342976bda1c14e2a36b1ee37a4894208880ee4fa6ab3e
+Store/
+GoldenImage/
 
 # Distribution / packaging
 .Python
@@ -20,7 +21,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/

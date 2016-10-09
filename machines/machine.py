@@ -78,14 +78,13 @@ class Machine:
         if self.revert() and self.start():
 
             # Wait 4 seconds for network to reconnect in VM
-            logging.info('[{}] Waiting 4 seconds for network to resore...'.format(self.machine_name))
+            logging.info('[{}] Waiting 4 seconds for network to restore...'.format(self.machine_name))
             time.sleep(4)
 
             logging.info('[{}] Executing (Sample ID: {})'.format(self.machine_name, malware_sample.id))
             if self.send_malware_sample(malware_sample):
 
-            # TODO: If the something in the process fails, set the malware processing as failed
-
+                logging.info('Sleeping {} seconds...'.format(DEFAULT_SLEEP_TIME))
                 time.sleep(DEFAULT_SLEEP_TIME)
 
                 logging.info('[{}] Suspending and processing... (Sample ID: {})'.format(self.machine_name, malware_sample.id))

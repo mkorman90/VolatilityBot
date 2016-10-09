@@ -34,6 +34,7 @@ for vm in MACHINE_INDEX:
         machine_dict[vm].suspend()
         print("[*] Acquiring memory...")
         memdump = MemoryDump(machine_dict[vm].get_memory_path())
+        memdump.profile = machine_dict[vm].memory_profile
 
         gi_dir = os.path.join(VOLATILITYBOT_HOME, 'GoldenImage', machine_dict[vm].machine_name)
 
