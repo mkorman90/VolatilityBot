@@ -13,8 +13,8 @@ __pycache__/
 *.so
 
 #VolatilityBot stuff
-volatilityboy/conf/Store/*
-volatilityboy/conf/GoldenImages/*
+volatilitybot/conf/Store/*
+volatilitybot/conf/GoldenImages/*
 
 # Distribution / packaging
 .Python

@@ -29,11 +29,17 @@ This feature is useful for memory analysis at scale. Usually, this initial proce
 
 ## Installation
 
+* Go to https://github.com/volatilityfoundation/volatility and install Volatility
+
+* Install VolatilityBot:
+```bash
 git clone https://github.com/mkorman90/VolatilityBot.git
+cd Volatilitybot
+python setup.py install
+```
 
-install the required dependencies, from the requirements.txt file
-
-### prepare the VM (Currently only vmware)
+### prepare the virtual machines (Currently only vmware.)
+#### If you want to use only the heuristics feature (on taken memory dumps), there is no need to do these steps.
 1. Create a new virtual machine, with Windows XP up to windows 10 x64.
 2. Make sure the machine has windows defender and FW disabled, and has a static IP
 3. Install python 3.5
@@ -45,18 +51,17 @@ install the required dependencies, from the requirements.txt file
 ### Configuring the host
 
 1. Edit the required parameters, as instructed in the conf/conf.py file
-2. Execute db_builder.py - in order to create the database
-3. Execute gi_builder.py - in order to build the golden images for all active VMs
+2. Execute gi_build_vbot - in order to build the golden images for all active VMs
 
 ###Submit
 
 * Analyze a memory dump using heuristics, and dump output to folder
 ```
-VolatilityBot.py  -m --dump -f /Users/Martin/Downloads/stuxnet.vmem
+volatilitybot -m --dump -f /Users/Martin/Downloads/stuxnet.vmem
 ```
 
 * Submit an executable and analyze it using Volatility:
 ```
-VolatilityBot.py  -f <Sample Path>
-VolatilityBot.py  -D
+volatilitybot -f <Sample Path>
+volatilitybot -D
 ```
