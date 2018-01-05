@@ -2,3 +2,4 @@ distorm3==3.3.4
 pefile==2016.3.28
 yara-python==3.5.0
 python-magic==0.4.12
+elasticsearch==6.0.0
