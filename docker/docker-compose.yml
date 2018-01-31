@@ -31,5 +31,19 @@ services:
     depends_on:
       - elasticsearch
 
+  neo4j:
+    image: neo4j:latest
+    environment:
+      - NEO4J_CACHE_MEMORY=8G
+      - NEO4J_HEAP_MEMORY=32G
+      - NEO4J_AUTH=neo4j/somesafepassword
+    ports:
+     - "7474:7474"
+     - "7687:7687"
+    volumes:
+     - ./db:/data
+    cap_add:
+     - SYS_RESOURCE
+
 networks:
   docker-elk:

@@ -1,6 +1,7 @@
 .idea
 *.ipynb
 docker/es_data/*
+docker/db/*
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template

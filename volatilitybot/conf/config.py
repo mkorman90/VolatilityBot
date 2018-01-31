@@ -17,6 +17,19 @@ ENABLE_THREADING = False
 # ------------ ElasticSearch configuration ------------
 ES_HOSTS = ['localhost:9200']
 
+
+# Neo4j configuration
+NEO4j_USER = 'neo4j'
+NEO4j_PASS = 'somesafepassword'
+
+# deep pe analysis configuration
+
+DAEMON_ZMQ_FRONTEND = 'tcp://127.0.0.1:5559'
+DAEMON_ZMQ_BACKEND = 'tcp://127.0.0.1:5560'
+
+NUM_DPA_WORKERS = 10
+
+
 # ------------ Agent configuration ------------
 # Agent ket is used to verify no unauthorized executables are sent from server to agent
 AGENT_KEY = 'ZZ4UNX4MGVSSCQ920O5CFCXR4UOYZ0S1UW70CLF9BC83E1VHA9W9MX0APTQ0WV0G'

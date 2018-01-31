@@ -27,6 +27,7 @@ parser.add_argument('--profile', help="Specify the profile, instead of having vo
 args = parser.parse_args()
 
 
+
 def main():
 
     db = DataBaseConnection()
