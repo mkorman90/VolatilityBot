@@ -1,12 +1,12 @@
 import os
-import time
 import sys
 import zmq
 
 from volatilitybot.conf.config import DAEMON_ZMQ_FRONTEND
+from volatilitybot.post_processing.deep_pe_analysis.utils import calc_file_sha256
 
 
-def send_task(file_path):
+def send_dpa_task(file_path, dump_type, original_sample_hash, notes=None):
     context = zmq.Context()
     zmq_socket = context.socket(zmq.PUSH)
     zmq_socket.connect(DAEMON_ZMQ_FRONTEND)
@@ -16,10 +16,14 @@ def send_task(file_path):
         print('ERROR: {} is not a file, or does not exist.'.format(file_path))
         return False
 
-    task = {'file_path': file_path}
+    task = {'file_path': file_path,
+            'dump_type': dump_type,
+            'original_sample_hash': original_sample_hash,
+            'notes': notes}
     zmq_socket.send_json(task)
 
 
 if __name__ == '__main__':
-    send_task(sys.argv[1])
+    sample_sha256 = calc_file_sha256(sys.argv[1])
+    send_dpa_task(sys.argv[1], 'original_sample', sample_sha256)
 

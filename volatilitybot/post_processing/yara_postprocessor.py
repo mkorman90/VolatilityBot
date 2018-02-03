@@ -11,7 +11,7 @@ NAME = None
 TIMEOUT = 60
 
 
-def scan_with_yara(sample_dump_instance):
-    return yara_scan_file(sample_dump_instance)
+def scan_with_yara(sample_dump_instance, **kwargs):
+    return yara_scan_file(sample_dump_instance, **kwargs)
 
 

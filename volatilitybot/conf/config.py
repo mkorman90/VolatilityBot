@@ -48,7 +48,7 @@ YARA_FILE_PATH = os.path.join(VOLATILITYBOT_HOME, 'conf', 'yara_rules.yar')
 SEMANTIC_YARA_RULES_PATH = os.path.join(VOLATILITYBOT_HOME, 'conf', 'Semantic_Rules.json')
 
 # Agent sleep time before pausing and analyzing memory
-DEFAULT_SLEEP_TIME = 60
+DEFAULT_SLEEP_TIME = 15
 
 # ------------ VMWARE configuration ------------
 

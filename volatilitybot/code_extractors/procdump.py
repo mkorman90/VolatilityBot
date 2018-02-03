@@ -7,8 +7,9 @@ from volatilitybot.lib.common import pslist
 from volatilitybot.lib.core.database import DataBaseConnection
 from volatilitybot.lib.core.memory_utils import execute_volatility_command
 from volatilitybot.lib.core.sample import SampleDump
-from volatilitybot.lib.common.utils import calc_sha256, calc_md5, calc_ephash, calc_imphash, calc_sha1
+from volatilitybot.lib.common.utils import calc_sha256, calc_md5, calc_ephash, calc_imphash, calc_sha1, yara_scan_file
 from volatilitybot.lib.common.pe_utils import static_analysis, get_strings
+from volatilitybot.post_processing.deep_pe_analysis.submiter import send_dpa_task
 from volatilitybot.post_processing.yara_postprocessor import scan_with_yara
 
 
@@ -52,6 +53,7 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
         # Rename the file, to contain process name
         src = workdir + "/executable." + str(procdata['PID']) + ".exe"
         if os.path.isfile(src):
+
             target_dump_path = workdir + "/" + procdata['Name'] + "." + str(procdata['PID']) + "._exe"
             os.rename(src, target_dump_path)
 
@@ -73,10 +75,22 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
             with open(target_dump_path + '.strings.json', 'w') as strings_output_file:
                 strings_output_file.write(json.dumps(get_strings(current_dump), indent=4))
 
-            with open(target_dump_path + '.static_analysis.json', 'w') as strings_output_file:
-                strings_output_file.write(json.dumps(static_analysis(current_dump), indent=4))
+            try:
+                static_analysis_report = static_analysis(current_dump)
+                with open(target_dump_path + '.static_analysis.json', 'w') as strings_output_file:
+                    strings_output_file.write(json.dumps(static_analysis_report, indent=4))
+            except Exception as ex:
+                logging.info('[*] Static analysis failed for {}: {}'.format(target_dump_path, ex))
 
-            with open(target_dump_path + '.yara.json', 'w') as yara_output_file:
-                yara_output_file.write(json.dumps(scan_with_yara(current_dump), indent=4))
+            try:
+                with open(target_dump_path + '.yara.json', 'w') as yara_output_file:
+                    yara_output_file.write(json.dumps(yara_scan_file(target_dump_path, path=True), indent=4))
+            except Exception as ex:
+                logging.info('[*] Yara scan failed for {}: {}'.format(target_dump_path, ex))
+
+            logging.info('[*] Submitting the code to dpa engine: {},{},{}'.format(target_dump_path, 'new_process',
+                                                                                  malware_sample.id))
+            send_dpa_task(target_dump_path, 'new_process', malware_sample.id, notes=procdata['Name'])
+
         else:
             logging.info('Could not dump process {} (PID: {})'.format(procdata['Name'], str(procdata['PID'])))

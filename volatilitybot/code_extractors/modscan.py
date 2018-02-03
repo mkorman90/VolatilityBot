@@ -9,6 +9,7 @@ from volatilitybot.lib.core.sample import SampleDump
 from volatilitybot.conf.config import VOLATILITYBOT_HOME
 from volatilitybot.lib.common.pe_utils import get_strings
 from volatilitybot.lib.common.utils import get_workdir_path, calc_md5, calc_sha256, calc_ephash, calc_imphash, calc_sha1
+from volatilitybot.post_processing.deep_pe_analysis.submiter import send_dpa_task
 from volatilitybot.post_processing.yara_postprocessor import scan_with_yara
 
 
@@ -83,10 +84,16 @@ def run_extractor(memory_instance, malware_sample,machine_instance=None):
             })
             db.add_dump(current_dump)
 
-
             with open(dest + '.strings.json', 'w') as strings_output_file:
                 strings_output_file.write(json.dumps(get_strings(current_dump), indent=4))
 
-            with open(dest + '.yara.json', 'w') as yara_output_file:
-                yara_output_file.write(json.dumps(scan_with_yara(current_dump), indent=4))
+            try:
+                with open(dest + '.yara.json', 'w') as yara_output_file:
+                    yara_output_file.write(json.dumps(scan_with_yara(current_dump), indent=4))
+            except Exception as ex:
+                logging.info('[*] Yara scan failed for {}: {}'.format(dest, ex))
+
+            logging.info('[*] Submitting the code to dpa engine: {},{},{}'.format(dest, 'loaded_driver',
+                                                                                  malware_sample.id))
+            send_dpa_task(dest, 'loaded_driver', malware_sample.id)
 

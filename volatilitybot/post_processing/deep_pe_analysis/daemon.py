@@ -1,6 +1,7 @@
 import zmq
 
 from volatilitybot.conf.config import DAEMON_ZMQ_FRONTEND, DAEMON_ZMQ_BACKEND
+from volatilitybot.post_processing.deep_pe_analysis.utils import _initialize_dpa
 
 
 def launch_daemon():
@@ -25,4 +26,5 @@ def launch_daemon():
 
 
 if __name__ == "__main__":
+    _initialize_dpa()
     launch_daemon()

@@ -22,6 +22,7 @@ class MalwareSample:
         self.sample_data = {}
 
         sha256 = calc_sha256(self.file_path)
+        self.id = sha256
 
         # Move file to store
         target_directory = os.path.join(STORE_PATH, sha256)
@@ -52,6 +53,7 @@ class MalwareSample:
                                      'sha1': calc_sha1(self.file_path),
                                      'sha256': calc_sha256(self.file_path),
                                      'timestamp': pendulum.now().isoformat(),
+                                     'id': self.id,
                                      'status': 'waiting'})
 
     def enqueue(self):
