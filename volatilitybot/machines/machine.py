@@ -7,6 +7,7 @@ import time
 from volatilitybot.conf.config import DEFAULT_SLEEP_TIME
 from volatilitybot.lib.common.utils import agent_send_sample
 from volatilitybot.lib.common.analyze_memory import analyze_memory
+from volatilitybot.lib.utils.postgresql import update_sample_status
 
 
 class Machine:
@@ -73,7 +74,6 @@ class Machine:
         logging.info(
             'Machine {}  Will handle sample ID {}'.format(self.machine_name, malware_sample.sample_data['sha256']))
 
-        self.status = 'executing'
         result = None
 
         logging.info('[{}] Reverting (Sample ID: {})'.format(self.machine_name, malware_sample.sample_data['sha256']))
@@ -119,7 +119,7 @@ class Machine:
         if status == 'failed':
             self.cleanup()
 
-        malware_sample.set_status(status)
+        update_sample_status(malware_sample.sample_data['sha256'],status)
         logging.info(
             'Processing of sample {} by {} completed with status: {}.'.format(malware_sample.sample_data['sha256'],
                                                                               self.machine_name,

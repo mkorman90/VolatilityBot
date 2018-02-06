@@ -1,13 +1,14 @@
 #! /usr/bin/python
 
 import json
+import os
 
-from volatilitybot.conf.config import VOLATILITYBOT_HOME
+from volatilitybot.conf.config import GI_DIR
 from volatilitybot.lib.core.memory_utils import execute_volatility_command
 
 
 def load_golden_image(machine_instance):
-    with open(VOLATILITYBOT_HOME + '/GoldenImages/' + machine_instance.machine_name + '/pslist.json') as data_file:
+    with open(os.path.join(GI_DIR,machine_instance.machine_name,'pslist.json')) as data_file:
         return json.load(data_file)
 
 

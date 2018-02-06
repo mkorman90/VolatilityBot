@@ -8,7 +8,7 @@ import shutil
 import pendulum
 from elasticsearch import NotFoundError
 
-from volatilitybot.lib.core.database import DataBaseConnection
+from volatilitybot.lib.core.es_utils import DataBaseConnection
 
 from volatilitybot.conf.config import STORE_PATH
 from volatilitybot.lib.common.utils import calc_md5, calc_sha256, calc_sha1, calc_ephash, calc_imphash
@@ -73,18 +73,6 @@ class MalwareSample:
             logging.info('Adding new sample')
             db.add_sample(self)
             return True
-
-    def set_status(self, f_status):
-        """
-        Changes the status of the sample in DB and object
-        :param f_status: ['completed','failed']
-        :return:
-        """
-        db = DataBaseConnection()
-        res = db.es.get(index='volatilitybot-samples', doc_type='sample', id=self.sample_data['sha256'])
-        res['_source']['status'] = f_status
-        db.es.index(index='volatilitybot-samples', doc_type='sample', id=self.sample_data['sha256'],
-                    body=res['_source'])
 
     def print_sample_details(self):
         logging.info(json.dumps(self.sample_data, indent=4))

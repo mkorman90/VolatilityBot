@@ -2,15 +2,12 @@ import json
 import logging
 import os
 
-from volatilitybot.lib.core.database import DataBaseConnection
+from volatilitybot.conf.config import GI_DIR
+from volatilitybot.lib.common.utils import get_workdir_path, calc_md5, calc_sha256, calc_ephash, calc_imphash, calc_sha1
+from volatilitybot.lib.core.es_utils import DataBaseConnection
 from volatilitybot.lib.core.memory_utils import execute_volatility_command
 from volatilitybot.lib.core.sample import SampleDump
-
-from volatilitybot.conf.config import VOLATILITYBOT_HOME
-from volatilitybot.lib.common.pe_utils import get_strings
-from volatilitybot.lib.common.utils import get_workdir_path, calc_md5, calc_sha256, calc_ephash, calc_imphash, calc_sha1
-from volatilitybot.post_processing.deep_pe_analysis.submiter import send_dpa_task
-from volatilitybot.post_processing.yara_postprocessor import scan_with_yara
+from volatilitybot.post_processing.utils.submiter import send_dump_analysis_task
 
 
 def create_golden_image(memory_instance):
@@ -29,8 +26,7 @@ def run_extractor(memory_instance, malware_sample,machine_instance=None):
     mod_white_list = ['TDTCP.SYS', 'RDPWD.SYS', 'kmixer.sys', 'Bthidbus.sys', 'rdpdr.sys', 'tdtcp.sys', 'tssecsrv.sys']
 
     # Get golden image data:
-    with open(os.path.join(VOLATILITYBOT_HOME, 'GoldenImages', machine_instance.machine_name,
-                           'modscan.json')) as data_file:
+    with open(os.path.join(GI_DIR, machine_instance.machine_name, 'modscan.json')) as data_file:
         modscan_golden_image = json.load(data_file)
 
     modscan_run = execute_volatility_command(memory_instance, 'modscan')
@@ -82,18 +78,8 @@ def run_extractor(memory_instance, malware_sample,machine_instance=None):
                 'parent_sample': malware_sample.id
 
             })
-            db.add_dump(current_dump)
-
-            with open(dest + '.strings.json', 'w') as strings_output_file:
-                strings_output_file.write(json.dumps(get_strings(current_dump), indent=4))
-
-            try:
-                with open(dest + '.yara.json', 'w') as yara_output_file:
-                    yara_output_file.write(json.dumps(scan_with_yara(current_dump), indent=4))
-            except Exception as ex:
-                logging.info('[*] Yara scan failed for {}: {}'.format(dest, ex))
 
             logging.info('[*] Submitting the code to dpa engine: {},{},{}'.format(dest, 'loaded_driver',
                                                                                   malware_sample.id))
-            send_dpa_task(dest, 'loaded_driver', malware_sample.id)
+            send_dump_analysis_task(dest, 'loaded_driver', malware_sample.id)
 

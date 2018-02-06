@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 
 from volatilitybot.lib.common.utils import calc_sha256
-from volatilitybot.lib.core.database import DataBaseConnection
+from volatilitybot.lib.core.es_utils import DataBaseConnection
 from volatilitybot.lib.core.sample import MalwareSample
 
 

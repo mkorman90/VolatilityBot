@@ -9,7 +9,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 
 from volatilitybot.lib.common.utils import create_workdir
-from volatilitybot.lib.core.database import DataBaseConnection
+from volatilitybot.lib.core.es_utils import DataBaseConnection
 from volatilitybot.lib.core.memory import MemoryDump
 from volatilitybot.lib.core.sample import MalwareSample
 from volatilitybot.code_extractors.heuristics import run_heuristics

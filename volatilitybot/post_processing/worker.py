@@ -1,10 +1,10 @@
-import zmq
 import random
-
 from multiprocessing import Process
 
-from volatilitybot.conf.config import DAEMON_ZMQ_BACKEND, NUM_DPA_WORKERS
-from volatilitybot.post_processing.deep_pe_analysis.analyze import process_file
+import zmq
+
+from volatilitybot.conf.config import POST_PROCESSORS_ZMQ_BACKEND, NUM_DPA_WORKERS
+from volatilitybot.post_processing.analyze import process_file
 
 
 def launch_worker():
@@ -13,7 +13,7 @@ def launch_worker():
     context = zmq.Context()
     # receive work
     consumer_receiver = context.socket(zmq.PULL)
-    consumer_receiver.connect(DAEMON_ZMQ_BACKEND)
+    consumer_receiver.connect(POST_PROCESSORS_ZMQ_BACKEND)
     while True:
         work = consumer_receiver.recv_json()
 

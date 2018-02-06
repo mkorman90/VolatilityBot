@@ -1,10 +1,9 @@
 import distorm3
 import pefile
 import r2pipe
-
 from tqdm import tqdm
 
-from volatilitybot.post_processing.deep_pe_analysis.utils import calc_file_sha256, calc_func_hash_for_code, \
+from volatilitybot.post_processing.utils.dpa_utils import calc_file_sha256, calc_func_hash_for_code, \
     add_sample_to_graphdb, \
     get_sample, add_function_to_graphdb, get_function, add_call_relation_to_graphdb, add_dump_to_graphdb, \
     add_dump_relation_to_graphdb, get_dump, add_function_to_es
@@ -56,6 +55,7 @@ def process_file(file_path, dump_type, original_sample_hash, dump_notes=None):
 
     add_dump_relation_to_graphdb(sample_node, dump_node)
 
+    # Get file functions for neo4j
     funcs = get_file_functions(file_path)
 
     # Skip if no functions found.
@@ -73,7 +73,6 @@ def process_file(file_path, dump_type, original_sample_hash, dump_notes=None):
 
         # Skip function if it cotains only zeros:
 
-
         add_function_to_graphdb(func['f_hash'], props)
 
         # Add function to elastic search:
@@ -81,5 +80,17 @@ def process_file(file_path, dump_type, original_sample_hash, dump_notes=None):
 
         function_node = get_function(func['f_hash'])
         add_call_relation_to_graphdb(dump_node, function_node)
+
+    # TODO:
+
+    # Perform static analysis on the dump
+
+    # Scan with YARA
+
+    # Extract strings
+
+    # Scan with Clam?
+
+    print('Processing of dump at {} done...'.format(file_path))
 
 

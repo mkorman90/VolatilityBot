@@ -4,8 +4,9 @@ import sys
 from pathlib import Path
 
 # ------------ General configuration ------------
-VOLATILITYBOT_HOME = str(Path(__file__).parent)
-STORE_PATH = os.path.join(VOLATILITYBOT_HOME, 'Store')
+VOLATILITYBOT_HOME = str(Path(__file__).parent.parent)
+STORE_PATH = os.path.join(VOLATILITYBOT_HOME, 'store')
+GI_DIR = os.path.join(VOLATILITYBOT_HOME,'conf','golden_images')
 DB_ENGINE = 'sqlite:///' + os.path.join(STORE_PATH, 'db.sqlite3')
 LOG_PATH = '/tmp'
 VOLATILITY_PATH = '/usr/local/bin/vol.py'
@@ -17,15 +18,22 @@ ENABLE_THREADING = False
 # ------------ ElasticSearch configuration ------------
 ES_HOSTS = ['localhost:9200']
 
+# Postgresql configuration
+PSQL_DB_NAME = 'volatilitybot'
+PSQL_TABLE_NAME = 'volatilitybot_queue'
+PSQL_USERNAME = 'postgres'
+PSQL_PASSWORD = 'somesafepassword'
+PSQL_HOSTNAME = 'localhost'
 
 # Neo4j configuration
 NEO4j_USER = 'neo4j'
 NEO4j_PASS = 'somesafepassword'
 
-# deep pe analysis configuration
+VIRTUAL_MACHINES_ZMQ = 'tcp://127.0.0.1:5558'
 
-DAEMON_ZMQ_FRONTEND = 'tcp://127.0.0.1:5559'
-DAEMON_ZMQ_BACKEND = 'tcp://127.0.0.1:5560'
+# Post processors configuration
+POST_PROCESSORS_ZMQ_FRONTEND = 'tcp://127.0.0.1:5559'
+POST_PROCESSORS_ZMQ_BACKEND = 'tcp://127.0.0.1:5560'
 
 NUM_DPA_WORKERS = 10
 

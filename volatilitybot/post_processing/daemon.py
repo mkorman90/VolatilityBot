@@ -1,7 +1,6 @@
 import zmq
 
-from volatilitybot.conf.config import DAEMON_ZMQ_FRONTEND, DAEMON_ZMQ_BACKEND
-from volatilitybot.post_processing.deep_pe_analysis.utils import _initialize_dpa
+from volatilitybot.conf.config import POST_PROCESSORS_ZMQ_FRONTEND, POST_PROCESSORS_ZMQ_BACKEND
 
 
 def launch_daemon():
@@ -9,11 +8,11 @@ def launch_daemon():
         context = zmq.Context(1)
         # Socket facing clients
         frontend = context.socket(zmq.PULL)
-        frontend.bind(DAEMON_ZMQ_FRONTEND)
+        frontend.bind(POST_PROCESSORS_ZMQ_FRONTEND)
 
         # Socket facing services
         backend = context.socket(zmq.PUSH)
-        backend.bind(DAEMON_ZMQ_BACKEND)
+        backend.bind(POST_PROCESSORS_ZMQ_BACKEND)
 
         zmq.device(zmq.STREAMER, frontend, backend)
     except Exception as e:
@@ -26,5 +25,4 @@ def launch_daemon():
 
 
 if __name__ == "__main__":
-    _initialize_dpa()
     launch_daemon()

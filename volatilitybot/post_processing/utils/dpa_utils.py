@@ -18,38 +18,6 @@ graph = py2neo.Graph("http://localhost:7474/db/data/")
 DPA_FUNCTIONS_INDEX = 'volatilitybot-functions'
 
 
-def _initialize_dpa():
-    """
-    Initialize neo4j DB, with relevant indices, etc...
-    :return:
-    """
-    try:
-        graph.schema.create_index('sample', 'sample_hash')
-    except Exception as ex:
-        print(ex)
-        if ex.__class__.__name__ != 'ConstraintViolationException':
-            exit(100)
-        print('sample index already exists...')
-
-    try:
-        graph.schema.create_index('function', 'fhash')
-    except Exception as ex:
-        print(ex)
-        if ex.__class__.__name__ != 'ConstraintViolationException':
-            exit(100)
-
-    try:
-        graph.schema.create_index('dump', 'dump_hash')
-    except Exception as ex:
-        print(ex)
-        if ex.__class__.__name__ != 'ConstraintViolationException':
-            exit(100)
-
-    es = Elasticsearch(ES_HOSTS)
-    if not es.indices.exists(DPA_FUNCTIONS_INDEX):
-        es.indices.create(DPA_FUNCTIONS_INDEX)
-
-
 def get_function(func_hash):
     selected = graph.node_selector.select('function', **{'fhash': func_hash})
     if selected.first():

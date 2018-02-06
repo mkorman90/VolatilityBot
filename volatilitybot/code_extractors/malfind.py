@@ -1,21 +1,18 @@
 #! /usr/bin/python
-import json
 import logging
 import os
 import re
-import pefile
 
+import pefile
 from pefile import PEFormatError
 
 from volatilitybot.lib.common import pslist
-from volatilitybot.lib.core.database import DataBaseConnection
+from volatilitybot.lib.common.pe_utils import fix_pe_from_memory
+from volatilitybot.lib.common.utils import get_workdir_path, calc_sha256, calc_md5, calc_ephash, calc_imphash, calc_sha1
+from volatilitybot.lib.core.es_utils import DataBaseConnection
 from volatilitybot.lib.core.memory_utils import execute_volatility_command
 from volatilitybot.lib.core.sample import SampleDump
-from volatilitybot.post_processing.deep_pe_analysis.submiter import send_dpa_task
-from volatilitybot.post_processing.yara_postprocessor import scan_with_yara
-from volatilitybot.lib.common.pe_utils import fix_pe_from_memory, static_analysis, get_strings
-from volatilitybot.lib.common.utils import get_workdir_path, calc_sha256, calc_md5, calc_ephash, calc_imphash, calc_sha1
-from volatilitybot.post_processing.SemanticAnalyzer2 import semantically_analyze
+from volatilitybot.post_processing.utils.submiter import send_dump_analysis_task
 
 
 def create_golden_image(self):
@@ -30,7 +27,10 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
     pslist_new_data = pslist.get_new_pslist(memory_instance)
 
     target_dump_dir = os.path.join(get_workdir_path(malware_sample), 'injected')
-    os.mkdir(target_dump_dir)
+    try:
+        os.mkdir(target_dump_dir)
+    except FileExistsError:
+        pass
 
     output = execute_volatility_command(memory_instance, 'malfind', extra_flags='-D {}/'.format(target_dump_dir),
                                         has_json_output=False)
@@ -98,31 +98,8 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
                     'parent_sample': malware_sample.id
 
                 })
-                db.add_dump(current_dump)
-
-                # Load post processing modules here, if needed
-                with open(outputpath + '.strings.json', 'w') as strings_output_file:
-                    strings_output_file.write(json.dumps(get_strings(current_dump, imagebase=imagebase), indent=4))
-
-                try:
-                    with open(outputpath + '.static_analysis.json', 'w') as static_analysis_output_file:
-                        static_analysis_output_file.write(json.dumps(static_analysis(current_dump), indent=4))
-                except Exception as ex:
-                    logging.info('[*] Stativ analysis failed for {}: {}'.format(outputpath, ex))
-
-                try:
-                    with open(outputpath + '.yara.json', 'w') as yara_output_file:
-                        yara_output_file.write(json.dumps(scan_with_yara(current_dump), indent=4))
-                except Exception as ex:
-                    logging.info('[*] Yara scan failed for {}: {}'.format(outputpath, ex))
-
-                try:
-                    with open(outputpath + '.ysa.json', 'w') as yara_semantic_output_file:
-                        yara_semantic_output_file.write(json.dumps(semantically_analyze(current_dump), indent=4))
-                except Exception as ex:
-                    logging.info('[*] Yara semantic analysis failed for {}: {}'.format(outputpath, ex))
 
                 logging.info('[*] Submitting the code to dpa engine: {},{},{}'.format(outputpath, 'injected_code',
                                                                                       malware_sample.id))
-                send_dpa_task(outputpath, 'injected_code', malware_sample.id,
-                              notes='injected to {}'.format(process_name))
+                send_dump_analysis_task(outputpath, 'injected_code', malware_sample.id,
+                                        notes='injected to {}'.format(process_name))

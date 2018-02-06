@@ -12,12 +12,12 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./es_data:/var/lib/elasticsearch
+      - ./es_data:/usr/share/elasticsearch/data
       - ./es_config/elasticsearch.yml:/etc/elasticsearch/config/elasticsearch.yml
     ports:
       - 9200:9200
     networks:
-      - docker-elk
+      - volatilitybot-net
 
   kibana:
     image: docker.elastic.co/kibana/kibana:6.1.1
@@ -25,7 +25,7 @@ services:
     environment:
       - "ELASTICSEARCH_URL=http://elasticsearch:9200"
     networks:
-      - docker-elk
+      - volatilitybot-net
     ports:
       - 5601:5601
     depends_on:
@@ -44,6 +44,17 @@ services:
      - ./db:/data
     cap_add:
      - SYS_RESOURCE
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: somesafepassword
+    ports:
+     - "5432:5432"
+    volumes:
+     - ./postgresql_data:/var/lib/postgresql
+    networks:
+      - volatilitybot-net
 
 networks:
-  docker-elk:
+  volatilitybot-net:

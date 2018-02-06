@@ -39,7 +39,7 @@ def main():
             memdump = MemoryDump(machine_dict[vm].get_memory_path())
             memdump.profile = machine_dict[vm].memory_profile
 
-            gi_dir = os.path.join(VOLATILITYBOT_HOME, 'GoldenImages', machine_dict[vm].machine_name)
+            gi_dir = os.path.join(VOLATILITYBOT_HOME, 'golden_images', machine_dict[vm].machine_name)
 
             if os.path.exists(gi_dir):
                 print("[*] Folder already exists, deleting and recreating")

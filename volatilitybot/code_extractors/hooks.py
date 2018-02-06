@@ -4,7 +4,7 @@ import os
 import re
 import subprocess
 
-from volatilitybot.lib.core.database import DataBaseConnection
+from volatilitybot.lib.core.es_utils import DataBaseConnection
 
 from volatilitybot.conf.config import VOLATILITY_PATH
 from volatilitybot.lib.common.utils import get_workdir_path
