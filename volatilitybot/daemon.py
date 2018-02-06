@@ -24,9 +24,12 @@ def launch_vm_worker(machine_instance):
     with zmq.Context() as ctx:
         # receive work
         consumer_receiver = ctx.socket(zmq.PULL)
-        consumer_receiver.connect(VIRTUAL_MACHINES_ZMQ)
+        consumer_receiver.bind(VIRTUAL_MACHINES_ZMQ)
         while True:
+            logging.info('[{}] Waiting for a task...'.format(worker_name))
             work = consumer_receiver.recv_json()
+
+            logging.info('[{}] Got a task! {}'.format(worker_name,work))
 
             file_path = work.get('sample_path')
             sample_sha256 = work.get('sample_sha256')
@@ -67,7 +70,7 @@ def main():
 
     with zmq.Context() as ctx:
         with ctx.socket(zmq.PUSH) as zmq_socket:
-            zmq_socket.bind(VIRTUAL_MACHINES_ZMQ)
+            zmq_socket.connect(VIRTUAL_MACHINES_ZMQ)
             while True:
                 samples_in_queue = get_sample_queue()
                 if samples_in_queue:

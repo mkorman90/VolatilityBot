@@ -1,5 +1,6 @@
 import os
 import py2neo
+import shutil
 
 from volatilitybot.conf.config import PSQL_DB_NAME, PSQL_TABLE_NAME, STORE_PATH
 from volatilitybot.lib.utils.es import EsInstance
@@ -28,7 +29,7 @@ if response != 'YES':
 print('Removing files from store:')
 for dir in os.scandir(STORE_PATH):
     print(dir.path)
-    os.unlink(dir.path)
+    shutil.rmtree(dir.path)
 
 print('Recreating postgresql DB')
 with db_cursor() as cur:

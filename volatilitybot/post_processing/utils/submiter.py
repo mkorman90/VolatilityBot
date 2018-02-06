@@ -4,7 +4,7 @@ import sys
 import zmq
 
 from volatilitybot.conf.config import POST_PROCESSORS_ZMQ_FRONTEND
-from volatilitybot.post_processing.utils import calc_file_sha256
+from volatilitybot.post_processing.utils.dpa_utils import calc_file_sha256
 
 
 def send_dump_analysis_task(file_path, dump_type, original_sample_hash, notes=None):
