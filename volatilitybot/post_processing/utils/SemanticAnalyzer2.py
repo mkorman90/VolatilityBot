@@ -93,7 +93,7 @@ def get_ysa_strings(f_filename, imagebase=0):
             except TypeError:
                 pass
 
-            if len(result) >= 4:
+            if result and len(result) >= 4:
                 string_dict.append({'string': result, 'offset': imagebase + offset})
 
             result = ""

@@ -19,7 +19,8 @@ This feature is useful for memory analysis at scale. Usually, this initial proce
   * Extraction of injected code
   * Dump of new processes
   * Yara scan, static analysis, string extraction, etc. on all outputs
-+ Automated heuristic analysis of memory dumps 
++ Deep binary analysis engine... (EXPLAIN)
++ Automated heuristic analysis of memory dumps
   * Detect anomallies using heuristics and dump the relevant code
   * Yara scan, static analysis, string extraction, etc. on all outputs
             
@@ -31,6 +32,8 @@ This feature is useful for memory analysis at scale. Usually, this initial proce
 
 * Go to https://github.com/volatilityfoundation/volatility and install Volatility
 
+* Install radare2 from: https://github.com/radare/radare2.git
+
 * Install VolatilityBot:
 ```bash
 git clone https://github.com/mkorman90/VolatilityBot.git
@@ -39,7 +42,6 @@ python setup.py install
 ```
 
 ### prepare the virtual machines (Currently only vmware.)
-#### If you want to use only the heuristics feature (on taken memory dumps), there is no need to do these steps.
 1. Create a new virtual machine, with Windows XP up to windows 10 x64.
 2. Make sure the machine has windows defender and FW disabled, and has a static IP
 3. Install python 3.5
@@ -55,13 +57,19 @@ python setup.py install
 
 ###Submit
 
-* Analyze a memory dump using heuristics, and dump output to folder
+* Launch the system (execute each command in a new terminal):
 ```
-volatilitybot -m --dump -f /Users/Martin/Downloads/stuxnet.vmem
+volatilitybot_d
+volatilitybot_post_processing_daemon
+volatilitybot_post_processing_workers
 ```
 
 * Submit an executable and analyze it using Volatility:
 ```
-volatilitybot -f <Sample Path>
-volatilitybot -D
+volatilitybot_submit <Sample Path>
 ```
+
+* Utils:
+    - a
+    - b
+    - c

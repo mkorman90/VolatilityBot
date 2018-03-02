@@ -73,18 +73,6 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
             pe.close()
 
             if process_name != 'unknown':
-                # Generate impscan IDC
-                output = execute_volatility_command(memory_instance, 'impscan',
-                                                    extra_flags='-b {} -p {} --output=idc'.format(imagebase, pid),
-                                                    has_json_output=False)
-
-                # Write IDC data to file
-                with open(outputpath + '.idc', 'w') as idc:
-                    idc.write('#include <idc.idc>\n')
-                    idc.write('static main(void) {{\n')
-                    idc.write(output)
-                    idc.write('Exit(0);}}')
-
                 current_dump = SampleDump(outputpath)
 
                 current_dump.dump_data.update({

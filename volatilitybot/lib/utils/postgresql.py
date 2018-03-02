@@ -45,8 +45,15 @@ def get_sample_queue(status='waiting'):
 
 
 def update_sample_status(sample_sha256, status):
-    print('settings status of {} to: {}'.format(sample_sha256,status))
+    print('settings status of {} to: {}'.format(sample_sha256, status))
     with db_cursor(dbname=PSQL_DB_NAME) as cur:
         result = cur.execute('update {} set status = %s where sha256 = %s'.format(PSQL_TABLE_NAME),
                              (status, sample_sha256))
+    return True
+
+
+def re_enqueue_all_sent():
+    with db_cursor(dbname=PSQL_DB_NAME) as cur:
+        result = cur.execute('update {} set status = %s where status = %s'.format(PSQL_TABLE_NAME),
+                             ('waiting', 'sent',))
     return True

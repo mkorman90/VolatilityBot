@@ -208,7 +208,7 @@ def get_strings(sample_dump_instance, imagebase=None, min_length=4):
             except TypeError:
                 pass
 
-            if len(result) >= min_length:
+            if result and len(result) >= min_length:
                 if isinstance(imagebase, int):
                     string_dict.append({'string': result, 'offset': hex(imagebase + int(offset))})
                 else:

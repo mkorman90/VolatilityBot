@@ -72,3 +72,10 @@ except Exception as ex:
     print(ex)
     if ex.__class__.__name__ != 'ConstraintViolationException':
         exit(100)
+
+try:
+    graph.schema.create_index('api_call', 'callee')
+except Exception as ex:
+    print(ex)
+    if ex.__class__.__name__ != 'ConstraintViolationException':
+        exit(100)

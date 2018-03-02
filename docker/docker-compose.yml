@@ -35,7 +35,7 @@ services:
     image: neo4j:latest
     environment:
       - NEO4J_CACHE_MEMORY=8G
-      - NEO4J_HEAP_MEMORY=32G
+      - NEO4J_HEAP_MEMORY=64G
       - NEO4J_AUTH=neo4j/somesafepassword
     ports:
      - "7474:7474"

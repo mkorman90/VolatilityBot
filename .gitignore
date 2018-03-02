@@ -2,6 +2,7 @@
 *.ipynb
 docker/es_data/*
 docker/db/*
+volatilitybot/store/*
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
