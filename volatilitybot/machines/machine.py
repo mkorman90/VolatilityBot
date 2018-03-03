@@ -59,7 +59,8 @@ class Machine:
         :return:
         """
         logging.info(
-            'Going to send malware sample {} to machine {} with ip {}'.format(malware_sample.sample_data['sha256'], self.machine_name,
+            'Going to send malware sample {} to machine {} with ip {}'.format(malware_sample.sample_data['sha256'],
+                                                                              self.machine_name,
                                                                               self.ip_address))
         if agent_send_sample(self, malware_sample):
             return True
@@ -103,14 +104,14 @@ class Machine:
                 logging.error('Could not send sample to machine {}'.format(self.machine_name))
 
             logging.info(
-                'Machine {} finished processing sample ID {} result: {}'.format(self.machine_name,
-                                                                                malware_sample.sample_data['sha256'],
-                                                                                result))
+                'Machine {} finished processing sample ID {}.'.format(self.machine_name,
+                                                                      malware_sample.sample_data['sha256']))
         status = 'failed'
 
         if result is not None:
             with open(os.path.join(os.path.dirname(os.path.realpath(malware_sample.file_path)),
-                                   'report' + str(malware_sample.sample_data['sha256']) + '.json'), 'w+') as result_file:
+                                   'report' + str(malware_sample.sample_data['sha256']) + '.json'),
+                      'w+') as result_file:
                 result_file.write(json.dumps(result, indent=4))
 
             # Change the status of sample to completed, and machine back to idle
@@ -119,7 +120,7 @@ class Machine:
         if status == 'failed':
             self.cleanup()
 
-        update_sample_status(malware_sample.sample_data['sha256'],status)
+        update_sample_status(malware_sample.sample_data['sha256'], status)
         logging.info(
             'Processing of sample {} by {} completed with status: {}.'.format(malware_sample.sample_data['sha256'],
                                                                               self.machine_name,
