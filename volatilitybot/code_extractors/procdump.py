@@ -17,27 +17,34 @@ def create_golden_image(machine_instance):
 NAME = 'process_dump'
 TIMEOUT = 60
 
+WHITELISTED = ['taskhost.exe', 'wmiapsrv.exe', 'python.exe', 'conhost.exe']
 
-def run_extractor(memory_instance, malware_sample, machine_instance=None):
-    golden_image = pslist.load_golden_image(machine_instance)
-    new_pslist = pslist.get_new_pslist(memory_instance)
 
+def get_new_processes(golden_image, new_pslist):
     new_processes = []
     for proc in new_pslist:
         new_proc = True
+        whitelisted = False
         for proc_gi in golden_image:
             if proc['PID'] == proc_gi['PID']:
                 new_proc = False
                 break
 
-            # TODO! Local patch!! Remove on production!!
-            if proc['Name'] == 'wmiprvse.exe':
-                new_proc = False
-                break
-
         if new_proc:
             logging.info('Identified a new process: {} - {}'.format(proc['PID'], proc['Name']))
+            if proc['Name'].lower() in WHITELISTED:
+                whitelisted = True
+
+            proc.update({'whitelisted': whitelisted})
             new_processes.append(proc)
+    return new_processes
+
+
+def run_extractor(memory_instance, malware_sample, machine_instance=None):
+    golden_image = pslist.load_golden_image(machine_instance)
+    new_pslist = pslist.get_new_pslist(memory_instance)
+
+    new_processes = get_new_processes(golden_image, new_pslist)
 
     workdir = os.path.dirname(os.path.realpath(malware_sample.file_path))
     db = DataBaseConnection()
@@ -67,9 +74,16 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
 
             })
 
-            logging.info('[*] Submitting the code to dump analysis engine: {},{},{}'.format(target_dump_path, 'new_process',
-                                                                                  malware_sample.id))
-            send_dump_analysis_task(target_dump_path, 'new_process', malware_sample.id, notes=procdata['Name'])
+            logging.info(
+                '[*] Submitting the code to dump analysis engine: {},{},{}'.format(target_dump_path, 'new_process',
+                                                                                   malware_sample.id))
+            notes = {
+                'process_name': procdata['Name'],
+                'whitelisted': procdata['whitelisted']
+            }
+            send_dump_analysis_task(target_dump_path, 'new_process', malware_sample.id, notes=notes)
+
+            current_dump.report()
 
         else:
             logging.info('Could not dump process {} (PID: {})'.format(procdata['Name'], str(procdata['PID'])))

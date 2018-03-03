@@ -59,12 +59,12 @@ def get_file_functions(file_path):
     return function_hashes
 
 
-def process_file(file_path, dump_type, original_sample_hash, dump_notes=None):
+def process_file(file_path, dump_type, original_sample_hash, dump_notes=None, whitelisted=False):
     add_sample_to_graphdb(original_sample_hash)
     sample_node = get_sample(original_sample_hash)
 
     dump_hash = calc_file_sha256(file_path)
-    add_dump_to_graphdb(dump_hash, dump_type, dump_notes)
+    add_dump_to_graphdb(dump_hash, dump_type, dump_notes, whitelisted)
     dump_node = get_dump(dump_hash)
 
     add_dump_relation_to_graphdb(sample_node, dump_node)

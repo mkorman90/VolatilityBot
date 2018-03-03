@@ -4,6 +4,8 @@ docker/es_data/*
 docker/db/*
 volatilitybot/store/*
 
+.pytest_cache/*
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
 # Byte-compiled / optimized / DLL files

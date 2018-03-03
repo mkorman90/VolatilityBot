@@ -11,17 +11,18 @@ IMAGE_NT_OPTIONAL_HDR32_MAGIC = hex(0x10b)
 IMAGE_NT_OPTIONAL_HDR64_MAGIC = hex(0x20b)
 
 
-def static_analysis(sample_dump_instance):
+def static_analysis(pe_path):
     try:
-        pe = pefile.PE(sample_dump_instance.binary_path)
+        pe = pefile.PE(pe_path)
         report = dict()
         report['imports'] = get_imports(pe)
         report['exports'] = get_exports(pe)
-        report['general'] = {'md5': calc_md5(sample_dump_instance.binary_path),
-                             'sha256': calc_sha256(sample_dump_instance.binary_path),
-                             'imphash': calc_imphash(sample_dump_instance.binary_path)}
+        report['general'] = {'md5': calc_md5(pe_path),
+                             'sha256': calc_sha256(pe_path),
+                             'imphash': calc_imphash(pe_path)}
         report['sections'] = get_section_data(pe)
         report['resources'] = get_resource_data(pe)
+        report['strings'] = get_strings(pe_path)
 
         return report
     except PEFormatError as exception:
@@ -30,6 +31,7 @@ def static_analysis(sample_dump_instance):
     except AttributeError as exception:
         logging.error('Could not load PE file: {}'.format(exception))
         return None
+
 
 def is_64bit(pe):
     # Check PE arch. if 0x10b then
@@ -169,10 +171,10 @@ def fix_pe_from_memory(pe, imagebase=None):
     return pe
 
 
-def get_strings(sample_dump_instance, imagebase=None, min_length=4):
+def get_strings(pe_path, imagebase=None, min_length=4):
     """
     Get strings and their relevant offsets. if imagebase was supplied, will calculate form imagebase
-    :param sample_dump_instance:
+    :param pe_path:
     :param imagebase:
     :param min_length:
     :return:
@@ -182,15 +184,15 @@ def get_strings(sample_dump_instance, imagebase=None, min_length=4):
 
     if imagebase is None:
         try:
-            pe = pefile.PE(sample_dump_instance.binary_path)
+            pe = pefile.PE(pe_path)
             imagebase = pe.OPTIONAL_HEADER.ImageBase
         except PEFormatError:
             imagebase = 0
         except AttributeError:
             imagebase = 0
 
-    logging.info('Extracting strings from {}'.format(sample_dump_instance.binary_path))
-    with open(sample_dump_instance.binary_path, "rb") as f:
+    logging.info('Extracting strings from {}'.format(pe_path))
+    with open(pe_path, "rb") as f:
         current_offset += 1
         result = ""
         first_char = True

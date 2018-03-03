@@ -2,7 +2,7 @@ import os
 import py2neo
 import shutil
 
-from volatilitybot.conf.config import PSQL_DB_NAME, PSQL_TABLE_NAME, STORE_PATH
+from volatilitybot.conf.config import PSQL_DB_NAME, PSQL_TABLE_NAME, STORE_PATH, ES_INDICES
 from volatilitybot.lib.utils.es import EsInstance
 from volatilitybot.lib.utils.postgresql import db_cursor
 from volatilitybot.conf.config import NEO4j_USER, NEO4j_PASS
@@ -45,6 +45,11 @@ es_instance.initialize_es()
 
 if es_instance.es.indices.exists(DPA_FUNCTIONS_INDEX):
     es_instance.es.indices.delete(DPA_FUNCTIONS_INDEX)
+
+for index in ES_INDICES:
+    if es_instance.es.indices.exists(index):
+        es_instance.es.indices.delete(index)
+
 
 print('Deleting neo4j data')
 py2neo.authenticate("localhost:7474", NEO4j_USER, NEO4j_PASS)

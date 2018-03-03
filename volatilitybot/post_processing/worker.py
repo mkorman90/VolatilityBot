@@ -23,8 +23,11 @@ def launch_worker():
         dump_notes = work.get('notes')
         print('Processing {}'.format(file_path))
 
+        process_name = dump_notes.get('process_name')
+        whitelisted = dump_notes.get('whitelisted')
+
         try:
-            process_file(file_path, dump_type, original_sample_hash, dump_notes=dump_notes)
+            process_file(file_path, dump_type, original_sample_hash, dump_notes=process_name, whitelisted=whitelisted)
             print('Done.')
         except Exception as ex:
             print('Failed to process sample {}: {}'.format(file_path, ex))

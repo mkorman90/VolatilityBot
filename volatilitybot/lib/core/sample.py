@@ -8,9 +8,10 @@ import shutil
 import pendulum
 from elasticsearch import NotFoundError
 
+from volatilitybot.lib.common.pe_utils import static_analysis
 from volatilitybot.lib.core.es_utils import DataBaseConnection
 
-from volatilitybot.conf.config import STORE_PATH
+from volatilitybot.conf import config
 from volatilitybot.lib.common.utils import calc_md5, calc_sha256, calc_sha1, calc_ephash, calc_imphash
 
 VolatilityBot_Home = ""
@@ -25,8 +26,8 @@ class MalwareSample:
         self.id = sha256
 
         # Move file to store
-        target_directory = os.path.join(STORE_PATH, sha256)
-        target_name = os.path.join(STORE_PATH, sha256, sha256 + '.bin')
+        target_directory = os.path.join(config.STORE_PATH, sha256)
+        target_name = os.path.join(config.STORE_PATH, sha256, sha256 + '.bin')
 
         if not os.path.exists(target_directory):
             os.makedirs(target_directory)
@@ -56,7 +57,7 @@ class MalwareSample:
                                      'id': self.id,
                                      'status': 'waiting'})
 
-    def enqueue(self):
+    def report(self):
         """
         Add sample to store, and enqueue it in DB
         :return:
@@ -70,6 +71,12 @@ class MalwareSample:
             logging.info('Sample already exists!')
             return False
         else:
+
+            # Add static analysis result to sample
+            self.sample_data.update({
+                'static_analysis': static_analysis(self.file_path)
+            })
+
             logging.info('Adding new sample')
             db.add_sample(self)
             return True
@@ -107,4 +114,17 @@ class SampleDump:
         })
 
     def report(self):
-        pass
+        # Add static analysis result to sample
+        db = DataBaseConnection()
+        sample = db.dump_exists(self)
+
+        if sample:
+            logging.info('Dump already exists!')
+            return False
+
+        self.dump_data.update({
+            'static_analysis': static_analysis(self.binary_path)
+        })
+        db.add_dump(self)
+        return True
+

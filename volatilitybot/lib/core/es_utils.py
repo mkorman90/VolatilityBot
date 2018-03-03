@@ -25,6 +25,13 @@ class DataBaseConnection:
         self.es.index(index='volatilitybot-samples',doc_type='sample',id=sha256, body=malware_sample.sample_data)
         return sha256
 
+    def dump_exists(self, malware_sample):
+        try:
+            self.es.get(index='volatilitybot-dumps', doc_type='dump', id=malware_sample.dump_data['sha256'])
+            return True
+        except NotFoundError:
+            return False
+
     def add_dump(self, malware_dump):
         # create an Insert object
 

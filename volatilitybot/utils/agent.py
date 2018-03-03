@@ -56,11 +56,11 @@ def handle_file():
             # Execute the file
             print('Now executing {}'.format(target_file_path))
             cmd = [target_file_path]
-            p = Popen(cmd, shell=False, stdin=None, stdout=None, stderr=None, close_fds=True,
-                      creationflags=DETACHED_PROCESS)
-            # subprocess.call([target_file_path])
-            return json.dumps({'response': response, 'rc': 0})
-    return json.dumps({'response': response, 'rc': 2})
+            #p = Popen(cmd, shell=False, stdin=None, stdout=None, stderr=None, close_fds=True,
+            #          creationflags=DETACHED_PROCESS)
+            pid = Popen(cmd)
+            return json.dumps({'response': response, 'rc': 0, 'pid': pid.pid})
+    return json.dumps({'response': response, 'rc': 2, 'pid': 0})
 
 
 @app.route('/conf', methods=['POST'])

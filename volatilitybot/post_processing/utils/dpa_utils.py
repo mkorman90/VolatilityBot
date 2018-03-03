@@ -99,10 +99,11 @@ def add_sample_to_graphdb(f_sample_hash, note=''):
     return True
 
 
-def add_dump_to_graphdb(f_dump_hash, dump_type, dumps_notes):
+def add_dump_to_graphdb(f_dump_hash, dump_type, dumps_notes, whitelisted=False):
     props = {'dump_hash': f_dump_hash,
              'dump_type': dump_type,
-             'notes': dumps_notes}
+             'notes': dumps_notes,
+             'whitelisted': whitelisted}
 
     if get_dump(f_dump_hash):
         return False

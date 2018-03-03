@@ -17,6 +17,11 @@ def send_dump_analysis_task(file_path, dump_type, original_sample_hash, notes=No
         print('ERROR: {} is not a file, or does not exist.'.format(file_path))
         return False
 
+    if not notes:
+        notes = {
+            'whitelisted': False
+        }
+
     task = {'file_path': file_path,
             'dump_type': dump_type,
             'original_sample_hash': original_sample_hash,

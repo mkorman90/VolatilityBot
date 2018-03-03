@@ -41,6 +41,7 @@ def launch_vm_worker(machine_instance):
                 sample_entry = MalwareSample(file_path)
                 sample_entry.sha256 = sample_sha256
                 sample_entry.get_sample_data()
+                sample_entry.report()
 
                 result = machine_instance.handle_malware_sample(sample_entry)
 

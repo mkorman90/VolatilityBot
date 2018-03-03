@@ -7,7 +7,7 @@ import pefile
 from pefile import PEFormatError
 
 from volatilitybot.lib.common import pslist
-from volatilitybot.lib.common.pe_utils import fix_pe_from_memory
+from volatilitybot.lib.common.pe_utils import fix_pe_from_memory, static_analysis
 from volatilitybot.lib.common.utils import get_workdir_path, calc_sha256, calc_md5, calc_ephash, calc_imphash, calc_sha1
 from volatilitybot.lib.core.es_utils import DataBaseConnection
 from volatilitybot.lib.core.memory_utils import execute_volatility_command
@@ -89,5 +89,12 @@ def run_extractor(memory_instance, malware_sample, machine_instance=None):
 
                 logging.info('[*] Submitting the code to dpa engine: {},{},{}'.format(outputpath, 'injected_code',
                                                                                       malware_sample.id))
+                notes = {
+                    'process_name': 'injected to {}'.format(process_name),
+                    'whitelisted': False
+                }
+
                 send_dump_analysis_task(outputpath, 'injected_code', malware_sample.id,
-                                        notes='injected to {}'.format(process_name))
+                                        notes=notes)
+                current_dump.report()
+

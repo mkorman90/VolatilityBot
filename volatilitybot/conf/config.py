@@ -18,6 +18,8 @@ ENABLE_THREADING = False
 # ------------ ElasticSearch configuration ------------
 ES_HOSTS = ['localhost:9200']
 
+ES_INDICES = ['volatilitybot-samples', 'volatilitybot-functions', 'volatilitybot-dumps']
+
 # Postgresql configuration
 PSQL_DB_NAME = 'volatilitybot'
 PSQL_TABLE_NAME = 'volatilitybot_queue'
@@ -65,7 +67,7 @@ VMRUN_PATH = '/Applications/VMware\ Fusion.app/Contents/Library/vmrun' if sys.pl
 
 MACHINE_INDEX = {
     'MWA7': {'is_64bit': True, 'vmx_path': r'/data/vmware/Win7x64_0_TEST/dns01/Win7x64_0_TEST.vmx',
-             'snapshot_name': 'vbot', 'ip_address': '172.16.57.220',
+             'snapshot_name': 'vbot3', 'ip_address': '172.16.57.220',
              'memory_profile': 'Win7SP0x64', 'active': True}
 }
 
