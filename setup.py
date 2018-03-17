@@ -13,6 +13,7 @@ setup(name='volatilitybot',
                                 'gi_build_vbot=volatilitybot.utils.gi_builder:main',
                                 'volatilitybot_post_processing_daemon=volatilitybot.post_processing.daemon:launch_daemon',
                                 'volatilitybot_post_processing_workers=volatilitybot.post_processing.worker:start_workers_pool',
-                                'volatilitybot_submit=volatilitybot.utils.submit:main'],
+                                'volatilitybot_submit=volatilitybot.utils.submit:main',
+                                'vbot_analyze_standalone_sample=volatilitybot.utils.analyze_dump:analyze_standalone_dump'],
       }
       )
